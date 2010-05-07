@@ -1,11 +1,16 @@
 set nocompatible
 syntax on
 let mapleader = ";"    
+filetype plugin on
+filetype indent on
+let g:tex_flavor='latex'    " allow recognition of latex files
 
 set history=100
+set autochdir
 set shortmess=filmnrxtTI
 set wrap 
 set linebreak
+set scrolloff=4             " lines below cursor while scrolling
 set whichwrap+=h,l          " cursor keys wrap lines
 set wildmenu                " tab menu completion
 set wildmode=longest,list   " tab completion settings
@@ -29,6 +34,10 @@ set incsearch               " search incrementally
 set ignorecase              " ignore case in searches
 set smartcase               " ... unless capitals are included
 
+" backup settings
+set backupdir=/tmp/         " backup files (~)
+set directory=/tmp/         " swap files
+set backup                  " enable backups
 
 """"""""""""""""""""""""""""""""
 " key bindings
