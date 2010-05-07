@@ -1,0 +1,50 @@
+is,v
+$$\includegraphics[width=.6\textwidth]{final5a.png}$$ &,V
+recursive,v
+second,v
+\end{document},V
+The second recursive step is shown below:$$\includegraphics[width=\textwidth]{final6e.png}$$\end{document},V
+ root node,v
+first,v
+The first recursive step for the Member(V,10) function is shown below on theroot node:$$\includegraphics[width=\textwidth]{final6d.png}$$,V
+below:,V
+The constructed vEB tree representing the set {1,3,5,8,9,11,13,14} is shown,V
+The constructed vEB tree representing the set {1,3,5,8,9,11,13,14} is shownbelow:$$\includegraphics[width=\textwidth]{final6c.png}$$,V
+% Question 6,V
+A view of the tree after removing the minimum node and adding the children nodesto the root list:$$\includegraphics[width=.8\textwidth]{final6a.png}$$The final tree after consolidating nodes of the same degree:$$\includegraphics[width=.8\textwidth]{final6b.png}$$,V
+\newpage\subsection*{Question 6},V
+to the root list:,V
+A view of the tree after removing the minimum node and adding the children nodes,V
+A view of the tree after removing the minimum node and adding the children nodesto the root list:$$\includegraphics[width=.8\textwidth]{final6a.png}$$,V
+\subsubsection*{Part c},V
+\subsection*{Question 1}\subsubsection*{Part a}\subsubsection*{Part b}\subsubsection*{Part c},V
+\subsubsection*{Part b},V
+\item[Question 7)] \underline{A linear program for the maximum flow problem}\\    maximize: $f^{(1)}+f^{(2)}+\dots +f^{(n)}$\\    subject to: $f^{(i)}\geq d_i$\\    $f_e^{(1)}+f_e^{(2)}+\dots +f_e^{(n)}\leq c_e$\\    $f_e^{(i)},f^{(i)} \geq 0$\\    \underline{Find the dual of the above problem}\\    $$\begin{aligned}    \text{minimize: }-d_1-d_2-\dots -d_n+c_{e_1}+c_{e_2}+\dots +c_{e_n}\\    \text{subject to: }    y_1\geq 1\\    y_2\geq 1\\    \dots \\    y_n\geq 1\\    y_{n+1}\geq 1\\    y_{n+2}\geq 1\\    \dots \\    y_{n+n}\geq 1\\\end{aligned}$$    \end{enumerate},V
+% ====================================================% Question 7% ====================================================   ,V
+\item[Question 6)] \underline{Solve the following linear program using simplex:}\\    $$\begin{matrix}    \text{minimize: }&x_1&-2x_2&-3x_3&-x_4&     \\    \text{subject to: }    &   x_1 &  -x_2 & -2x_3 &   -x_4 &\leq 4\\    &  2x_1 &       &  +x_3 &  -4x_4 &\leq 2\\    & -2x_1 &  +x_2 &       &   +x_4 &\leq 1\\\end{matrix}$$    where, $x_1,x_2,x_3,x_4\geq 0$\\         First, convert to augmented matrix form:    $$\begin{matrix}     x_1 & x_2 & x_3 & x_4 &  s  &  t  &  u  &  z  &  b\\\hline      1  & -2  & -3  & -1  & 0   & 0   & 0   & -1  & =0\\\hline      1  & -1  & -2  & -1  & 1   & 0   & 0   &  0  & =4\\      2  &  0  &  1  & -4  & 0   & 1   & 0   &  0  & =2\\     -2  &  1  &  0  &  1  & 0   & 0   & 1   &  0  & =1\\\end{matrix}$$    Basic variables: $z=0,s=4,t=2,u=1$    \centering \rule{300pt}{1pt}\\    Using $row_2=2\cdot row_3+row_2$ and $row_1=3\cdot row_3+row_1$    $$\begin{matrix}     x_1 & x_2 & x_3 & x_4 &  s  &  t  &  u  &  z  &  b \\\hline      7  & -2  &  0  & -13 &  0  &  3  &  0  & -1  & = 6\\\hline      5  & -1  &  0  &  -9 &  1  &  2  &  0  &  0  & = 8\\      2  &  0  &  1  &  -4 &  0  &  1  &  0  &  0  & = 2\\     -2  &  1  &  0  &  1  &  0  &  0  &  1  &  0  & = 1\\\end{matrix}$$    Basic variables: $z=-6,s=8,u=1,x_3=2$    \centering \rule{300pt}{1pt}\\    Using $row_1=row_1+13\cdot row_4$, $row_2=row_2+9\cdot row_4$, and $row_3=row_3+4\cdot row_4$    $$\begin{matrix}     x_1 & x_2 & x_3 & x_4 &  s  &  t  &  u  &  z  &  b \\\hline     -19 &  11 &  0  &  0  &  0  &  3  &  13 & -1  & = 19\\\hline     -13 &  8  &  0  &  0  &  1  &  2  &  9  &  0  & = 17\\     -6  &  4  &  1  &  0  &  0  &  1  &  4  &  0  & = 6\\     -2  &  1  &  0  &  1  &  0  &  0  &  1  &  0  & = 1\\\end{matrix}$$    Basic variables: $z=-19,s=17,u=1,x_3=6,x_4=1$\\    As we can no longer proceed, the solution is:$$\begin{bmatrix}x1\\x2\\x3\\x4\\\end{bmatrix} = \begin{bmatrix}0\\0\\6\\1\\\end{bmatrix}$$    ,V
+\item[Question 5)] \underline{Transform cargo plane problem into a linear program.}\\\\    The goal is to maximize revenue $r=1000m_1+1200m_2+12000m_3$. The physical constraints are the amount of each material available, and the volume and weight limits of the plane. This gives:    $$\begin{aligned}    \text{maximize: }&1000m_1+1200m_2+12000m_3\hspace{20pt}&(revenue)\\    \text{subject to: }&2m_1+m_2+3m_3\leq 100&(mass)\\    &m_1+m_2+m_3\leq 60&(volume)\\    &m_1,m_2,m_3\geq 0&(availability)\\\end{aligned}$$\\,V
+    \item \underline{Compare ($\frac{3}{2}$, $\frac{1}{2}$, 0) to optimal of dual solution (1, .5).}\\\\    Inserting ($\frac{3}{2}$, $\frac{1}{2}$, 0) into $x_1-2x_3$ gives 1.5, the same solution as part c found.    \end{enumerate},V
+    \item \underline{Solve for optimal solution of the dual using a plot.}\\\\    The vertices are at (1, .5), (1, 2), and (4, 2). Solving these equations using min $y_1+y_2$:    $$\begin{aligned}    &1+.5=1.5\\    &1+2=3\\    &4+2=6\\\end{aligned}$$    gives $y_1=1$ and $y_2=.5$ as the solution.\\    \includegraphics[scale=.8]{4c.png},V
+    \item \underline{Formulate the dual of the given linear program.}\\\\    The dual is:    $$\begin{aligned}    \text{minimize: }&y_1+y_2\\    \text{subject to: }&y1\geq 1\\    -&y_1+2y_2\geq 0\\    -&y_2 \geq -2\\\end{aligned}$$,V
+    \begin{enumerate}     \item \underline{Show the solution ($\frac{3}{2}$, $\frac{1}{2}$, 0) is in the feasible region.}\\\\    Entering $(\frac{3}{2},\frac{1}{2},0)$ for $(x_1,x_2,x_3)$ in the above equations show that the solution is in the feasible region.    $$\begin{aligned}    \frac{3}{2}-\frac{1}{2}=1\leq 1&\hspace{10pt}\checkmark \\    2\cdot \frac{1}{2}-0=1\leq 1&\hspace{10pt}\checkmark \\    \frac{3}{2},\frac{1}{2},0\geq 0&\hspace{10pt}\checkmark \\\end{aligned}$$,V
+\item[Question 4)] For the linear program:$$\begin{aligned}\text{maximize: }&x_1-2x_3\\\text{subject to: }&x_1-x_2&\leq 1\\&2x_2-x_3&\leq 1\\&x_1,x_2,x_3&\geq 0\end{aligned}$$,V
+\item[Question 3)] \underline{Linear program to minimize maximum absolute error}\\$$\begin{aligned}\text{minimize: }a+b+c\\\text{subject to: }a+b-c+d\geq z\\a+b-c+e\leq z\\d,e\geq 0\\\end{aligned}$$\\,V
+\item[Question 1)] ,V
+\begin{enumerate},V
+\item[Question 2)] \underline{Strategy for selling items on auction site}\\Assuming the buyers appear in a random order, and there are a known number n buyers, then the following strategy can be used.\\\\,V
+\underline{Expected number of boys}\\Assuming children will be had infinitely, that is $k\Rightarrow \infty$, we have:$$E(boys)=\lim_{k\to\infty}1-\frac{1}{2}^k=1$$The expected number of boys is 1.\\,V
+\underline{Expected number of male children}\\The probabilities of male birth is identical to the number of female births, $1-\frac{1}{2}^k$.\\,V
+\underline{Expected number of female children}\\The possibilities for female birth are the following: \\$$\begin{matrix}x_1=g=.5\\x_2=bg=.5\cdot .5\\x_3=bbg=(.5)^2\cdot .5\\\dots \\x_k=b..k g=(.5)^{k-1}\cdot .5\end{matrix}$$Assuming F is the event of a female birth, the probability of no female being born is $P(F=0)=\frac{1}{2}^k$. Then, $E(F)=P(F=1)=1-P(F=0)=1-\frac{1}{2}^k$.\\,v
+groups,v
+\end{document}\end{document}\end{document}\end{document}\end{document},V
+\section{},V
+\end{tabular}\begin{tabular}{|c|c|}\hline,V
+I was curious to find if the subgroups found for the most-liked,V
+of subgroups f,V
+\end{tabular},V
+\begin{tabular}{|c|c|}\hline,V
+There were mostly 3 subgroups during each week identified by K-cores analysis.,V
+Least,v
+\subsubsection*{Least-liked People Subgroups} There were mostly 3 subgroups during each week identified by K-cores analysis.One subgroup during most weeks was the single node with no edges, this representsa node that has no reciprocated edges in their bottom 5 with another node. Thiscan be thought of as a particularly unantagonistic node. We then had a subgroup ofnodes that all had 3 edges, these could be thought of as nodes that are moreantagonistic.\\\begin{tabular}{|c|c|}\hlineWeek 0 & Week 2\\\includegraphics[width=.45\textwidth]{kc-ml5-w0.jpg} & \includegraphics[width=.45\textwidth]{kc-ml5-w2.jpg}\\\hlineWeek 4 & Week 6\\\includegraphics[width=.45\textwidth]{kc-ml5-w4.jpg} & \includegraphics[width=.45\textwidth]{kc-ml5-w6.jpg}\\\hline\end{tabular}\begin{tabular}{|c|c|}\hlineWeek 8 & Week 10\\\includegraphics[width=.45\textwidth]{kc-ml5-w8.jpg} & \includegraphics[width=.45\textwidth]{kc-ml5-w10.jpg}\\\hlineWeek 12 & Week 15\\\includegraphics[width=.45\textwidth]{kc-ml5-w12.jpg} & \includegraphics[width=.45\textwidth]{kc-ml5-w15.jpg}\\\hline\end{tabular}\end{document}\end{document}\end{document}\end{document},V
+an,v
+We also notice that tastes can be somewhat fickle. 5 people selected node 12 asmost liked during week 4, and by week 6 that number was down to 2. We can alsonotice that node 17 emerged as the most-liked node of all the nodes by week6 and stayed that way until the end of the survey.,V

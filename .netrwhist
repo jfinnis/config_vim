@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/josh/Dropbox/10spr Advanced Algorithms/hws'
+let g:netrw_dirhist_2='/home/josh/Dropbox/10spr Bio-Inspiration for Robotics/hw9'
+let g:netrw_dirhist_3='/home/josh/Dropbox/10spr Advanced Algorithms/hws'
+let g:netrw_dirhist_4='/etc/X11'
