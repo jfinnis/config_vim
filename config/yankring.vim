@@ -20,12 +20,12 @@ let g:yankring_ignore_duplicate = 1
 " the right side
 let g:yankring_window_use_separate = 1
 let g:yankring_window_use_horiz = 0
-let g:yankring_window_auto_close = 1
+let g:yankring_window_auto_close = 0
 let g:yankring_window_width = 30
 let g:yankring_window_use_right = 1
 
 " pressing <space> will increase the size of the window by 15 columns
-let g:yankring_window_increment = 1
+let g:yankring_window_increment = 20
 
 " have yankring manage Vim's numbered registers ("0-"9)
 let g:yankring_manage_numbered_reg = 1

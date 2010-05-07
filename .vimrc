@@ -42,7 +42,6 @@ set backup                  " enable backups
 """"""""""""""""""""""""""""""""
 " key bindings
 """"""""""""""""""""""""""""""""
-map <Leader>q :q!<CR>       " fast quit
 map <Leader>h <C-W>h        " ;[hjkl] to navigate split windows
 map <Leader>j <C-W>j
 map <Leader>k <C-W>k
@@ -50,6 +49,7 @@ map <Leader>l <C-W>l
 
 map <Leader>n :bnext<CR>    " navigate through buffers
 map <Leader>p :bprevious<CR>
+map <Leader>q :bd<CR>       " close current buffer without closing window
 
 " plugin specific bindings
 map <Leader>bo :BufOnly<CR>           " close all buffers except this 
