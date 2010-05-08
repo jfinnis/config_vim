@@ -67,5 +67,6 @@ command! -bar -nargs=0 Sudow 	:silent exe "write !sudo tee % >/dev/null"|silent 
 
 
 """"""""""""""""""""""""""""""""
+call pathogen#runtime_append_all_bundles()       # support for pathogen plugin 
 runtime! config/**/*
 """"""""""""""""""""""""""""""""
