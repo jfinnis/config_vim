@@ -1,0 +1,14 @@
+*Instructions*
+* Either place .vimrc in your home directory for VIM to load upon startup or start
+VIM with the command "vim -u ~/.vim/.vimrc". 
+
+*Included plugins*
+* BufExplorer
+* BufOnly
+* NERDTree
+* Latex-suite
+ 
+*Language specific settings*
+* LaTeX
+
+
