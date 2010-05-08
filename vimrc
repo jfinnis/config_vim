@@ -68,6 +68,7 @@ map <Leader>d :NERDTreeToggle<CR>     " access nerd tree directory
 map <Leader>gs :Gstatus<CR>           " fugitive git wrappings
 map <Leader>gc :Gcommit<CR>
 map <Leader>gp :Git push origin master<CR>
+let g:snips_author='Joshua Finnis'    " snippets variable
 
 """"""""""""""""""""""""""""""""
 " commands
