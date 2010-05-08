@@ -1,0 +1,14 @@
+*Instructions*
+* cp vimrc to ~/.vimrc
+
+*Included plugins*
+* BufExplorer
+* BufOnly
+* NERDTree
+* Latex-suite
+* Abolish
+ 
+*Language specific settings*
+* LaTeX
+
+
