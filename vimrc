@@ -1,8 +1,11 @@
+filetype off
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+filetype plugin indent on
+
 set nocompatible
 syntax on
 let mapleader = ";"    
-filetype plugin on
-filetype indent on
 let g:tex_flavor='latex'    " allow recognition of latex files
 
 set hidden
@@ -18,7 +21,7 @@ set wrap
 set linebreak
 set whichwrap+=h,l          " cursor keys wrap lines
 set bs=indent,eol,start     " backspace over everything in insert mode
-"
+
 " tab settings
 set softtabstop=4           " 4 space tabs
 set tabstop=4
@@ -47,9 +50,6 @@ set backup                  " enable backups
 """"""""""""""""""""""""""""""""
 " key bindings
 """"""""""""""""""""""""""""""""
-nmap j gj                   " ignore line wrap when navigating
-nmap k gk
-
 map <Leader>h <C-W>h        " ;[hjkl] to navigate split windows
 map <Leader>j <C-W>j
 map <Leader>k <C-W>k
@@ -69,13 +69,11 @@ map <Leader>gs :Gstatus<CR>           " fugitive git wrappings
 map <Leader>gc :Gcommit<CR>
 map <Leader>gp :Git push origin master<CR>
 
-
 """"""""""""""""""""""""""""""""
 " commands
 """"""""""""""""""""""""""""""""
 " command to save a file with sudo priveleges
 command! -bar -nargs=0 Sudow 	:silent exe "write !sudo tee % >/dev/null"|silent edit
-
 
 """"""""""""""""""""""""""""""""
 runtime! config/**/*

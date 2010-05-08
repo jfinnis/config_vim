@@ -1,6 +1,6 @@
 " pathogen.vim - path option manipulation
-" Maintainer:   Tim Pope <vimNOSPAM@tpope.org>
-" Version:      1.2
+" Maintainer: Tim Pope <vimNOSPAM@tpope.org>
+" Version: 1.2
 
 " Install in ~/.vim/autoload (or ~\vimfiles\autoload).
 "
@@ -65,18 +65,6 @@ function! pathogen#uniq(list) abort " {{{1
   return a:list
 endfunction " }}}1
 
-" Returns a hash indicating which filetype features are enabled.
-function! pathogen#filetype() abort " {{{1
-  redir => output
-  silent filetype
-  redir END
-  let result = {}
-  let result.detection = match(output,'detection:ON') >= 0
-  let result.indent = match(output,'indent:ON') >= 0
-  let result.plugin = match(output,'plugin:ON') >= 0
-  return result
-endfunction " }}}1
-
 " \ on Windows unless shellslash is set, / everywhere else.
 function! pathogen#separator() abort " {{{1
   return !exists("+shellslash") || &shellslash ? '/' : '\'
@@ -96,9 +84,9 @@ endfunction "}}}1
 " Prepend all subdirectories of path to the rtp, and append all after
 " directories in those subdirectories.
 function! pathogen#runtime_prepend_subdirectories(path) " {{{1
-  let sep    = pathogen#separator()
+  let sep = pathogen#separator()
   let before = pathogen#glob_directories(a:path.sep."*[^~]")
-  let after  = pathogen#glob_directories(a:path.sep."*[^~]".sep."after")
+  let after = pathogen#glob_directories(a:path.sep."*[^~]".sep."after")
   let rtp = pathogen#split(&rtp)
   let path = expand(a:path)
   call filter(rtp,'v:val[0:strlen(path)-1] !=# path')
@@ -106,25 +94,30 @@ function! pathogen#runtime_prepend_subdirectories(path) " {{{1
   return &rtp
 endfunction " }}}1
 
-" For each directory in rtp, check for a subdirectory named dir.  If it
+" For each directory in rtp, check for a subdirectory named dir. If it
 " exists, add all subdirectories of that subdirectory to the rtp, immediately
-" after the original directory.  If no argument is given, 'bundle' is used.
+" after the original directory. If no argument is given, 'bundle' is used.
 " Repeated calls with the same arguments are ignored.
 function! pathogen#runtime_append_all_bundles(...) " {{{1
   let sep = pathogen#separator()
   let name = a:0 ? a:1 : 'bundle'
+  if "\n".s:done_bundles =~# "\\M\n".name."\n"
+    return ""
+  endif
+  let s:done_bundles .= name . "\n"
   let list = []
   for dir in pathogen#split(&rtp)
     if dir =~# '\<after$'
-      let list +=  pathogen#glob_directories(substitute(dir,'after$',name.sep.'*[^~]'.sep.'after','')) + [dir]
+      let list += pathogen#glob_directories(substitute(dir,'after$',name.sep.'*[^~]'.sep.'after','')) + [dir]
     else
-      let list +=  [dir] + pathogen#glob_directories(dir.sep.name.sep.'*[^~]')
+      let list += [dir] + pathogen#glob_directories(dir.sep.name.sep.'*[^~]')
     endif
   endfor
   let &rtp = pathogen#join(pathogen#uniq(list))
   return 1
 endfunction
 
+let s:done_bundles = ''
 " }}}1
 
 " Invoke :helptags on all non-$VIM doc directories in runtimepath.
