@@ -29,6 +29,7 @@ set shiftwidth=4
 set expandtab
 
 " display settings
+colorscheme  evening
 set t_Co=256                " number of colors:
 set laststatus=2            " always display status line
 set number                  " display line numbers
