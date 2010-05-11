@@ -8,7 +8,8 @@ syntax on
 let mapleader = ";"    
 let g:tex_flavor='latex'    " allow recognition of latex files
 
-set hidden
+set mouse=a
+set hidden                  " liberal hidden buffers
 set history=100
 set autochdir
 set shortmess=filmnrxtTI
@@ -25,11 +26,11 @@ set bs=indent,eol,start     " backspace over everything in insert mode
 " tab settings
 set softtabstop=4           " 4 space tabs
 set tabstop=4
-set shiftwidth=4
-set expandtab
+set shiftwidth=4            " indent width using '<' and '>'
+set expandtab               " replace tabs with spaces
 
 " display settings
-colorscheme  evening
+colorscheme ir_black
 set t_Co=256                " number of colors:
 set laststatus=2            " always display status line
 set number                  " display line numbers
@@ -56,9 +57,12 @@ map <Leader>j <C-W>j
 map <Leader>k <C-W>k
 map <Leader>l <C-W>l
 
-map <Leader>n :bnext<CR>    " navigate through buffers
+map <Leader>n :bnext<CR>              " navigate through buffers
 map <Leader>p :bprevious<CR>
-map <Leader>q :bd<CR>       " close current buffer and close window
+map <Leader>t gt                      " next tab
+map <Leader>bt :tab ball<CR>          " open tabs for all buffers
+map <Leader>q :bd<CR>                 " close current buffer and close window
+map <Leader>v :source ~/.vimrc
  
 " paste in a sane manner
 set pastetoggle=<F9>

@@ -7,6 +7,10 @@
 * NERDTree
 * Latex-suite
 * Abolish
+* Fugitive
+
+*Included colorscheme*
+* IR_Black
  
 *Language specific settings*
 * LaTeX
