@@ -66,6 +66,7 @@ set pastetoggle=<F9>
 " plugin specific bindings
 map <Leader>bo :BufOnly<CR>           " close all buffers and windows except this 
 map <Leader>d :NERDTreeToggle<CR>     " access nerd tree directory
+let NERDTreeShowBookmarks=1
 map <Leader>gs :Gstatus<CR>           " fugitive git wrappings
 map <Leader>gc :Gcommit -a<CR>
 map <Leader>gl :Git log
