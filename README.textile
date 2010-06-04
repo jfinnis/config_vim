@@ -13,6 +13,4 @@
 * IR_Black
  
 *Language specific settings*
-* LaTeX
-
-
+* LaTeX 

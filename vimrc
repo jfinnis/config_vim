@@ -22,6 +22,7 @@ set wrap
 set linebreak
 set whichwrap+=h,l          " cursor keys wrap lines
 set bs=indent,eol,start     " backspace over everything in insert mode
+set nojoinspaces
 
 " tab settings
 set softtabstop=4           " 4 space tabs
@@ -44,11 +45,6 @@ set incsearch               " search incrementally
 set ignorecase              " ignore case in searches
 set smartcase               " ... unless capitals are included
 
-" backup settings
-set backupdir=/tmp/         " backup files (~)
-set directory=/tmp/         " swap files
-set backup                  " enable backups
-
 """"""""""""""""""""""""""""""""
 " key bindings
 """"""""""""""""""""""""""""""""
@@ -62,7 +58,7 @@ map <Leader>p :bprevious<CR>
 map <Leader>t gt                      " next tab
 map <Leader>bt :tab ball<CR>          " open tabs for all buffers
 map <Leader>q :bd<CR>                 " close current buffer and close window
-map <Leader>v :source ~/.vimrc
+map <Leader>S :source ~/.vimrc<CR>
  
 " paste in a sane manner
 set pastetoggle=<F9>
@@ -71,7 +67,8 @@ set pastetoggle=<F9>
 map <Leader>bo :BufOnly<CR>           " close all buffers and windows except this 
 map <Leader>d :NERDTreeToggle<CR>     " access nerd tree directory
 map <Leader>gs :Gstatus<CR>           " fugitive git wrappings
-map <Leader>gc :Gcommit<CR>
+map <Leader>gc :Gcommit -a<CR>
+map <Leader>gl :Git log
 map <Leader>gp :Git push origin master<CR>
 let g:snips_author='Joshua Finnis'    " snippets variable
 
