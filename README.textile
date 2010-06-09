@@ -8,9 +8,12 @@
 * Latex-suite
 * Abolish
 * Fugitive
+* Snipmate
+* Surround
 
 *Included colorscheme*
 * IR_Black
  
 *Language specific settings*
 * LaTeX 
+* Python - jpythonfold script
