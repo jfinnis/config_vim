@@ -9,4 +9,4 @@ set nosmartindent
 map <buffer> gd /def <C-R><C-W><CR>
 
 " jpythonfold script http://www.vim.org/scripts/script.php?script_id=2527
-source jpythonfold.vim
+source ~/.vim/ftplugin/jpythonfold.vim
