@@ -17,3 +17,6 @@
 *Language specific settings*
 * LaTeX 
 * Python - jpythonfold script
+
+*Required programs
+* pdftotext, odt2txt, antiword, unrtf

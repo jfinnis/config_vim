@@ -45,6 +45,13 @@ set incsearch               " search incrementally
 set ignorecase              " ignore case in searches
 set smartcase               " ... unless capitals are included
 
+" viewing formatted files
+autocmd BufReadPost *.doc silent %!antiword "%"
+autocmd BufReadPost *.odt,*.odp silent %!odt2txt "%"
+autocmd BufReadPost *.pdf silent %!pdftotext -nopgbrk -q -eol unix "%" - | fmt -w78
+autocmd BufReadPost *.rtf silent %!unrtf --text "%"
+autocmd BufWriteCmd *.pdf,*.rtf,*.odt,*.odp,*.doc set readonly
+
 """"""""""""""""""""""""""""""""
 " key bindings
 """"""""""""""""""""""""""""""""
@@ -78,7 +85,3 @@ let g:snips_author='Joshua Finnis'    " snippets variable
 """"""""""""""""""""""""""""""""
 " command to save a file with sudo priveleges
 command! -bar -nargs=0 Sudow 	:silent exe "write !sudo tee % >/dev/null"|silent edit
-
-""""""""""""""""""""""""""""""""
-runtime! config/**/*
-""""""""""""""""""""""""""""""""
