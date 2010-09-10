@@ -2,12 +2,14 @@
 * cp vimrc to ~/.vimrc
 
 *Included plugins*
+* Abolish
 * BufExplorer
 * BufOnly
-* NERDTree
-* Latex-suite
-* Abolish
 * Fugitive
+* Latex-suite
+* MatchIt
+* NERDCommenter
+* NERDTree
 * Snipmate
 * Surround
 
@@ -15,8 +17,9 @@
 * IR_Black
  
 *Language specific settings*
-* LaTeX 
 * Python - jpythonfold script
+* Ocaml, SML indent scripts
+* LaTeX 
 
-*Required programs
+*Required programs*
 * pdftotext, odt2txt, antiword, unrtf
