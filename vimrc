@@ -75,8 +75,11 @@ map <Leader>bo :BufOnly<CR>           " close all buffers and windows except thi
 map <Leader>d :NERDTreeToggle<CR>     " access nerd tree directory
 let NERDTreeShowBookmarks=1
 map <Leader>gs :Gstatus<CR>           " fugitive git wrappings
+map <Leader>ga :Git add %<CR>
+map <Leader>gb :Gblame<CR>
 map <Leader>gc :Gcommit -a<CR>
-map <Leader>gl :Git log
+map <Leader>gd :Gdiff<CR>
+map <Leader>gl :Glog
 map <Leader>gp :Git push origin master<CR>
 let g:snips_author='Joshua Finnis'    " snippets variable
 
