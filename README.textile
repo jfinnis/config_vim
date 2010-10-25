@@ -1,5 +1,6 @@
 *Instructions*
 * cp vimrc to ~/.vimrc
+* run ":helptags ." within vim
 
 *Included plugins*
 * Abolish
