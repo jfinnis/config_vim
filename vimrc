@@ -25,9 +25,9 @@ set bs=indent,eol,start     " backspace over everything in insert mode
 set nojoinspaces
 
 " tab settings
-set softtabstop=4           " 4 space tabs
-set tabstop=4
-set shiftwidth=4            " indent width using '<' and '>'
+set softtabstop=2           " 4 space tabs
+set tabstop=2
+set shiftwidth=2            " indent width using '<' and '>'
 set expandtab               " replace tabs with spaces
 
 " display settings
@@ -44,6 +44,8 @@ set hlsearch                " highlight search terms
 set incsearch               " search incrementally
 set ignorecase              " ignore case in searches
 set smartcase               " ... unless capitals are included
+vnoremap <silent> * :call VisualSearch('f')<CR>   
+vnoremap <silent> # :call VisualSearch('b')<CR>
 
 " viewing formatted files
 autocmd BufReadPost *.doc silent %!antiword "%"
@@ -55,23 +57,39 @@ autocmd BufWriteCmd *.pdf,*.rtf,*.odt,*.odp,*.doc set readonly
 """"""""""""""""""""""""""""""""
 " key bindings
 """"""""""""""""""""""""""""""""
+map <Leader>S :source ~/.vimrc<CR>
+
+" window navigation
 map <Leader>h <C-W>h        " ;[hjkl] to navigate split windows
 map <Leader>j <C-W>j
 map <Leader>k <C-W>k
 map <Leader>l <C-W>l
 
+" buffer management
 map <Leader>n :bnext<CR>              " navigate through buffers
 map <Leader>p :bprevious<CR>
-map <Leader>t gt                      " next tab
-map <Leader>bt :tab ball<CR>          " open tabs for all buffers
-map <Leader>q :bd<CR>                 " close current buffer and close window
-map <Leader>S :source ~/.vimrc<CR>
+map <Leader>bo :BufOnly<CR>           " close all buffers and windows except this 
+map <Leader>bd :bd<CR>                " close current buffer and close window
+map <Leader>q :Bclose<CR>             " close current buffer and keep window
+
+" tab management
+map <Leader>tb :tab ball<CR>          " open tabs for all buffers
+map <Leader>tn :tabnew<cr>
+map <leader>te :tabedit
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove
+
+" global substitute word under cursor
+nmap <Leader>z :%s/\<<c-r>=expand("<cword>")<cr>\>/  
+vmap <Leader>z :<C-U>%s/\<<c-r>*\>/
+
+" find word under cursor in all files of a directory
+map <Leader>f [I
  
 " paste in a sane manner
 set pastetoggle=<F9>
 
 " plugin specific bindings
-map <Leader>bo :BufOnly<CR>           " close all buffers and windows except this 
 map <Leader>d :NERDTreeToggle<CR>     " access nerd tree directory
 let NERDTreeShowBookmarks=1
 map <Leader>gs :Gstatus<CR>           " fugitive git wrappings
@@ -88,3 +106,40 @@ let g:snips_author='Joshua Finnis'    " snippets variable
 """"""""""""""""""""""""""""""""
 " command to save a file with sudo priveleges
 command! -bar -nargs=0 Sudow 	:silent exe "write !sudo tee % >/dev/null"|silent edit
+
+function! VisualSearch(direction) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+
+    let l:pattern = escape(@", '\\/.*$^~[]')
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+    if a:direction == 'b'
+        execute "normal ?" . l:pattern . "^M"
+    elseif a:direction == 'f'
+        execute "normal /" . l:pattern . "^M"
+    endif
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunction
+
+command! Bclose call <SID>BufcloseCloseIt()
+function! <SID>BufcloseCloseIt()
+   let l:currentBufNum = bufnr("%")
+   let l:alternateBufNum = bufnr("#")
+
+   if buflisted(l:alternateBufNum)
+     buffer #
+   else
+     bnext
+   endif
+
+   if bufnr("%") == l:currentBufNum
+     new
+   endif
+
+   if buflisted(l:currentBufNum)
+     execute("bdelete! ".l:currentBufNum)
+   endif
+endfunction
