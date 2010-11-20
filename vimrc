@@ -69,8 +69,8 @@ map <Leader>l <C-W>l
 map <Leader>n :bnext<CR>              " navigate through buffers
 map <Leader>p :bprevious<CR>
 map <Leader>bo :BufOnly<CR>           " close all buffers and windows except this 
-map <Leader>bd :bd<CR>                " close current buffer and close window
-map <Leader>q :Bclose<CR>             " close current buffer and keep window
+map <Leader>q :bd<CR>                 " close current buffer and close window
+map <Leader>bd :Bclose<CR>            " close current buffer and keep window
 
 " tab management
 map <Leader>tb :tab ball<CR>          " open tabs for all buffers
@@ -92,6 +92,7 @@ set pastetoggle=<F9>
 " plugin specific bindings
 map <Leader>d :NERDTreeToggle<CR>     " access nerd tree directory
 let NERDTreeShowBookmarks=1
+let NERDTreeIgnore=['\~$', '\.aux$', '\.blg$', '\.bbl$']
 map <Leader>gs :Gstatus<CR>           " fugitive git wrappings
 map <Leader>ga :Git add %<CR>
 map <Leader>gb :Gblame<CR>

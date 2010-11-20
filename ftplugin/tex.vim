@@ -1,5 +1,5 @@
-"set textwidth=80   " wrap at 80 chars
-set textwidth=0    " do not hardwrap lines
+set textwidth=80   " wrap at 80 chars
+"set textwidth=0    " do not hardwrap lines
 set wrap linebreak " but do softwrap lines
 set iskeyword+=:   " <C-n> autocompletes labels when written
                    " as \label{fig:something}
