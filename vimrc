@@ -1,6 +1,6 @@
 filetype off
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+silent! call pathogen#runtime_append_all_bundles()
+silent! call pathogen#helptags()
 filetype plugin indent on
 
 set nocompatible
@@ -57,7 +57,9 @@ autocmd BufWriteCmd *.pdf,*.rtf,*.odt,*.odp,*.doc set readonly
 """"""""""""""""""""""""""""""""
 " key bindings
 """"""""""""""""""""""""""""""""
+map <Leader>M :mksession 
 map <Leader>S :source ~/.vimrc<CR>
+map <Leader>w :sav 
 
 " window navigation
 map <Leader>h <C-W>h        " ;[hjkl] to navigate split windows
@@ -74,8 +76,9 @@ map <Leader>bd :Bclose<CR>            " close current buffer and keep window
 
 " tab management
 map <Leader>tb :tab ball<CR>          " open tabs for all buffers
-map <Leader>tn :tabnew<cr>
-map <leader>te :tabedit
+map <Leader>tn :tabnext<cr>
+map <Leader>tp :tabprevious<cr>
+map <leader>te :tabedit 
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 
@@ -89,10 +92,14 @@ map <Leader>f [I
 " paste in a sane manner
 set pastetoggle=<F9>
 
+" easier navigation with tags, Right to view source, Left back to program
+map <silent><C-Left> <C-T>
+map <silent><C-Right> <C-]>
+
 " plugin specific bindings
 map <Leader>d :NERDTreeToggle<CR>     " access nerd tree directory
 let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=['\~$', '\.aux$', '\.blg$', '\.bbl$']
+let NERDTreeIgnore=['\~$', '\.aux$', '\.blg$', '\.bbl$', '\.log$', '\.dvi$']
 map <Leader>gs :Gstatus<CR>           " fugitive git wrappings
 map <Leader>ga :Git add %<CR>
 map <Leader>gb :Gblame<CR>
@@ -101,6 +108,7 @@ map <Leader>gd :Gdiff<CR>
 map <Leader>gl :Glog
 map <Leader>gp :Git push origin master<CR>
 let g:snips_author='Joshua Finnis'    " snippets variable
+map <Leader>todo :set ft=todo<cr>     " vimtodo plugin
 
 """"""""""""""""""""""""""""""""
 " commands
