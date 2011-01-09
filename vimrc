@@ -8,6 +8,7 @@ syntax on
 let mapleader = ";"    
 let g:tex_flavor='latex'    " allow recognition of latex files
 
+set autochdir               " change directory to the file you opened
 set mouse=a
 set hidden                  " liberal hidden buffers
 set history=100
@@ -32,6 +33,8 @@ set expandtab               " replace tabs with spaces
 
 " display settings
 colorscheme ir_black
+set cul                     " highlight current line
+hi CursorLine term=none cterm=none ctermbg=0    " adjust highlight
 set t_Co=256                " number of colors:
 set laststatus=2            " always display status line
 set number                  " display line numbers
