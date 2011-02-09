@@ -156,12 +156,12 @@ if g:Tex_Menus && g:Tex_FontMenus
 	call <SID>Tex_FontSize('Huge')
 	" }}}
 	" {{{ &font.
-	call s:Tex_Fontfont('fontencoding{}',               '\fontencoding{<++>}<++>')
-	call s:Tex_Fontfont('fontfamily{qtm}',              '\fontfamily{<++>}<++>')
-	call s:Tex_Fontfont('fontseries{m\ b\ bx\ sb\ c}',  '\fontseries{<++>}<++>')
-	call s:Tex_Fontfont('fontshape{n\ it\ sl\ sc\ ui}', '\fontshape{<++>}<++>')
-	call s:Tex_Fontfont('fontsize{}{}',                 '\fontsize{<++>}{<++>}<++>')
-	call s:Tex_Fontfont('selectfont',                   '\selectfont ')
+	"call s:Tex_Fontfont('fontencoding{}',               '\fontencoding{<++>}<++>')
+	"call s:Tex_Fontfont('fontfamily{qtm}',              '\fontfamily{<++>}<++>')
+	"call s:Tex_Fontfont('fontseries{m\ b\ bx\ sb\ c}',  '\fontseries{<++>}<++>')
+	"call s:Tex_Fontfont('fontshape{n\ it\ sl\ sc\ ui}', '\fontshape{<++>}<++>')
+	"call s:Tex_Fontfont('fontsize{}{}',                 '\fontsize{<++>}{<++>}<++>')
+	"call s:Tex_Fontfont('selectfont',                   '\selectfont ')
 	" }}}
 endif
 
@@ -310,14 +310,14 @@ endif
 " ============================================================================== 
 if g:Tex_Menus
 	" Various {{{
-	call <SID>Tex_VariousMenus('ref{}'         , '\ref{<++>}<++>')
-	call <SID>Tex_VariousMenus('pageref{}'     , '\pageref{<++>}<++>')
-	call <SID>Tex_VariousMenus('label{}'       , '\label{<++>}<++>')
-	call <SID>Tex_VariousMenus('footnote{}'    , '\footnote{<++>}<++>')
-	call <SID>Tex_VariousMenus('footnotemark{}', '\footnotemark{<++>}<++>')
-	call <SID>Tex_VariousMenus('footnotemark{}', '\footnotetext{<++>}<++>')
-	call <SID>Tex_VariousMenus('cite{}'        , '\cite{<++>}<++>')
-	call <SID>Tex_VariousMenus('nocite{}'      , '\nocite{<++>}<++>')
+	"call <SID>Tex_VariousMenus('ref{}'         , '\ref{<++>}<++>')
+	"call <SID>Tex_VariousMenus('pageref{}'     , '\pageref{<++>}<++>')
+	"call <SID>Tex_VariousMenus('label{}'       , '\label{<++>}<++>')
+	"call <SID>Tex_VariousMenus('footnote{}'    , '\footnote{<++>}<++>')
+	"call <SID>Tex_VariousMenus('footnotemark{}', '\footnotemark{<++>}<++>')
+	"call <SID>Tex_VariousMenus('footnotemark{}', '\footnotetext{<++>}<++>')
+	"call <SID>Tex_VariousMenus('cite{}'        , '\cite{<++>}<++>')
+	"call <SID>Tex_VariousMenus('nocite{}'      , '\nocite{<++>}<++>')
 	" }}}
 endif
 
