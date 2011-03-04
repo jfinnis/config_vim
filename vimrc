@@ -57,7 +57,9 @@ autocmd BufReadPost *.pdf silent %!pdftotext -nopgbrk -q -eol unix "%" - | fmt -
 autocmd BufReadPost *.rtf silent %!unrtf --text "%"
 autocmd BufWriteCmd *.pdf,*.rtf,*.odt,*.odp,*.doc set readonly
 
-""""""""""""""""""""""""""""""""
+" browse most recently uesd files
+autocmd VimEnter * if empty(expand('%:p')) | browse oldfiles | endif """"""""""""""""""""""""""""""""
+
 " key bindings
 """"""""""""""""""""""""""""""""
 map <Leader>M :mksession 
