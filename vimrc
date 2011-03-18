@@ -1,6 +1,6 @@
 filetype off
-silent! call pathogen#runtime_append_all_bundles()
-silent! call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 filetype plugin indent on
 
 set nocompatible
@@ -116,6 +116,15 @@ map <Leader>gl :Glog
 map <Leader>gp :Git push origin master<CR>
 let g:snips_author='Joshua Finnis'    " snippets variable
 map <Leader>todo :set ft=todo<cr>     " vimtodo plugin
+map <Leader>tl :TlistToggle<cr>       " Taglist plugin
+let Tlist_GainFocus_On_ToggleOpen=1
+let Tlist_Close_On_Select=1
+let Tlist_Show_One_File=1
+let Tlist_File_Fold_Auto_Close=1
+let Tlist_Use_Right_Window=1
+let Tlist_Compact_Format=1
+let Tlist_Enable_Fold_Column=0
+let Tlist_Display_Prototype=0
 
 """"""""""""""""""""""""""""""""
 " commands
