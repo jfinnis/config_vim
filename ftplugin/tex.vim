@@ -7,5 +7,5 @@ set winaltkeys=no  " disable default vim mapping for latex-suite macros
 set shiftwidth=2
 set autoindent
 
-map <Leader>tt :TTemplate<CR>        " insert template from latex-suite/template
-
+" insert template from latex-suite/template
+map <Leader>tt :TTemplate<CR>

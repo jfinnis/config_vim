@@ -1,9 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/josh'
-let g:netrw_dirhist_2='/home/josh/Desktop'
-let g:netrw_dirhist_3='/home/josh/Dropbox/Mobisec/10spr_elsevier'
-let g:netrw_dirhist_4='/home/josh/Dropbox/Mobisec/data'
-let g:netrw_dirhist_5='/home/josh/.vim/task_manager'
-let g:netrw_dirhist_6='/home/josh/Dropbox/11spring_adv_programming_languages'
-let g:netrw_dirhist_7='/home/josh/working'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/home/josh/Dropbox/ta_alg/hw_solutions'
+let g:netrw_dirhist_2='/home/josh/working/dsg_website/publications'
