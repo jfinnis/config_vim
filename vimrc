@@ -31,6 +31,8 @@ set virtualedit+=block      " allows cursor anywhere in visual block mode
 " convert current word to uppercase and lowercase
 nnoremap <leader>U gUiw
 nnoremap <leader>u guiw
+" make Y behave like other capitals
+map Y y$
 
 " tab settings
 set softtabstop=2           " 4 space tabs
