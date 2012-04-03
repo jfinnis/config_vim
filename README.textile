@@ -23,7 +23,8 @@
 * Repeat          (utility plugin to allow . to work for plugin mappings)
 * Snipmate        (expands snippets after, date<tab>, for<tab>, ifmain<tab> etc)
 * Surround        (change/delete surrounding "/[/<tag>, ds), cst<p>, add with y)
-* Tabular
+* Tabman          (
+* Tabular         (<Leader>a=/a: to automatically align, |s autoalign tables)
 * Taglist         (<Leader>tl shows tags for open files, o-new window, p-same window, space-show prototypes, u-open tags)
 * Unimpaired      ([<space>/]<space - ADD [n] blank lines before/after, [e/]e exchange lines, encoding/decoding method)
 

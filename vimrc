@@ -33,6 +33,8 @@ nnoremap <leader>U gUiw
 nnoremap <leader>u guiw
 " make Y behave like other capitals
 map Y y$
+" close diff windows
+nnoremap <Leader>D :diffoff!<cr>
 
 " tab settings
 set softtabstop=2           " 4 space tabs
@@ -140,7 +142,7 @@ vnoremap <silent> <Leader>gF :<C-U>call EasyMotionF(1, 1)<CR>
 map <Leader>gs :Gstatus<CR>           
 map <Leader>ga :Git add %<CR>
 map <Leader>gb :Gblame<CR>
-map <Leader>gb :Gbrowse<CR>
+map <Leader>gw :Gbrowse<CR>
 map <Leader>gc :Gcommit -a<CR>
 map <Leader>gd :Gdiff<CR>
 map <Leader>gl :Glog
