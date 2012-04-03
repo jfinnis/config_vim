@@ -34,3 +34,6 @@
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = git://github.com/vim-scripts/taglist.vim.git
+[submodule "bundle/tabman"]
+	path = bundle/tabman
+	url = git://github.com/kien/tabman.vim.git
