@@ -9,3 +9,6 @@ set autoindent
 
 " insert template from latex-suite/template
 map <Leader>tt :TTemplate<CR>
+
+" map pdflatex command
+ map <Leader>lc :!pdflatex %<CR>
