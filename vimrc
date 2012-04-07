@@ -26,7 +26,7 @@ set nojoinspaces
 set matchtime=3             " tenths of a second to show matching paren
 set gdefault                " always do g option for substitute
 nnoremap zO zCzO
-set pastetoggle=<F9>        " paste in a sane manner
+set pastetoggle=<F10>       " paste in a sane manner
 set virtualedit+=block      " allows cursor anywhere in visual block mode 
 " convert current word to uppercase and lowercase
 nnoremap <leader>U gUiw

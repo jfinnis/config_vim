@@ -15,18 +15,18 @@
 * BufOnly         (:Leader:bo removes all other open buffers)
 * EasyMotion      (:Leader:gf/gF to specify specific letter to go to)
 * Fugitive        (:Leader:gs/gc/gd/gl/gp - status (- stage/unstage, p patch, c commit), commit, diff, log, push, diffput/get to stage/checkout, :Gedit)
-* Latex-suite     (templates - :Leader:tt, macros - EEQ/SSS/`a/`D, <F7> expands commands, <F9> completes labels/cites, :Leader:ll compiles [visual])
+* Latex-suite     (templates - :Leader:tt, macros - EEQ/SSS/`a/`D, F7 expands commands, F9 completes labels/cites, :Leader:ll compiles [visual])
 * MatchIt         (extends % to if/else/endif, can configure more matchpairs)
-* NERDCommenter   (:Leader:c<space>/ci/cm/cb/cA)
+* NERDCommenter   (:Leader:c:space:/ci/cm/cb/cA)
 * NERDTree        (:Leader:d opens directory tree, o, s, t to open/vsplit/tab)
 * Pydoc           (:Leader:Pw/PW/Pk/PK to bring up python doc for cursor word)
 * Repeat          (utility plugin to allow . to work for plugin mappings)
-* Snipmate        (expands snippets after, date<tab>, for<tab>, ifmain<tab> etc)
-* Surround        (change/delete surrounding "/[/<tag>, ds), cst<p>, add with y)
+* Snipmate        (expands snippets after, date:tab:, for:tab: ifmain:tab: etc)
+* Surround        (change/delete surrounding "/[/tag, ds), cstp, add with y)
 * Tabman          (
 * Tabular         (:Leader:a=/a: to automatically align, |s autoalign tables)
 * Taglist         (:Leader:tl shows tags for open files, o-new window, p-same window, space-show prototypes, u-open tags)
-* Unimpaired      ([<space>/]<space - ADD [n] blank lines before/after, [e/]e exchange lines, encoding/decoding method)
+* Unimpaired      ([:space:/]:space:- ADD [n] blank lines before/after, [e/]e exchange lines, encoding/decoding method)
 
 *Included colorscheme*
 * IR_Black
@@ -37,8 +37,8 @@
 ** pydoc script (:Leader:Pw/Pk/PW/PK)
 ** ifmain/try/from/init snippets
 ** gf goes to python library file, gd goes to function definition in module
-** can compile with :make, evaluate visual blocks with <C-H>
-** <F7>/Shift+<F7> adds/removes breakpoints
+** can compile with :make, evaluate visual blocks with :C-H:
+** F7/Shift+F7 adds/removes breakpoints
 * Ocaml, SML indent scripts
 * LaTeX 
 
