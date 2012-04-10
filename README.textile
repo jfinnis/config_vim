@@ -3,7 +3,7 @@
 
 *Modifications*
 * can open doc/odt/pdf/rtf files
-* :F9: - pastemode, n - number text object
+* :F9: - pastemode, n/ai-ii - number/indent text objects
 * :Leader:s - global substitute word on cursor, :Leader:f - find in all files
 * S - split line at cursor, g+/g= - max window/same size, u/U upper/lowercase
 * Navigation - :Leader:h/j/k/l/n/p, C-Left/Right to navigate help
@@ -24,10 +24,12 @@
 * Rainbow Paren.  (colored nested parentheses/brackets/etc)
 * Repeat          (utility plugin to allow . to work for plugin mappings)
 * Snipmate        (expands snippets after, date:tab:, for:tab: ifmain:tab: etc)
-* Surround        (change/delete surrounding "/[/tag, ds), cstp, add with y)
+* Surround        (change/delete surrounding bracket/tag, ds", cstp, add with y)
 * Tabman          (:Leader:tt/tf to open tabman, e/b/x/o/l/h edit/delete/move)
 * Tabular         (:Leader:a=/a: to automatically align, |s autoalign tables)
 * Taglist         (:Leader:tl shows tags for open files, o-new window, p-same window, space-show prototypes, u-open tags)
+* Textobj-User    (utility plugin for defining text objects)
+* Textobj-Indent  (defines indent text objects, ai aI ii iI)
 * Unimpaired      ([:space:/]:space:- ADD [n] blank lines before/after, [e/]e exchange lines, encoding/decoding method)
 * Yankring        (after paste, :C-P: - previous/next pastes, :Leader:y - window)
 
