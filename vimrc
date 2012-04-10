@@ -89,6 +89,8 @@ map <Leader>S :source ~/.vimrc<CR>
 nnoremap S i<cr><esc><right>
 " remove all trailing whitespace
 nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+" make ! read in output of command
+map <Leader>! :r !
 
 " window navigation
 map <Leader>h <C-W>h                  " ;[hjkl] to navigate split windows
