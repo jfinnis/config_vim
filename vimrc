@@ -61,6 +61,9 @@ set hlsearch                " highlight search terms
 set incsearch               " search incrementally
 set ignorecase              " ignore case in searches
 set smartcase               " ... unless capitals are included
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+" shortcut for searching with Ack
+nnoremap <leader>a :Ack
 
 " viewing formatted files
 autocmd BufReadPost *.doc silent %!antiword "%"

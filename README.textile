@@ -11,6 +11,7 @@
 
 *Included plugins*
 * Abolish         (cr[c/m/_] to change case, :S/:%S for smart search/substitute, record abbreviations)
+* Ack             (:Leader:a shortcut, output of search in quickfix)
 * BufExplorer     (:Leader:be toggles, o opens buffer, q quits)
 * BufOnly         (:Leader:bo removes all other open buffers)
 * EasyMotion      (:Leader:gf/gF to specify specific letter to go to)
