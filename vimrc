@@ -28,6 +28,7 @@ set gdefault                " always do g option for substitute
 nnoremap zO zCzO
 set pastetoggle=<F10>       " paste in a sane manner
 set virtualedit+=block      " allows cursor anywhere in visual block mode 
+set undofile                " store in .un files the previous changes
 " convert current word to uppercase and lowercase
 nnoremap <leader>U gUiw
 nnoremap <leader>u guiw
@@ -49,6 +50,7 @@ hi CursorLine term=none cterm=none ctermbg=0    " adjust highlight
 set t_Co=256                " number of colors:
 set laststatus=2            " always display status line
 set number                  " display line numbers
+set relativenumber          " number lines relative to cursor
 set title                   " show file in titlebar
 set ruler                   " show the cursor position always
 
@@ -74,7 +76,10 @@ autocmd BufWriteCmd *.pdf,*.rtf,*.odt,*.odp,*.doc set readonly
 """"""""""""""""""""""""""""""""
 map <Leader>M :mksession 
 map <Leader>S :source ~/.vimrc<CR>
-nnoremap S i<cr><esc><right>          " split line at the current cursor position
+" split line at the current cursor position
+nnoremap S i<cr><esc><right>
+" remove all trailing whitespace
+nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " window navigation
 map <Leader>h <C-W>h                  " ;[hjkl] to navigate split windows
