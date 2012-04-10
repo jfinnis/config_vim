@@ -7,7 +7,7 @@
 * :Leader:s - global substitute word on cursor, :Leader:f - find in all files
 * S - split line at cursor, g+/g= - max window/same size, u/U upper/lowercase
 * Navigation - :Leader:h/j/k/l/n/p, C-Left/Right to navigate help
-* Tabs - :Leader:tb, tn, tp, to, te, tc
+* Tabs - :Leader:tb, tn, tp, to, te, tc, tt
 
 *Included plugins*
 * Abolish         (cr[c/m/_] to change case, :S/:%S for smart search/substitute, record abbreviations)
@@ -20,6 +20,7 @@
 * NERDCommenter   (:Leader:c:space:/ci/cm/cb/cA)
 * NERDTree        (:Leader:d opens directory tree, o, s, t to open/vsplit/tab)
 * Pydoc           (:Leader:Pw/PW/Pk/PK to bring up python doc for cursor word)
+* Rainbow Paren.  (colored nested parentheses/brackets/etc)
 * Repeat          (utility plugin to allow . to work for plugin mappings)
 * Snipmate        (expands snippets after, date:tab:, for:tab: ifmain:tab: etc)
 * Surround        (change/delete surrounding "/[/tag, ds), cstp, add with y)

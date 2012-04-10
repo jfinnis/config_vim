@@ -69,6 +69,12 @@ autocmd BufReadPost *.pdf silent %!pdftotext -nopgbrk -q -eol unix "%" - | fmt -
 autocmd BufReadPost *.rtf silent %!unrtf --text "%"
 autocmd BufWriteCmd *.pdf,*.rtf,*.odt,*.odp,*.doc set readonly
 
+" turn on rainbow colored parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
 " browse most recently used files on startup
 "autocmd VimEnter * if empty(expand('%:p')) | browse oldfiles | endif
 
@@ -165,6 +171,22 @@ vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs/l0l1<CR>
 vmap <Leader>a: :Tabularize /:\zs/l0l1<CR>
 
+" taglist plugin options
+map <Leader>tl :TlistToggle<cr>
+let Tlist_Compact_Format=0                   " remove blank lines
+let Tlist_Display_Prototype=0
+let Tlist_Enable_Fold_Column=0
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_Inc_Winwidth=0
+let Tlist_Sort_Type="name"
+let Tlist_Use_Right_Window=1
+
+""""""""""""""""""""""""""""""""
+" commands
+""""""""""""""""""""""""""""""""
+" command to save a file with sudo priveleges
+command! -bar -nargs=0 Sudow 	:silent exe "write !sudo tee % >/dev/null"|silent edit
+
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
   if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
@@ -188,22 +210,6 @@ function! s:NumberTextObject(whole)
         endwhile
     endif
 endfunction
-
-" taglist plugin options
-map <Leader>tl :TlistToggle<cr>
-let Tlist_Compact_Format=0                   " remove blank lines
-let Tlist_Display_Prototype=0
-let Tlist_Enable_Fold_Column=0
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_Inc_Winwidth=0
-let Tlist_Sort_Type="name"
-let Tlist_Use_Right_Window=1
-
-""""""""""""""""""""""""""""""""
-" commands
-""""""""""""""""""""""""""""""""
-" command to save a file with sudo priveleges
-command! -bar -nargs=0 Sudow 	:silent exe "write !sudo tee % >/dev/null"|silent edit
 
 command! Bclose call <SID>BufcloseCloseIt()
 function! <SID>BufcloseCloseIt()
