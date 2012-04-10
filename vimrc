@@ -181,6 +181,9 @@ let Tlist_Inc_Winwidth=0
 let Tlist_Sort_Type="name"
 let Tlist_Use_Right_Window=1
 
+" show yankring window
+nnoremap <silent> <Leader>y :YRShow<CR>
+
 """"""""""""""""""""""""""""""""
 " commands
 """"""""""""""""""""""""""""""""
