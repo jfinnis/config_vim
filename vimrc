@@ -78,6 +78,14 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+" start ctrlp
+let g:ctrlp_map='<Leader>df'
+let g:ctrlp_by_filename=1
+let g:ctrlp_match_window_bottom=0
+let g:ctrlp_max_height=15
+let g:ctrlp_open_multiple_files='1vr'
+let g:ctrlp_custom_ignore = {'dir':'\.git$\|\.hg$\|\.svn$'}
+
 " browse most recently used files on startup
 "autocmd VimEnter * if empty(expand('%:p')) | browse oldfiles | endif
 
@@ -147,7 +155,7 @@ map <silent><C-Right> <C-]>
 let g:snips_author='Joshua Finnis'    " snippets variable
 
 " nerdtree bindings and settings
-map <Leader>d :NERDTreeToggle<CR>
+map <Leader>dd :NERDTreeToggle<CR>
 let NERDChDirMode=2
 let NERDTreeIgnore=['\~$', '\.aux$', '\.blg$', '\.bbl$', '\.log$', '\.dvi$']
 let NERDTreeShowBookmarks=1
