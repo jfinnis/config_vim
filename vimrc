@@ -25,7 +25,6 @@ set bs=indent,eol,start     " backspace over everything in insert mode
 set nojoinspaces
 set matchtime=3             " tenths of a second to show matching paren
 set gdefault                " always do g option for substitute
-nnoremap zO zCzO
 set pastetoggle=<F10>       " paste in a sane manner
 set virtualedit+=block      " allows cursor anywhere in visual block mode 
 set undofile                " store in .un files the previous changes
@@ -54,7 +53,9 @@ set relativenumber          " number lines relative to cursor
 set title                   " show file in titlebar
 set ruler                   " show the cursor position always
 
-set statusline=%<\ %2*[%n%H%M%R%W]%*\ %-40f\ %{fugitive#statusline()}%=%l*%y%*%*\ %10((%l/%L)%)\%P
+" old statusline (before powerline plugin)
+"set statusline=%<\ %2*[%n%H%M%R%W]%*\ %-40f\ %{fugitive#statusline()}%=%l*%y%*%*\ %10((%l/%L)%)\%P
+let g:Powerline_symbols='fancy'
 
 " search settings
 set hlsearch                " highlight search terms

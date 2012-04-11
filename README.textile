@@ -23,6 +23,7 @@
 * MatchIt         (extends % to if/else/endif, can configure more matchpairs)
 * NERDCommenter   (:Leader:c:space:/ci/cm/cb/cA)
 * NERDTree        (:Leader:d opens directory tree, o, s, t to open/vsplit/tab)
+* Powerline       (awesome statuslines, colored, symbols, really cool)
 * Pydoc           (:Leader:Pw/PW/Pk/PK to bring up python doc for cursor word)
 * Rainbow Paren.  (colored nested parentheses/brackets/etc)
 * Repeat          (utility plugin to allow . to work for plugin mappings)
