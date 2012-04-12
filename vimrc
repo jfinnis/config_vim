@@ -1,5 +1,5 @@
 filetype off
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
 
@@ -163,10 +163,10 @@ let NERDTreeShowBookmarks=1
 
 " easymotion options and bindings
 let EasyMotion_do_mapping=0
-nnoremap <silent> <Leader>gf      :call EasyMotionF(0, 0)<CR>
-vnoremap <silent> <Leader>gf :<C-U>call EasyMotionF(1, 0)<CR>
-nnoremap <silent> <Leader>gF      :call EasyMotionF(0, 1)<CR>
-vnoremap <silent> <Leader>gF :<C-U>call EasyMotionF(1, 1)<CR>
+nnoremap <silent> <Leader>gf      :call EasyMotion#F(0, 0)<CR>
+vnoremap <silent> <Leader>gf :<C-U>call EasyMotion#F(1, 0)<CR>
+nnoremap <silent> <Leader>gF      :call EasyMotion#F(0, 1)<CR>
+vnoremap <silent> <Leader>gF :<C-U>call EasyMotion#F(1, 1)<CR>
 
 " fugitive git wrapping
 map <Leader>gs :Gstatus<CR>           
