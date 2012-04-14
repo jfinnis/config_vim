@@ -100,6 +100,7 @@ nnoremap S i<cr><esc><right>
 nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " make ! read in output of command
 map <Leader>! :r !
+map <Leader>wc g<C-G>
 
 " window navigation
 map <Leader>h <C-W>h                  " ;[hjkl] to navigate split windows
