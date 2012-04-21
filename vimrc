@@ -99,7 +99,8 @@ nnoremap S i<cr><esc><right>
 " remove all trailing whitespace
 nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " make ! read in output of command
-map <Leader>! :r !
+map ! :r !
+" word count
 map <Leader>wc g<C-G>
 
 " window navigation
@@ -107,8 +108,8 @@ map <Leader>h <C-W>h                  " ;[hjkl] to navigate split windows
 map <Leader>j <C-W>j
 map <Leader>k <C-W>k
 map <Leader>l <C-W>l
-map g+ <C-W>_                         " max window
-map g= <C-W>=                         " same size
+map + <C-W>_                         " max window
+map - <C-W>=                         " same size
 
 " buffer management
 map <Leader>n :bnext<CR>              " navigate through buffers
@@ -168,6 +169,9 @@ nnoremap <silent> <Leader>gf      :call EasyMotion#F(0, 0)<CR>
 vnoremap <silent> <Leader>gf :<C-U>call EasyMotion#F(1, 0)<CR>
 nnoremap <silent> <Leader>gF      :call EasyMotion#F(0, 1)<CR>
 vnoremap <silent> <Leader>gF :<C-U>call EasyMotion#F(1, 1)<CR>
+
+" space plugin might cause problems with snippets plugin
+let g:space_disable_select_mode = 1
 
 " fugitive git wrapping
 map <Leader>gs :Gstatus<CR>           
@@ -274,3 +278,14 @@ function! s:NumberTextObject(whole)
         endwhile
     endif
 endfunction
+
+" show last motion for space movement plugin
+function! SlSpace()
+    if exists("*GetSpaceMovement")
+        return "[" . GetSpaceMovement() . "]"
+    else
+        return ""
+    endif
+endfunc
+" disabled for now
+" set statusline+=%{SlSpace()}
