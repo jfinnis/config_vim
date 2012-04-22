@@ -90,6 +90,11 @@ let g:ctrlp_custom_ignore = {'dir':'\.git$\|\.hg$\|\.svn$'}
 " browse most recently used files on startup
 "autocmd VimEnter * if empty(expand('%:p')) | browse oldfiles | endif
 
+" key unbindings
+""""""""""""""""""""""""""""""""
+map ZQ <nop>
+map ZZ <nop>
+
 " key bindings
 """"""""""""""""""""""""""""""""
 map <Leader>M :mksession 
@@ -165,10 +170,10 @@ let NERDTreeShowBookmarks=1
 
 " easymotion options and bindings
 let EasyMotion_do_mapping=0
-nnoremap <silent> <Leader>gf      :call EasyMotion#F(0, 0)<CR>
-vnoremap <silent> <Leader>gf :<C-U>call EasyMotion#F(1, 0)<CR>
-nnoremap <silent> <Leader>gF      :call EasyMotion#F(0, 1)<CR>
-vnoremap <silent> <Leader>gF :<C-U>call EasyMotion#F(1, 1)<CR>
+nnoremap <silent> <space>      :call EasyMotion#F(0, 0)<CR>
+vnoremap <silent> <space> :<C-U>call EasyMotion#F(1, 0)<CR>
+nnoremap <silent> <space>      :call EasyMotion#F(0, 1)<CR>
+vnoremap <silent> <space> :<C-U>call EasyMotion#F(1, 1)<CR>
 
 " space plugin might cause problems with snippets plugin
 let g:space_disable_select_mode = 1
@@ -292,3 +297,6 @@ function! SlSpace()
 endfunc
 " disabled for now
 " set statusline+=%{SlSpace()}
+"
+"
+" keys to free: s, H, M, L, Z, Q, K
