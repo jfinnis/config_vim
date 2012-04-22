@@ -173,6 +173,9 @@ vnoremap <silent> <Leader>gF :<C-U>call EasyMotion#F(1, 1)<CR>
 " space plugin might cause problems with snippets plugin
 let g:space_disable_select_mode = 1
 
+" replace set to R, allows for R to delete and replace motions
+map R <Plug>(operator-replace)
+
 " fugitive git wrapping
 map <Leader>gs :Gstatus<CR>           
 map <Leader>ga :Git add %<CR>
