@@ -170,10 +170,10 @@ let NERDTreeShowBookmarks=1
 
 " easymotion options and bindings
 let EasyMotion_do_mapping=0
-nnoremap <silent> <space>      :call EasyMotion#F(0, 0)<CR>
-vnoremap <silent> <space> :<C-U>call EasyMotion#F(1, 0)<CR>
-nnoremap <silent> <space>      :call EasyMotion#F(0, 1)<CR>
-vnoremap <silent> <space> :<C-U>call EasyMotion#F(1, 1)<CR>
+nnoremap <silent> \      :call EasyMotion#F(0, 0)<cr>
+vnoremap <silent> \ :<C-U>call EasyMotion#F(1, 0)<cr>
+nnoremap <silent> \|      :call EasyMotion#F(0, 1)<cr>
+vnoremap <silent> \| :<C-U>call EasyMotion#F(1, 1)<cr>
 
 " space plugin might cause problems with snippets plugin
 let g:space_disable_select_mode = 1
