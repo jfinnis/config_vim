@@ -116,6 +116,8 @@ map Y y$
 nnoremap <Leader>D :diffoff!<cr>
 " easier vreplace
 nnoremap gr gR
+" easier copy to clipboard
+map <leader>y "+y
 
 " window navigation
 map <Leader>h <C-W>h                  " ;[hjkl] to navigate split windows
@@ -214,7 +216,7 @@ let Tlist_Sort_Type="name"
 let Tlist_Use_Right_Window=1
 
 " show yankring window
-nnoremap <silent> <Leader>y :YRShow<CR>
+nnoremap <silent> <Leader>Y :YRShow<CR>
 let g:yankring_history_dir='~/.vim'
 
 " turn off pressing " in visual puts quotes around
