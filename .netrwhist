@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/josh/Dropbox/ta_alg/hw_solutions'
-let g:netrw_dirhist_2='/home/josh/working/dsg_website/publications'
-let g:netrw_dirhist_3='/home/josh/.tilda'
-let g:netrw_dirhist_4='/home/josh/working/python_baccarat'
-let g:netrw_dirhist_5='/usr/include/sys'
-let g:netrw_dirhist_6='/home/josh/School Archive/08fall Intro to AI'

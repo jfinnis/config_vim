@@ -5,7 +5,7 @@ filetype plugin indent on
 
 set nocompatible 
 syntax on
-let mapleader = ";"    
+let mapleader=";"    
 let g:tex_flavor='latex'    " allow recognition of latex files
 
 set autochdir               " change directory to the file you opened
@@ -28,13 +28,6 @@ set gdefault                " always do g option for substitute
 set pastetoggle=<F10>       " paste in a sane manner
 set virtualedit+=block      " allows cursor anywhere in visual block mode 
 set undofile                " store in .un files the previous changes
-" convert current word to uppercase and lowercase
-nnoremap <leader>U gUiw
-nnoremap <leader>u guiw
-" make Y behave like other capitals
-map Y y$
-" close diff windows
-nnoremap <Leader>D :diffoff!<cr>
 
 " tab settings
 set softtabstop=2           " 4 space tabs
@@ -79,6 +72,9 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+" don't quote signatures in mutt files
+au BufRead /tmp/mutt* normal :g/^> -- $/,/^$/-1d^M/^$^M^L
+
 " start ctrlp
 let g:ctrlp_map='<Leader>df'
 let g:ctrlp_by_filename=1
@@ -97,6 +93,8 @@ map ZZ <nop>
 
 " key bindings
 """"""""""""""""""""""""""""""""
+nnoremap j gj
+nnoremap k gk
 map <Leader>M :mksession 
 map <Leader>S :source ~/.vimrc<CR>
 " split line at the current cursor position
@@ -107,6 +105,17 @@ nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 map ! :r !
 " word count
 map <Leader>wc g<C-G>
+" easier formatting
+map Q gq
+" convert current word to uppercase and lowercase
+nnoremap <leader>U gUiw
+nnoremap <leader>u guiw
+" make Y behave like other capitals
+map Y y$
+" close diff windows
+nnoremap <Leader>D :diffoff!<cr>
+" easier vreplace
+nnoremap gr gR
 
 " window navigation
 map <Leader>h <C-W>h                  " ;[hjkl] to navigate split windows
@@ -155,10 +164,6 @@ vmap <Leader>s :<C-U>%s/\<<c-r>*\>/
 " find word under cursor in all files of a directory
 map <Leader>f [I
  
-" easier navigation with tags, Right to view source, Left back to program
-map <silent><C-Left> <C-T>
-map <silent><C-Right> <C-]>
-
 " plugin specific bindings
 let g:snips_author='Joshua Finnis'    " snippets variable
 
@@ -210,6 +215,10 @@ let Tlist_Use_Right_Window=1
 
 " show yankring window
 nnoremap <silent> <Leader>y :YRShow<CR>
+let g:yankring_history_dir='~/.vim'
+
+" turn off pressing " in visual puts quotes around
+let g:AutoCloseSelectionWrapPrefix="<Leader><s-F12>"
 
 """"""""""""""""""""""""""""""""
 " commands
