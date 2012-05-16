@@ -8,6 +8,7 @@
 * S - split line at cursor, g+/g= - max window/same size, u/U upper/lowercase
 * Navigation - :Leader:h/j/k/l/n/p, C-Left/Right to navigate help
 * Tabs - :Leader:tb, tn, tp, to, te, tc, tt
+* :Leader:y = yank to clipboard
 
 *Included plugins*
 * Abolish         (cr[c/m/_] to change case, :S/:%S for smart search/substitute, record abbreviations)
@@ -37,7 +38,7 @@
 * Textobj-User    (utility plugin for defining text objects)
 * Textobj-Indent  (defines indent text objects, ai aI ii iI)
 * Unimpaired      ([:space:/]:space:- ADD [n] blank lines before/after, [e/]e exchange lines, encoding/decoding method)
-* Yankring        (after paste, :C-P: - previous/next pastes, :Leader:y - window)
+* Yankring        (after paste, :C-P: - previous/next pastes, :Leader:Y - window)
 
 *Included colorscheme*
 * IR_Black

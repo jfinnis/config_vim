@@ -93,8 +93,6 @@ map ZZ <nop>
 
 " key bindings
 """"""""""""""""""""""""""""""""
-nnoremap j gj
-nnoremap k gk
 map <Leader>M :mksession 
 map <Leader>S :source ~/.vimrc<CR>
 " split line at the current cursor position
@@ -118,6 +116,8 @@ nnoremap <Leader>D :diffoff!<cr>
 nnoremap gr gR
 " easier copy to clipboard
 map <leader>y "+y
+map j gj
+map k gk
 
 " window navigation
 map <Leader>h <C-W>h                  " ;[hjkl] to navigate split windows
