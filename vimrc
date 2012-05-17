@@ -16,6 +16,7 @@ set shortmess=filmnrxtTI
 set scrolloff=4             " lines below cursor while scrolling
 set wildmenu                " tab menu completion
 set wildmode=longest,list   " tab completion settings
+set fo=cq
 
 " editing settings
 set wrap 
@@ -27,12 +28,13 @@ set matchtime=3             " tenths of a second to show matching paren
 set gdefault                " always do g option for substitute
 set pastetoggle=<F10>       " paste in a sane manner
 set virtualedit+=block      " allows cursor anywhere in visual block mode 
-set undofile                " store in .un files the previous changes
+set noundofile                " store in .un files the previous changes
+set fo=tcq
 
 " tab settings
-set softtabstop=2           " 4 space tabs
-set tabstop=2
-set shiftwidth=2            " indent width using '<' and '>'
+set softtabstop=4           " 4 space tabs
+set tabstop=4
+set shiftwidth=4            " indent width using '<' and '>'
 set expandtab               " replace tabs with spaces
 
 " display settings
@@ -129,8 +131,6 @@ nnoremap <Leader>D :diffoff!<cr>
 nnoremap gr gR
 " easier copy to clipboard
 map <leader>y "+y
-map j gj
-map k gk
 
 " window navigation
 map <Leader>h <C-W>h                  " ;[hjkl] to navigate split windows
@@ -182,6 +182,10 @@ map <Leader>f [I
 " plugin specific bindings
 let g:snips_author='Joshua Finnis'    " snippets variable
 
+" new mapping ala unimpaired
+nnoremap [f :lprevious<cr>
+nnoremap ]f :lnext<cr>
+
 " nerdtree bindings and settings
 map <Leader>dd :NERDTreeToggle<CR>
 let NERDChDirMode=2
@@ -194,9 +198,6 @@ nnoremap <silent> \      :call EasyMotion#F(0, 0)<cr>
 vnoremap <silent> \ :<C-U>call EasyMotion#F(1, 0)<cr>
 nnoremap <silent> \|      :call EasyMotion#F(0, 1)<cr>
 vnoremap <silent> \| :<C-U>call EasyMotion#F(1, 1)<cr>
-
-" space plugin might cause problems with snippets plugin
-let g:space_disable_select_mode = 1
 
 " replace set to R, allows for R to delete and replace motions
 map R <Plug>(operator-replace)
@@ -293,28 +294,34 @@ function! s:align()
 endfunction
 
 function! s:NumberTextObject(whole)
-    normal! v
-    while getline('.')[col('.')] =~# '\v[0-9]'
-        normal! l
+  normal! v
+  while getline('.')[col('.')] =~# '\v[0-9]'
+    normal! l
+  endwhile
+  if a:whole
+    normal! o
+    while col('.') > 1 && getline('.')[col('.') - 2] =~# '\v[0-9]'
+      normal! h
     endwhile
-    if a:whole
-        normal! o
-        while col('.') > 1 && getline('.')[col('.') - 2] =~# '\v[0-9]'
-            normal! h
-        endwhile
-    endif
+  endif
 endfunction
 
-" show last motion for space movement plugin
-function! SlSpace()
-    if exists("*GetSpaceMovement")
-        return "[" . GetSpaceMovement() . "]"
-    else
-        return ""
-    endif
-endfunc
-" disabled for now
-" set statusline+=%{SlSpace()}
-"
-"
+function! ToggleSingleLine()
+  if !exists("s:imove")
+    let s:imove=1 "zero: not enabled
+  endif"
+  if s:imove
+    map j gj
+    map k gk
+    let s:imove=0
+    echo "Toggle: normal line movements"
+  else 
+    map j <Down>
+    map k <Up>
+    let s:imove=1
+    echo "Toggle: single line movements"
+  endif
+endfunction
+map <F8> :call ToggleSingleLine()<CR>
+
 " keys to free: s, H, M, L, Z, Q, K

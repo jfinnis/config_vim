@@ -4,6 +4,7 @@ set shiftwidth=4
 set textwidth=0
 set smarttab expandtab
 set nosmartindent
+set fo=cq
 
 " definition lookup
 map <buffer> gd /def <C-R><C-W><CR>
