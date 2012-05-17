@@ -49,6 +49,19 @@ set ruler                   " show the cursor position always
 " old statusline (before powerline plugin)
 "set statusline=%<\ %2*[%n%H%M%R%W]%*\ %-40f\ %{fugitive#statusline()}%=%l*%y%*%*\ %10((%l/%L)%)\%P
 let g:Powerline_symbols='fancy'
+"call Pl#Theme#InsertSegment('syntastic', 'after', 'filename')
+
+" syntastic settings
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_balloons=0
+let g:syntastic_loc_list_height=5
+let g:syntastic_enable_signs=0
+
+" tagbar settings
+let g:tagbar_width=30
+let g:tagbar_autofocus=1
+let g:tagbar_compact=1
+let g:tagbar_autoshowtag=1
 
 " search settings
 set hlsearch                " highlight search terms
@@ -206,19 +219,13 @@ nmap <Leader>a: :Tabularize /:\zs/l0l1<CR>
 vmap <Leader>a: :Tabularize /:\zs/l0l1<CR>
 
 " taglist plugin options
-map <Leader>tl :TlistToggle<cr>
-let Tlist_Compact_Format=0                   " remove blank lines
-let Tlist_Display_Prototype=0
-let Tlist_Enable_Fold_Column=0
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_Inc_Winwidth=0
-let Tlist_Sort_Type="name"
-let Tlist_Use_Right_Window=1
+map <Leader>tl :TagbarToggle<CR>
 
 " show yankring window
 nnoremap <silent> <Leader>Y :YRShow<CR>
 let g:yankring_history_dir='~/.vim'
 
+map <F12> :SyntasticToggleMode<CR>
 " turn off pressing " in visual puts quotes around
 let g:AutoCloseSelectionWrapPrefix="<Leader><s-F12>"
 
