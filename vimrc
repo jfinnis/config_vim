@@ -29,7 +29,6 @@ set gdefault                " always do g option for substitute
 set pastetoggle=<F10>       " paste in a sane manner
 set virtualedit+=block      " allows cursor anywhere in visual block mode 
 set noundofile                " store in .un files the previous changes
-set fo=tcq
 
 " tab settings
 set softtabstop=4           " 4 space tabs
