@@ -67,3 +67,6 @@
 [submodule "bundle/textobj-arguments"]
 	path = bundle/textobj-arguments
 	url = git://github.com/vim-scripts/argtextobj.vim.git
+[submodule "bundle/vim-mash"]
+	path = bundle/vim-mash
+	url = git://github.com/dahu/vim-mash.git
