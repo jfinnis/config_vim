@@ -156,11 +156,6 @@ map <leader>te :tabedit               " edit new tab [file name]
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove               " move tab to last [or specify number]
 
-" tabman plugin settings
-let g:tabman_toggle='<Leader>tt'
-let g:tabman_focus='<Leader>tf'
-let g:tabman_side='right'
-
 " visually select the text that was last edited/pasted
 nmap gV `[v`]
 
