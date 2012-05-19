@@ -235,6 +235,8 @@ let g:AutoCloseSelectionWrapPrefix="<Leader><s-F12>"
 " command to save a file with sudo priveleges
 command! -bar -nargs=0 Sudow 	:silent exe "write !sudo tee % >/dev/null"|silent edit
 
+" assuming the first line has appropriate table format, format following lines '|'
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
   if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
@@ -244,19 +246,6 @@ function! s:align()
     normal! 0
     call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
   endif
-endfunction
-
-function! s:NumberTextObject(whole)
-    normal! v
-    while getline('.')[col('.')] =~# '\v[0-9]'
-        normal! l
-    endwhile
-    if a:whole
-        normal! o
-        while col('.') > 1 && getline('.')[col('.') - 2] =~# '\v[0-9]'
-            normal! h
-        endwhile
-    endif
 endfunction
 
 command! Bclose call <SID>BufcloseCloseIt()
@@ -277,19 +266,6 @@ function! <SID>BufcloseCloseIt()
    if buflisted(l:currentBufNum)
      execute("bdelete! ".l:currentBufNum)
    endif
-endfunction
-
-" assuming the first line has appropriate table format, format following lines '|'
-inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-function! s:align()
-  let p = '^\s*|\s.*\s|\s*$'
-  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-    Tabularize/|/l1
-    normal! 0
-    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-  endif
 endfunction
 
 function! s:NumberTextObject(whole)
