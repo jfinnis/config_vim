@@ -50,13 +50,13 @@ set ruler                   " show the cursor position always
 " old statusline (before powerline plugin)
 "set statusline=%<\ %2*[%n%H%M%R%W]%*\ %-40f\ %{fugitive#statusline()}%=%l*%y%*%*\ %10((%l/%L)%)\%P
 let g:Powerline_symbols='fancy'
-"call Pl#Theme#InsertSegment('syntastic', 'after', 'filename')
 
 " syntastic settings
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_balloons=0
 let g:syntastic_loc_list_height=5
 let g:syntastic_enable_signs=0
+map <F12> :SyntasticToggleMode<CR>
 
 " tagbar settings
 let g:tagbar_width=30
@@ -130,6 +130,7 @@ nnoremap <Leader>D :diffoff!<cr>
 nnoremap gr gR
 " easier copy to clipboard
 map <leader>y "+y
+nnoremap <C-l> :ls<CR>:b<space>
 
 " window navigation
 map <Leader>h <C-W>h                  " ;[hjkl] to navigate split windows
@@ -225,7 +226,6 @@ map <Leader>tl :TagbarToggle<CR>
 nnoremap <silent> <Leader>Y :YRShow<CR>
 let g:yankring_history_dir='~/.vim'
 
-map <F12> :SyntasticToggleMode<CR>
 " turn off pressing " in visual puts quotes around
 let g:AutoCloseSelectionWrapPrefix="<Leader><s-F12>"
 
