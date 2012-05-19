@@ -39,7 +39,6 @@
 * Textobj-Args    (defines argument text objects for functions)
 * Textobj-Indent  (defines indent text objects, ai aI ii iI)
 * Unimpaired      ([:space:/]:space:- ADD [n] blank lines before/after, [e/]e exchange lines, encoding/decoding method)
-* Yankring        (after paste, :C-P: - previous/next pastes, :Leader:Y - window)
 
 *Included colorscheme*
 * IR_Black

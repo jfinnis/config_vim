@@ -31,9 +31,6 @@
 [submodule "bundle/rainbow_parentheses"]
 	path = bundle/rainbow_parentheses
 	url = git://github.com/kien/rainbow_parentheses.vim.git
-[submodule "bundle/yankring"]
-	path = bundle/yankring
-	url = git://github.com/vim-scripts/YankRing.vim.git
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = git://github.com/mileszs/ack.vim.git

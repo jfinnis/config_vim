@@ -80,6 +80,10 @@ autocmd BufReadPost *.pdf silent %!pdftotext -nopgbrk -q -eol unix "%" - | fmt -
 autocmd BufReadPost *.rtf silent %!unrtf --text "%"
 autocmd BufWriteCmd *.pdf,*.rtf,*.odt,*.odp,*.doc set readonly
 
+augroup filetypedetect
+    au BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
+augroup END
+
 " turn on rainbow colored parentheses
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
@@ -216,10 +220,6 @@ vmap <Leader>a: :Tabularize /:\zs/l0l1<CR>
 
 " taglist plugin options
 map <Leader>tl :TagbarToggle<CR>
-
-" show yankring window
-nnoremap <silent> <Leader>Y :YRShow<CR>
-let g:yankring_history_dir='~/.vim'
 
 " turn off pressing " in visual puts quotes around
 let g:AutoCloseSelectionWrapPrefix="<Leader><s-F12>"
