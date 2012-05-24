@@ -14,6 +14,7 @@ set hidden                  " liberal hidden buffers
 set history=100
 set shortmess=filmnrxtTI
 set scrolloff=4             " lines below cursor while scrolling
+set ttyfast
 set wildmenu                " tab menu completion
 set wildmode=longest,list   " tab completion settings
 set fo=cq
@@ -38,12 +39,12 @@ set expandtab               " replace tabs with spaces
 
 " display settings
 colorscheme ir_black
-set cul                     " highlight current line
+set nocul                     " highlight current line
 hi CursorLine term=none cterm=none ctermbg=0    " adjust highlight
 set t_Co=256                " number of colors:
 set laststatus=2            " always display status line
 set number                  " display line numbers
-set relativenumber          " number lines relative to cursor
+"set relativenumber          " number lines relative to cursor
 set title                   " show file in titlebar
 set ruler                   " show the cursor position always
 
@@ -134,7 +135,7 @@ nnoremap <Leader>D :diffoff!<cr>
 nnoremap gr gR
 " easier copy to clipboard
 map <leader>y "+y
-nnoremap <C-l> :ls<CR>:b<space>
+nnoremap L :ls<CR>:b<space>
 
 " window navigation
 map <Leader>h <C-W>h                  " ;[hjkl] to navigate split windows
@@ -218,11 +219,16 @@ vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs/l0l1<CR>
 vmap <Leader>a: :Tabularize /:\zs/l0l1<CR>
 
+" abolish abbreviations
+let g:abolish_save_file='abbreviations'
+
 " taglist plugin options
 map <Leader>tl :TagbarToggle<CR>
 
-" turn off pressing " in visual puts quotes around
-let g:AutoCloseSelectionWrapPrefix="<Leader><s-F12>"
+" vimux commands
+map ! :PromptVimTmuxCommand()<CR>
+map <leader>! :RunLastVimTmuxCommand<CR>:w
+"let g:VimuxUseNearestPane=1
 
 """"""""""""""""""""""""""""""""
 " commands
@@ -294,4 +300,4 @@ function! ToggleSingleLine()
 endfunction
 map <F8> :call ToggleSingleLine()<CR>
 
-" keys to free: s, H, M, L, Z, Q, K
+" keys to free: s, H, M, Z, Q, K
