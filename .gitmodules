@@ -64,3 +64,13 @@
 [submodule "bundle/vim-mash"]
 	path = bundle/vim-mash
 	url = git://github.com/dahu/vim-mash.git
+[submodule "bundle/vimux"]
+	path = bundle/vimux
+	url = git://github.com/benmills/vimux.git
+[submodule "bundle/vim-operator-replace"]
+	path = bundle/vim-operator-replace
+	url = git://github.com/kana/vim-operator-replace.git
+[submodule "bundle/vim-operator-user"]
+	path = bundle/vim-operator-user
+	url = git://github.com/kana/vim-operator-user.git
+
