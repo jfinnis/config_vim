@@ -152,9 +152,8 @@ map <Leader>l <C-W>l
 map + <C-W>_                         " max window
 map - <C-W>=                         " same size
 
-" buffer management
-map <Leader>n :bnext<CR>              " navigate through buffers
-map <Leader>p :bprevious<CR>
+" buffer management 
+" :q - close window and keep buffer, ]b, [b prev/next buffer
 map <Leader>q :bd<CR>                 " close current buffer and close window
 map <Leader>Q :Bclose<CR>             " close current buffer and keep window
 map <Leader>bo :BufOnly<CR>           " close all buffers and windows except this 
