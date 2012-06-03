@@ -48,6 +48,10 @@ set number                  " display line numbers
 set title                   " show file in titlebar
 set ruler                   " show the cursor position always
 
+" display tabs (not working)
+"set lcs=tab:?\ ,trail:?,extends:>,precedes:<,nbsp:&
+set list lcs=tab:\|-,extends:>,precedes:<,nbsp:&
+
 " old statusline (before powerline plugin)
 "set statusline=%<\ %2*[%n%H%M%R%W]%*\ %-40f\ %{fugitive#statusline()}%=%l*%y%*%*\ %10((%l/%L)%)\%P
 let g:Powerline_symbols='fancy'
@@ -121,15 +125,26 @@ nnoremap <leader>U gUiw
 nnoremap <leader>u guiw
 " make Y behave like other capitals
 map Y y$
-" close diff windows
-nnoremap <Leader>D :diffoff!<cr>
 " easier vreplace
 nnoremap gr gR
 " easier copy to clipboard
 map <leader>y "+y
 nnoremap L :ls<CR>:b<space>
+map <leader>p :set paste<bar>put + <bar>set nopaste<cr>
+map <F8> :call ToggleSingleLine()<CR>
 
-" window navigation
+" center screen for searches, foldcloses - to top for foldopen
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap zc zczz
+nnoremap zo zozt
+
+" easier access to diff commands
+nnoremap df :diffthis<cr>
+nnoremap <silent> dF :diffoff!<cr>
+nnoremap du :diffupdate<cr>
+
+" window management
 map <Leader>h <C-W>h                  " ;[hjkl] to navigate split windows
 map <Leader>j <C-W>j
 map <Leader>k <C-W>k
