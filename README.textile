@@ -45,11 +45,12 @@
 *Language specific settings*
 * Python
 ** jpythonfold script
-** pydoc script (:Leader:Pw/Pk/PW/PK)
-** ifmain/try/from/init snippets
+** snippets - #!, docs, wh, cl, def, deff, defs, property, ld, ., try, ifmain, _, ae, from
 ** gf goes to python library file, gd goes to function definition in module
-** can compile with :make, evaluate visual blocks with :C-H:
-** F7/Shift+F7 adds/removes breakpoints
+** preview window on tab completion (with ctrl+space)
+** can compile with and evaluate visual blocks with M
+** pydoc script, lookup in docs under cursor with <space>d/D
+** <space>b/B adds/removes breakpoints
 * Ocaml, SML indent scripts
 * LaTeX 
 

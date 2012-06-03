@@ -46,8 +46,6 @@ set laststatus=2            " always display status line
 set number                  " display line numbers
 set title                   " show file in titlebar
 set ruler                   " show the cursor position always
-set list lcs=tab:\|-,extends:>,precedes:<,nbsp:&
-"set lcs=tab:?\ ,trail:?,extends:>,precedes:<,nbsp:&
 "set relativenumber          " number lines relative to cursor
 
 " search settings
