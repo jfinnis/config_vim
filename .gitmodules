@@ -74,3 +74,9 @@
 	path = bundle/vim-operator-user
 	url = git://github.com/kana/vim-operator-user.git
 
+[submodule "bundle/vim-git"]
+	path = bundle/vim-git
+	url = git://github.com/tpope/vim-git.git
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = git://github.com/ervandew/supertab.git

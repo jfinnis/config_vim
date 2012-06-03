@@ -94,14 +94,6 @@ au Syntax * RainbowParenthesesLoadBraces
 " don't quote signatures in mutt files
 au BufRead /tmp/mutt* normal :g/^> -- $/,/^$/-1d^M/^$^M^L
 
-" start ctrlp
-let g:ctrlp_map='<Leader>df'
-let g:ctrlp_by_filename=1
-let g:ctrlp_match_window_bottom=0
-let g:ctrlp_max_height=15
-let g:ctrlp_open_multiple_files='1vr'
-let g:ctrlp_custom_ignore = {'dir':'\.git$\|\.hg$\|\.svn$'}
-
 " browse most recently used files on startup
 "autocmd VimEnter * if empty(expand('%:p')) | browse oldfiles | endif
 
@@ -187,20 +179,33 @@ nnoremap [f :lprevious<cr>
 nnoremap ]f :lnext<cr>
 
 " nerdtree bindings and settings
-map <Leader>dd :NERDTreeToggle<CR>
+map <Leader>n :NERDTreeToggle<CR>
 let NERDChDirMode=2
 let NERDTreeIgnore=['\~$', '\.aux$', '\.blg$', '\.bbl$', '\.log$', '\.dvi$']
 let NERDTreeShowBookmarks=1
 
+" start ctrlp
+let g:ctrlp_map='<Leader>N'
+let g:ctrlp_by_filename=1
+let g:ctrlp_match_window_bottom=0
+let g:ctrlp_max_height=15
+let g:ctrlp_open_multiple_files='1vr'
+let g:ctrlp_custom_ignore = {'dir':'\.git$\|\.hg$\|\.svn$'}
+
+
 " easymotion options and bindings
 let EasyMotion_do_mapping=0
-nnoremap <silent> \      :call EasyMotion#F(0, 0)<cr>
-vnoremap <silent> \ :<C-U>call EasyMotion#F(1, 0)<cr>
-nnoremap <silent> \|      :call EasyMotion#F(0, 1)<cr>
-vnoremap <silent> \| :<C-U>call EasyMotion#F(1, 1)<cr>
+nnoremap <silent> K      :call EasyMotion#F(0, 0)<cr>
+vnoremap <silent> K :<C-U>call EasyMotion#F(1, 0)<cr>
+nnoremap <silent> H      :call EasyMotion#F(0, 1)<cr>
+vnoremap <silent> H :<C-U>call EasyMotion#F(1, 1)<cr>
 
 " replace set to R, allows for R to delete and replace motions
 map R <Plug>(operator-replace)
+
+" supertab settings
+let g:SuperTabDefaultCompletionType="context"
+let g:SuperTabLongestEnhanced=1
 
 " fugitive git wrapping
 map <Leader>gs :Gstatus<CR>           
@@ -209,7 +214,7 @@ map <Leader>gb :Gblame<CR>
 map <Leader>gw :Gbrowse<CR>
 map <Leader>gc :Gcommit -a<CR>
 map <Leader>gd :Gdiff<CR>
-map <Leader>gl :Glog
+map <Leader>gl :Glog<CR>
 map <Leader>gp :Git push origin master<CR>
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
@@ -287,17 +292,28 @@ function! ToggleSingleLine()
     let s:imove=1 "zero: not enabled
   endif"
   if s:imove
-    map j gj
-    map k gk
+    map gj <Down>
+    map gk <Up>
+    map g0 <Home>
+    map g$ <End>
+    map j g<Down>
+    map k g<Up>
+    map 0 g<Home>
+    map $ g<End>
     let s:imove=0
-    echo "Toggle: normal line movements"
+    echo "Toggle: single line movements"
   else 
     map j <Down>
     map k <Up>
+    map 0 <Home>
+    map $ <End>
+    map gj g<Down>
+    map gk g<Up>
+    map g0 g<Home>
+    map g$ g<End>
     let s:imove=1
-    echo "Toggle: single line movements"
+    echo "Toggle: normal vim movements"
   endif
 endfunction
-map <F8> :call ToggleSingleLine()<CR>
 
-" keys to free: s, H, M, Z, Q, K
+" keys to free: s, M, Z, Q
