@@ -55,7 +55,7 @@
 * LaTeX 
 
 *Required programs*
-* pdftotext, odt2txt, antiword, unrtf
+* pdftotext, odt2txt, antiword, unrtf, python, ruby
 
 *Compiling
 * vim7.3 - @./configure --with-features=huge --enable-rubyinterp=yes --enable-pythoninterp=yes@

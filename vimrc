@@ -9,49 +9,49 @@ syntax on
 let mapleader=";"
 let g:tex_flavor='latex'    " allow recognition of latex files
 set autochdir               " change directory to the file you opened
-set mouse=a
+set fo=cq
 set hidden                  " liberal hidden buffers
 set history=100
+set mouse=a
 set shortmess=filmnrxtTI
 set scrolloff=4             " lines below cursor while scrolling
 set ttyfast
 set wildmenu                " tab menu completion
 set wildmode=longest,list   " tab completion settings
-set fo=cq
 
 " editing settings
-set wrap
-set linebreak
-set whichwrap+=h,l          " cursor keys wrap lines
 set bs=indent,eol,start     " backspace over everything in insert mode
-set nojoinspaces
-set matchtime=3             " tenths of a second to show matching paren
 set gdefault                " always do g option for substitute
+set linebreak
+set matchtime=3             " tenths of a second to show matching paren
+set nojoinspaces
 set pastetoggle=<F10>       " paste in a sane manner
-set virtualedit+=block      " allows cursor anywhere in visual block mode
 set noundofile                " store in .un files the previous changes
+set virtualedit+=block      " allows cursor anywhere in visual block mode
+set whichwrap+=h,l          " cursor keys wrap lines
+set wrap
 
 " tab settings
+set expandtab               " replace tabs with spaces
+set shiftwidth=4            " indent width using '<' and '>'
 set softtabstop=4           " 4 space tabs
 set tabstop=4
-set shiftwidth=4            " indent width using '<' and '>'
-set expandtab               " replace tabs with spaces
 
 " display settings
 colorscheme ir_black
-set nocul                     " highlight current line
 hi CursorLine term=none cterm=none ctermbg=0    " adjust highlight
-set t_Co=256                " number of colors:
 set laststatus=2            " always display status line
+set nocul                   " highlight current line
 set number                  " display line numbers
-set title                   " show file in titlebar
 set ruler                   " show the cursor position always
+set title                   " show file in titlebar
+set t_Co=256                " number of colors:
 "set relativenumber          " number lines relative to cursor
 
 " search settings
 set hlsearch                " highlight search terms
-set incsearch               " search incrementally
 set ignorecase              " ignore case in searches
+set incsearch               " search incrementally
 set smartcase               " ... unless capitals are included
 
 " old statusline (before powerline plugin)
@@ -208,10 +208,6 @@ map R <Plug>(operator-replace)
 
 " snippets variable
 let g:snips_author='Joshua Finnis'    
-
-" supertab settings
-let g:SuperTabDefaultCompletionType="context"
-let g:SuperTabLongestEnhanced=1
 
 " syntastic settings
 let g:syntastic_check_on_open=1
