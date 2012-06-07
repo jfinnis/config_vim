@@ -111,7 +111,7 @@ map <leader>y "+y
 map <leader>p :set paste<bar>put + <bar>set nopaste<cr>
 
 " split line at the current cursor position
-nnoremap S i<cr><esc><right>
+nnoremap S i<cr><esc>
 
 " remove all trailing whitespace
 nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR>
@@ -157,16 +157,13 @@ map + <C-W>_                         " max window
 map - <C-W>=                         " same size
 
 " buffer management
-" :q - close window and keep buffer, ]b, [b prev/next buffer, L list
+" :q - close window and keep buffer, ]b, [b prev/next buffer, K list
 map <Leader>q :bd<CR>                 " close current buffer and close window
 map <Leader>Q :Bclose<CR>             " close current buffer and keep window
 map <Leader>bo :BufOnly<CR>           " close all buffers and windows except this
-nnoremap L :ls<CR>:b<space>
+nnoremap K :ls<CR>:b<space>
 
 """""""""""""""""" PLUGIN SPECIFIC BINDINGS """"""""""""""""""""""
-" abolish abbreviations
-let g:abolish_save_file='abbreviations'
-
 " Ack command/shortcut
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nnoremap <leader>a :Ack
@@ -181,8 +178,8 @@ let g:ctrlp_custom_ignore = {'dir':'\.git$\|\.hg$\|\.svn$'}
 
 " easymotion options and bindings
 let EasyMotion_do_mapping=0
-nnoremap <silent> K      :call EasyMotion#F(0, 0)<cr>
-vnoremap <silent> K :<C-U>call EasyMotion#F(1, 0)<cr>
+nnoremap <silent> L      :call EasyMotion#F(0, 0)<cr>
+vnoremap <silent> L :<C-U>call EasyMotion#F(1, 0)<cr>
 nnoremap <silent> H      :call EasyMotion#F(0, 1)<cr>
 vnoremap <silent> H :<C-U>call EasyMotion#F(1, 1)<cr>
 
@@ -234,7 +231,7 @@ map <Leader>tl :TagbarToggle<CR>
 " vimux commands
 map ! :call PromptVimTmuxCommand()<CR>
 map <leader>! :call RunLastVimTmuxCommand()<CR>
-let g:VimuxUseNearestPane=1
+let g:VimuxUseNearestPane=0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""" COMMANDS """""""""""""""""""""""""""""
@@ -257,17 +254,14 @@ command! Bclose call <SID>BufcloseCloseIt()
 function! <SID>BufcloseCloseIt()
    let l:currentBufNum = bufnr("%")
    let l:alternateBufNum = bufnr("#")
-
    if buflisted(l:alternateBufNum)
      buffer #
    else
      bnext
    endif
-
    if bufnr("%") == l:currentBufNum
      new
    endif
-
    if buflisted(l:currentBufNum)
      execute("bdelete! ".l:currentBufNum)
    endif

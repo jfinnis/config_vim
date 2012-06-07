@@ -1,42 +1,34 @@
 *Instructions*
-* cp vimrc to ~/.vimrc
-
-*Modifications*
-* can open doc/odt/pdf/rtf files
-* :F9: - pastemode, n/ai-ii - number/indent text objects
-* :Leader:s - global substitute word on cursor, :Leader:f - find in all files
-* S - split line at cursor, g+/g= - max window/same size, u/U upper/lowercase
-* Navigation - :Leader:h/j/k/l/n/p, C-Left/Right to navigate help
-* Tabs - :Leader:tb, tn, tp, to, te, tc, tt
-* :Leader:y = yank to clipboard
+* link vimrc to ~/.vimrc
 
 *Included plugins*
 * Abolish         (cr[c/m/_] to change case, :S/:%S for smart search/substitute, record abbreviations)
 * Ack             (:Leader:a shortcut, output of search in quickfix)
-* Arpeggio        (allows mapping two keys pressed)
+* Arpeggio        (allows mapping two keys pressed) <-- unused
 * BufOnly         (:Leader:bo removes all other open buffers)
-* CtrlP           (:Leader:df to open window, quick find file in project, C-F switch type, C-Z/C-O to mark/open, C-V vsplit, CR opens)
-* EasyMotion      (\ and | to specify specific letter to go to)
-* Fugitive        (:Leader:gs/gc/gd/gl/gp - status (- stage/unstage, p patch, c commit), commit, diff, log, push, diffput/get to stage/checkout, :Gedit)
+* CtrlP           (:Leader:p to open window, quick find file in project, C-F switch type, C-Z/C-O to mark/open, C-V vsplit, CR opens)
+* EasyMotion      (H and L to specify specific letter to go to, back/forward)
+* Fugitive        (:Leader:gs/gc/gd/gl/gp - status (- stage/unstage, p patch, C commit), commit, diff, log, push, diffput/get to stage/checkout, :Gedit)
 * Git             (syntax highlighting for git)
-* Latex-suite     (templates - :Leader:tt, macros - EEQ/SSS/`a/`D, F7 expands commands, F9 completes labels/cites, :Leader:ll compiles [visual])
+* Latex-suite     (templates - :Leader:tt, macros - EEQ/SSS/`a/`D, F7 expands commands, F9 completes labels/cites, :Leader:ll compiles [visual]) <-- overkill
+* Mash            (highlight current searched for term differently)
 * MatchIt         (extends % to if/else/endif, can configure more matchpairs)
 * NERDCommenter   (:Leader:c:space:/ci/cm/cb/cA)
-* NERDTree        (:Leader:d opens directory tree, o, s, t to open/vsplit/tab)
+* NERDTree        (:Leader:n opens directory tree, o, s, t to open/vsplit/tab, C changeroot, r refresh, I hidden files)
 * Powerline       (awesome statuslines, colored, symbols, really cool)
 * Pydoc           (:space:d/D to bring up python doc for cursor word)
 * Rainbow Paren.  (colored nested parentheses/brackets/etc)
 * Repeat          (utility plugin to allow . to work for plugin mappings)
 * Replace         (R is multipurpose replace command, Rib, "xR$, etc)
 * Snipmate        (expands snippets after, date:tab:, for:tab: ifmain:tab: etc)
-* Surround        (change/delete surrounding bracket/tag, ds", cstp, add with y)
-* Syntastic       (run checker on files on open/save-store in location list-]l-[l])
+* Surround        (s text object when followed by bracket/tag/paren/quote/etc)
+* Syntastic       (run checker on files on open/save-store in location list, [f, ]f for errors)
 * Tabular         (:Leader:a=/a: to automatically align, |s autoalign tables)
 * Tagbar          (better taglist, ;tl, o to toggle fold, space/enter)
 * Textobj-User    (utility plugin for defining text objects)
 * Textobj-Args    (defines argument text objects for functions)
 * Textobj-Indent  (defines indent text objects, ai aI ii iI)
-* Unimpaired      ([:space:/]:space:- ADD [n] blank lines before/after, [e/]e exchange lines, encoding/decoding method)
+* Unimpaired      (consistent [ and ] motions, [:space: adds spaces, [e exchanges lines, [b buffer navigation)
 * Vimux           (! and ;! run a tmux pane with new command/last command)
 
 *Included colorscheme*
@@ -58,4 +50,4 @@
 * pdftotext, odt2txt, antiword, unrtf, python, ruby
 
 *Compiling
-* vim7.3 - @./configure --with-features=huge --enable-rubyinterp=yes --enable-pythoninterp=yes@
+* vim7.3 - @./configure --with-features=huge --enable-rubyinterp=yes --enable-pythoninterp=yes
