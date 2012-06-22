@@ -61,19 +61,18 @@ EOF
 
 """"""""""""""""""""" COMPILATION """""""""""""""""""""""
 " set up make
-set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
-set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m 
-
+" set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
+" set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m 
 " compile whole file with M
-nmap M :make
+" nmap M :make
 
-" also use M to evaluate a visually selected block
+" use space-e to evaluate a visually selected block
 python << EOL
 import vim
 def EvaluateCurrentRange():
   eval(compile('\n'.join(vim.current.range),'','exec'),globals())
 EOL
-vmap M :py EvaluateCurrentRange()<cr>
+vmap <space>e :py EvaluateCurrentRange()<cr>
 
 """""""""""""""""""""""" DEBUG """"""""""""""""""""""""""
 " space b/B to add/remove breakpoints
