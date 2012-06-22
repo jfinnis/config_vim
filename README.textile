@@ -44,6 +44,7 @@
 ** can compile with and evaluate visual blocks with M
 ** pydoc script, lookup in docs under cursor with <space>d/D
 ** <space>b/B adds/removes breakpoints
+** X makes executable script
 * Ocaml, SML indent scripts
 * LaTeX 
 

@@ -8,7 +8,7 @@ set nocompatible
 syntax on
 let mapleader=";"
 let g:tex_flavor='latex'    " allow recognition of latex files
-set autochdir               " change directory to the file you opened
+set noautochdir               " change directory to the file you opened
 set fo=cq
 set hidden                  " liberal hidden buffers
 set history=100
@@ -94,8 +94,8 @@ map ZZ <nop>
 map <Leader>S :source ~/.vimrc<CR>
 
 """""""""""""""" EDITING - save some keystrokes """"""""""""""""""
-" format text
-map Q gq
+" since ^ is hard to reach and who cares about ,
+map , ^
 
 " make Y behave like other capitals
 map Y y$
@@ -313,4 +313,43 @@ function! ToggleSingleLine()
     echo "Toggle: normal vim movements"
   endif
 endfunction
-map <F8> :call ToggleSingleLine()<CR>
+map <F11> :call ToggleSingleLine()<CR>
+
+" functions to set scripts as executable and add a shebang to beginning
+function! SetExecutableBit()
+	" This function is taken from
+	" http://vim.wikia.com/wiki/Setting_file_attributes_without_reloading_a_buffer
+	" Thanks Max Ischenko!
+	let fname = expand("%:p")
+	checktime
+	execute "au FileChangedShell " . fname . " :echo"
+	silent !chmod a+x %
+	checktime
+	execute "au! FileChangedShell " . fname
+endfunction
+function! SetShebang()
+python << endpython
+import vim
+shebang = {
+	'python':     '#!/usr/bin/env python',
+	'sh':         '#!/bin/bash',
+	'zsh':        '#!/bin/zsh',
+	'javascript': '#!/usr/local/bin/node',
+	'lua':        '#!/usr/bin/env lua',
+	'ruby':       '#!/usr/bin/env ruby',
+	'perl':       '#!/usr/bin/perl',
+	'php':        '#!/usr/bin/php',
+}
+if not vim.current.buffer[0].startswith('#!'):
+	filetype = vim.eval('&filetype')
+	if filetype in shebang:
+		vim.current.buffer[0:0] = [ shebang[filetype] ]
+endpython
+endfunction
+function! SetExecutable()
+    call SetExecutableBit()
+    call SetShebang()
+endfunction
+map X :w<CR>:call SetExecutable()<CR>
+
+" free keys: , _ M Q Z \ ` F2-9
