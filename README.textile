@@ -28,6 +28,7 @@
 * Textobj-User    (utility plugin for defining text objects)
 * Textobj-Args    (defines argument text objects for functions)
 * Textobj-Indent  (defines indent text objects, ai aI ii iI)
+* Tmux            (syntax highlighting and filetype recognition for tmux)
 * Unimpaired      (consistent [ and ] motions, [:space: adds spaces, [e exchanges lines, [b buffer navigation)
 * Vimux           (! and ;! run a tmux pane with new command/last command)
 
