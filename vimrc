@@ -126,6 +126,11 @@ nnoremap N Nzz
 nnoremap zc zczz
 nnoremap zo zozt
 
+" scroll up
+imap <tab>e	<C-X><C-E>
+" scroll down
+imap <tab>y	<C-X><C-Y>
+
 " add number object for modification (cin, etc)
 onoremap n :<c-u>call <SID>NumberTextObject(0)<cr>
 xnoremap n :<c-u>call <SID>NumberTextObject(0)<cr>
@@ -137,6 +142,37 @@ xnoremap in :<c-u>call <SID>NumberTextObject(1)<cr>
 " global substitute word under cursor
 nmap <Leader>s :%s/\<<c-r>=expand("<cword>")<cr>\>/
 vmap <Leader>s :<C-U>%s/\<<c-r>*\>/
+
+"""""""""""""""""""""" WORD COMPLETION """""""""""""""""""""""""""
+" remap tab
+inoremap <tab><tab> <tab>
+
+" complete defined identifiers
+imap <tab>d	<C-X><C-D>
+" complete file names
+imap <tab>f	<C-X><C-F>
+" complete identifiers
+imap <tab>i	<C-X><C-I>
+" complete identifiers from dictionary
+imap <tab>k	<C-X><C-K>
+" complete whole lines
+imap <tab>l	<C-X><C-L>
+" next completion
+imap <tab>n	<C-X><C-N>
+" omni completion
+imap <tab>o	<C-X><C-O>
+" previous completion
+imap <tab>p	<C-X><C-P>
+" spelling suggestions
+imap <tab>s	<C-X><C-S>
+" complete identifiers from thesaurus
+imap <tab>t	<C-X><C-T>
+" complete with 'completefunc'
+imap <tab>u	<C-X><C-U>
+" complete like in : command line
+imap <tab>v	<C-X><C-V>
+" complete tags
+imap <tab>]	<C-X><C-]>
 
 """""""""""""""""" WINDOW/COMMAND MANAGEMENT """""""""""""""""""""
 " easier access to diff commands
