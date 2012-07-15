@@ -261,18 +261,16 @@ let g:syntastic_enable_signs=0
 map <F12> :SyntasticToggleMode<CR>
 
 " tabular settings to align at = and after : for blocks of code
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:\zs/l0l1<CR>
-vmap <Leader>a: :Tabularize /:\zs/l0l1<CR>
+nmap <Leader>= :Tabularize /=<CR>
+vmap <Leader>= :Tabularize /=<CR>
+nmap <Leader>: :Tabularize /:\zs/l0l1<CR>
+vmap <Leader>: :Tabularize /:\zs/l0l1<CR>
 
 " tagbar settings
 let g:tagbar_width=30
 let g:tagbar_autofocus=1
 let g:tagbar_compact=1
 let g:tagbar_autoshowtag=1
-
-" taglist plugin options
 map <Leader>tl :TagbarToggle<CR>
 
 " vimux commands
@@ -335,7 +333,7 @@ command! -bar -nargs=0 Sudow 	:silent exe "write !sudo tee % >/dev/null"|silent 
 function! ToggleSingleLine()
   if !exists("s:imove")
     let s:imove=1 "zero: not enabled
-  endif"
+  endif
   if s:imove
     map gj <Down>
     map gk <Up>
