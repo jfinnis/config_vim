@@ -44,9 +44,6 @@ EOF
 set omnifunc=pythoncomplete#Complete
 set completeopt=menuone,longest,preview
 
-" easier code completion with ctrl+space
-inoremap <Nul> <C-X><C-o>
-
 """""""""""""""""""" NAVIGATION """""""""""""""""""""""""
 " definition lookup
 map <buffer> gd /def <C-R><C-W><CR>
