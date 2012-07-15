@@ -251,7 +251,7 @@ let NERDTreeShowBookmarks=1
 map R <Plug>(operator-replace)
 
 " snippets variable
-let g:snips_author='Joshua Finnis'    
+let g:snips_author='Joshua Finnis'
 
 " syntastic settings
 let g:syntastic_check_on_open=1
@@ -397,4 +397,19 @@ function! SetExecutable()
 endfunction
 map X :w<CR>:call SetExecutable()<CR>
 
-" free keys: , _ M Q Z \ ` F2-9
+" hexdumps the file (as a toggle)
+function! ToggleHexdump()
+    if !exists("s:xxd")
+        let s:xxd=1 "zero: not enabled
+    endif
+    if s:xxd
+        %!xxd
+        let s:xxd=0
+    else
+        %!xxd -r
+        let s:xxd=1
+    endif
+endfunction
+map <F8> :call ToggleHexdump()<CR>
+
+" free keys: , _ M Q Z \ ` F2-7
