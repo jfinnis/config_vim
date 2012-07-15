@@ -93,9 +93,15 @@ map ZZ <nop>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <Leader>S :source ~/.vimrc<CR>
 
+"""""""""""""""""""""" quick file access """""""""""""""""""""""""
+map <space>V :e ~/.vim/vimrc <bar> :cd ~/.vim<cr>
+map <space>M :e ~/.mutt/cfg/muttrc <bar> :cd ~/.mutt/cfg<cr>
+map <space>T :e ~/.tmux/tmux.conf <bar> :cd ~/.tmux<cr>
+map <space>Z :e ~/.zsh/zshrc <bar> :cd ~/.zsh<cr>
+
 """""""""""""""" EDITING - save some keystrokes """"""""""""""""""
-" since ^ is hard to reach and who cares about ,
-map , ^
+" since ^ is hard to reach and i don't use ,
+nnoremap , ^
 
 " make Y behave like other capitals
 map Y y$
