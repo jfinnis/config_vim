@@ -132,6 +132,11 @@ nnoremap N Nzz
 nnoremap zc zczz
 nnoremap zo zozt
 
+" can use zz/t/b in visual mode to center/top/bottom selection
+vnoremap <silent> zz :<C-u>call setpos('.',[0,(line("'>")-line("'<"))/2+line("'<"),0,0])<Bar>normal! zzgv<CR>
+vnoremap <silent> zt :<C-u>call setpos('.',[0,line("'<"),0,0])<Bar>normal! ztgv<CR>
+vnoremap <silent> zb :<C-u>call setpos('.',[0,line("'>"),0,0])<Bar>normal! zbgv<CR>
+
 " scroll up
 imap <tab>e	<C-X><C-E>
 " scroll down
