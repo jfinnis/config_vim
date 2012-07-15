@@ -358,7 +358,7 @@ function! ToggleSingleLine()
     echo "Toggle: normal vim movements"
   endif
 endfunction
-map <F11> :call ToggleSingleLine()<CR>
+map <F9> :call ToggleSingleLine()<CR>
 
 " functions to set scripts as executable and add a shebang to beginning
 function! SetExecutableBit()
