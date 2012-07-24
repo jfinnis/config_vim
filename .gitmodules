@@ -79,3 +79,9 @@
 [submodule "bundle/vim-tmux"]
 	path = bundle/vim-tmux
 	url = git://github.com/peterhoeg/vim-tmux.git
+[submodule "bundle/textobj-word-column"]
+	path = bundle/textobj-word-column
+	url = https://github.com/coderifous/textobj-word-column.vim.git
+[submodule "bundle/vim-signature"]
+	path = bundle/vim-signature
+	url = http://github.com/kshenoy/vim-signature.git

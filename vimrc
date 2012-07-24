@@ -250,6 +250,10 @@ let NERDTreeShowBookmarks=1
 " replace set to R, allows for R to delete and replace motions
 map R <Plug>(operator-replace)
 
+" signature options
+map m<del> <Plug>SIG_PurgeMarks
+map m<space> :SignatureToggleDisplay<cr>
+
 " snippets variable
 let g:snips_author='Joshua Finnis'
 
