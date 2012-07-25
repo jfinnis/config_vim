@@ -103,6 +103,9 @@ map <space>Z :e ~/.zsh/zshrc <bar> :cd ~/.zsh<cr>
 " since ^ is hard to reach and i don't use ,
 nnoremap , ^
 
+" format paragraph
+map Q gqip
+
 " make Y behave like other capitals
 map Y y$
 
@@ -416,4 +419,4 @@ function! ToggleHexdump()
 endfunction
 map <F8> :call ToggleHexdump()<CR>
 
-" free keys: , _ M Q Z \ ` F2-7
+" free keys: , _ M Z \ ` F2-7
