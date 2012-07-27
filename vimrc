@@ -112,12 +112,13 @@ map Y y$
 " vreplace mode
 nnoremap gr gR
 
-" visually select the text that was last edited/pasted
-nmap gV `[v`]
-
 " easier clipboard access
 map <leader>y "+y
 map <leader>p :set paste<bar>put + <bar>set nopaste<cr>
+
+" indent the just pasted text
+nnoremap <Leader>> g'[>']
+nnoremap <Leader>< g'[<']
 
 " split line at the current cursor position
 nnoremap S i<cr><esc>
