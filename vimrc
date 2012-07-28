@@ -9,7 +9,7 @@ syntax on
 let mapleader=";"
 let g:tex_flavor='latex'    " allow recognition of latex files
 set noautochdir               " change directory to the file you opened
-set fo=cq
+set formatoptions=cqrl
 set hidden                  " liberal hidden buffers
 set history=100
 set mouse=a
@@ -218,6 +218,7 @@ map <Leader>q :bd<CR>                 " close current buffer and close window
 map <Leader>Q :Bclose<CR>             " close current buffer and keep window
 map <Leader>bo :BufOnly<CR>           " close all buffers and windows except this
 nnoremap K :ls<CR>:b<space>
+map , :e #<CR>                        " open alternate buffer
 
 """""""""""""""""" PLUGIN SPECIFIC BINDINGS """"""""""""""""""""""
 " Ack command/shortcut
