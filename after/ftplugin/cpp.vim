@@ -3,6 +3,9 @@ set shiftwidth=3            " indent width using '<' and '>'
 set softtabstop=3           " 3 space tabs
 set tabstop=3
 
+" feature-full folding plugin
+source ~/.vim/after/ftplugin/c-fold.vim
+
 " surround mappings for f, i, and w
 let b:surround_102="for (<++>)\n{\n\t\r\n}"
 let b:surround_105="if (<++>)\n{\n\t\r\n}"

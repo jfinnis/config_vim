@@ -1,7 +1,10 @@
-set formatoptions-=o      " don't put comment leader when using o
+set formatoptions-=o        " don't put comment leader when using o
 set shiftwidth=3            " indent width using '<' and '>'
 set softtabstop=3           " 3 space tabs
 set tabstop=3
+
+" feature-full folding plugin
+source ~/.vim/after/ftplugin/c-fold.vim
 
 " surround mappings for f, i, and w
 let b:surround_102="for (<++>)\n{\n\t\r\n}"
@@ -11,7 +14,7 @@ let b:surround_119="while (<++>)\n{\n\t\r\n}"
 " improve by converting to a function, just not sure how
 nmap <silent> <space>c :let @9=@/<cr>$?\/-<cr>zf/^\(\s*\/\)\@!<cr>:let @/=@9<cr>
 " insert trailing comments after } braces
-nmap <space>C :SmartBraceCommenter<CR>:SmartPreProcCommenter<CR>
+nmap <silent> <space>C :SmartBraceCommenter<CR>:SmartPreProcCommenter<CR>
 
 " space+g/G highlights debug statements (with #ifdef XX)
 map <silent> <space>g :call AddCommentDefine()<CR>
