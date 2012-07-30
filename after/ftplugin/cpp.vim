@@ -36,3 +36,14 @@ function! ClearCommentDefine()
   syn clear MyCommentOut
   syn clear MyCommentOut2
 endfunction
+
+" mappings to open corresponding header/source file
+nmap <silent> <space>hf :FSHere<cr>
+nmap <silent> <space>hl :FSRight<cr>
+nmap <silent> <space>hL :FSSplitRight<cr>
+nmap <silent> <space>hh :FSLeft<cr>
+nmap <silent> <space>hH :FSSplitLeft<cr>
+nmap <silent> <space>hk :FSAbove<cr>
+nmap <silent> <space>hK :FSSplitAbove<cr>
+nmap <silent> <space>hj :FSBelow<cr>
+nmap <silent> <space>hJ :FSSplitBelow<cr>
