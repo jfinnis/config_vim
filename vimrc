@@ -106,6 +106,9 @@ nnoremap , ^
 " format paragraph
 map Q gqip
 
+" reindent whole file and return cursor position
+nmap g= gg=G<C-O><C-O>
+
 " make Y behave like other capitals
 map Y y$
 
@@ -142,9 +145,9 @@ nnoremap zo zozt
 :for m in map(map(range(26), 'nr2char(97+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
 
 " can use zz/t/b in visual mode to center/top/bottom selection
-vnoremap <silent> zz :<C-u>call setpos('.',[0,(line("'>")-line("'<"))/2+line("'<"),0,0])<Bar>normal! zzgv<CR>
-vnoremap <silent> zt :<C-u>call setpos('.',[0,line("'<"),0,0])<Bar>normal! ztgv<CR>
-vnoremap <silent> zb :<C-u>call setpos('.',[0,line("'>"),0,0])<Bar>normal! zbgv<CR>
+xnoremap <silent> zz :<C-u>call setpos('.',[0,(line("'>")-line("'<"))/2+line("'<"),0,0])<Bar>normal! zzgv<CR>
+xnoremap <silent> zt :<C-u>call setpos('.',[0,line("'<"),0,0])<Bar>normal! ztgv<CR>
+xnoremap <silent> zb :<C-u>call setpos('.',[0,line("'>"),0,0])<Bar>normal! zbgv<CR>
 
 " scroll up
 imap <tab>e	<C-X><C-E>
@@ -200,10 +203,6 @@ nnoremap df :diffthis<cr>
 nnoremap <silent> dF :diffoff!<cr>
 nnoremap du :diffupdate<cr>
 
-" easier mapping ala unimpaired
-nnoremap [f :lprevious<cr>
-nnoremap ]f :lnext<cr>
-
 " window management
 map <Leader>h <C-W>h                  " ;[hjkl] to navigate split windows
 map <Leader>j <C-W>j
@@ -214,11 +213,14 @@ map - <C-W>=                         " same size
 
 " buffer management
 " :q - close window and keep buffer, ]b, [b prev/next buffer, K list
+nnoremap K :ls<CR>:b<space>
+map , :e #<CR>                        " open alternate buffer
 map <Leader>q :bd<CR>                 " close current buffer and close window
 map <Leader>Q :Bclose<CR>             " close current buffer and keep window
 map <Leader>bo :BufOnly<CR>           " close all buffers and windows except this
-nnoremap K :ls<CR>:b<space>
-map , :e #<CR>                        " open alternate buffer
+
+" location list popup
+map <space>l :llist<CR>
 
 """""""""""""""""" PLUGIN SPECIFIC BINDINGS """"""""""""""""""""""
 " Ack command/shortcut
@@ -233,12 +235,12 @@ let g:ctrlp_max_height=15
 let g:ctrlp_open_multiple_files='1vr'
 let g:ctrlp_custom_ignore = {'dir':'\.git$\|\.hg$\|\.svn$'}
 
-" easymotion options and bindings
+" easymotion options and bindings (visual binding screws up snippets)
 let EasyMotion_do_mapping=0
 nnoremap <silent> L      :call EasyMotion#F(0, 0)<cr>
-vnoremap <silent> L :<C-U>call EasyMotion#F(1, 0)<cr>
 nnoremap <silent> H      :call EasyMotion#F(0, 1)<cr>
-vnoremap <silent> H :<C-U>call EasyMotion#F(1, 1)<cr>
+xnoremap <silent> L :<C-U>call EasyMotion#F(1, 0)<cr>
+xnoremap <silent> H :<C-U>call EasyMotion#F(1, 1)<cr>
 
 " fugitive git wrapping
 map <Leader>gs :Gstatus<CR>
