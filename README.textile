@@ -47,6 +47,12 @@
 ** pydoc script, lookup in docs under cursor with <space>d/D
 ** <space>b/B adds/removes breakpoints
 ** X makes executable script
+* C/C++
+** space+g/G -> color "#ifdef DEBUG" blocks as comments
+** space+c -> comment comment block beginning //-
+** space+C -> add end of block/#endif comment markers
+** surround with f/i/w (i.e., v:motion:Sf) to add for/if/while blocks around code
+** snippets - c/cc/ch/cf/chh
 * Ocaml, SML indent scripts
 * LaTeX 
 

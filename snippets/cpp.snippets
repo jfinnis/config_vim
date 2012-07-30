@@ -1,0 +1,73 @@
+snippet ch
+	//----------------------------------------
+	// ${1:filename.ext}
+	//
+	//    ${2:description of file}
+	//
+	//    Copyright (c) 2012 Reynolds & Reynolds, Inc.
+	//
+	//    VMOD#  PROJECT#    DATE      DESCRIPTION OF CHANGE
+	//    -----  ----------  --------  ---------------------------------------
+	//
+snippet cc
+	//----------------------------------------
+	// ${1:class name} class declaration
+	//
+	//    ${2: description of class}
+	//
+	Class $1
+	{
+		public:
+			${3}
+
+		private:
+	}
+snippet cf
+	//----------------------------------------
+	// ${1:function name}
+	//
+	//   ${2:description of function}
+	//
+	//   Args:
+	//    ${3:argument = explanation}
+	//   Return:
+	//    ${4:type = explanation}
+	//
+snippet c
+	//------------------------------------
+	// ${1:comment}
+	//
+snippet chh
+	//----------------------------------------
+	// ${1:filename.ext}
+	//
+	//    ${2:description of file}
+	//
+	//    Copyright (c) 2012 Reynolds & Reynolds, Inc.
+	//
+	//    VMOD#  PROJECT#    DATE      DESCRIPTION OF CHANGE
+	//    -----  ----------  --------  ---------------------------------------
+	//
+	#ifndef ${3:`toupper(Filename('$1_H', 'UNTITLED_H'))`
+	#define $3
+
+	//----------------------------------------
+	// ${4:class name} class declaration
+	//
+	//    ${5: description of class}
+	//
+	Class $4
+	{
+		public:
+			${6}
+
+		private:
+	}
+
+	#endif
+snippet #i
+	#include <{1}>
+snippet #I
+	#include "{1}"
+snippet #d
+	#define 
