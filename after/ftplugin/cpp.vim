@@ -75,3 +75,5 @@ let g:protodefvaluedefaults =
             \     'const bool'           : '(true)'
             \ }
 
+" only set once tagbar is opened
+highlight cEnumTag ctermfg=11 ctermbg=24

@@ -7,6 +7,9 @@ set smarttab expandtab
 set nosmartindent
 set fo=cq
 
+" auto-open tagbar if closed
+:TagbarOpen
+
 " jpythonfold script http://www.vim.org/scripts/script.php?script_id=2527
 source ~/.vim/ftplugin/jpythonfold.vim
 

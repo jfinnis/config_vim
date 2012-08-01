@@ -47,3 +47,6 @@ nmap <silent> <space>hk :FSAbove<cr>
 nmap <silent> <space>hK :FSSplitAbove<cr>
 nmap <silent> <space>hj :FSBelow<cr>
 nmap <silent> <space>hJ :FSSplitBelow<cr>
+
+" only set once tagbar is opened
+highlight cEnumTag ctermfg=11 ctermbg=24
