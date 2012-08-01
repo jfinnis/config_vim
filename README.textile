@@ -17,6 +17,7 @@
 * NERDCommenter   (:Leader:c:space:/ci/cm/cb/cA)
 * NERDTree        (:Leader:n opens directory tree, o, s, t to open/vsplit/tab, C changeroot, r refresh, I hidden files)
 * Powerline       (awesome statuslines, colored, symbols, really cool)
+* Protodef        (:space:p/P to read prototypes from header file)
 * Pydoc           (:space:d/D to bring up python doc for cursor word)
 * Rainbow Paren.  (colored nested parentheses/brackets/etc)
 * Repeat          (utility plugin to allow . to work for plugin mappings)
@@ -52,6 +53,7 @@
 ** space+g/G -> color "#ifdef DEBUG" blocks as comments
 ** space+c -> comment comment block beginning //-
 ** space+C -> add end of block/#endif comment markers
+** space+p/P -> read prototypes from header file
 ** surround with f/i/w (i.e., v:motion:Sf) to add for/if/while blocks around code
 ** snippets - c/cc/ch/cf/chh
 * Ocaml, SML indent scripts
