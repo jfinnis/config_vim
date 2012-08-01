@@ -269,6 +269,7 @@ let NERDTreeShowBookmarks=1
 map R <Plug>(operator-replace)
 
 " signature options
+highlight SignColumn ctermbg=16
 map m<del> <Plug>SIG_PurgeMarks
 map m<space> :SignatureToggleDisplay<cr>
 
