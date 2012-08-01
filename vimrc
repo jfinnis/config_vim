@@ -1,4 +1,4 @@
-filetype off
+filetype off 
 call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
@@ -39,7 +39,7 @@ set tabstop=4
 
 " display settings
 colorscheme ir_black
-hi CursorLine term=none cterm=none ctermbg=0    " adjust highlight
+hi CursorLine term=none cterm=none ctermbg=0
 set laststatus=2            " always display status line
 set nocul                   " highlight current line
 set number                  " display line numbers
@@ -253,6 +253,10 @@ map <Leader>gl :Glog<CR>
 map <Leader>gp :Git push origin master<CR>
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
+" jump-tracker settings
+let g:jump_line_color="DarkGrey"
+let g:jump_insert_mode_line=1
+
 " nerdtree bindings and settings
 map <Leader>n :NERDTreeToggle<CR>
 let NERDChDirMode=2
@@ -273,7 +277,7 @@ let g:snips_author='Joshua Finnis'
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_balloons=0
 let g:syntastic_loc_list_height=5
-let g:syntastic_enable_signs=0
+let g:syntastic_enable_signs=1
 map <F12> :SyntasticToggleMode<CR>
 
 " tabular settings to align at = and after : for blocks of code
