@@ -1,4 +1,4 @@
-filetype off 
+filetype off
 call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
@@ -57,6 +57,8 @@ set smartcase               " ... unless capitals are included
 " old statusline (before powerline plugin)
 "set statusline=%<\ %2*[%n%H%M%R%W]%*\ %-40f\ %{fugitive#statusline()}%=%l*%y%*%*\ %10((%l/%L)%)\%P
 let g:Powerline_symbols='fancy'
+" insert trailing whitespace notifier
+call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""" AUTOCOMMANDS """""""""""""""""""""""""""
