@@ -70,9 +70,10 @@ autocmd BufReadPost *.pdf silent %!pdftotext -nopgbrk -q -eol unix "%" - | fmt -
 autocmd BufReadPost *.rtf silent %!unrtf --text "%"
 autocmd BufWriteCmd *.pdf,*.rtf,*.odt,*.odp,*.doc set readonly
 
-" format tmux files
+" format specific filetypes
 augroup filetypedetect
-    au BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
+    autocmd BufNewFile,BufRead .tmux.conf*,tmux.conf* setfiletype tmux
+    autocmd! BufNewFile,BufRead *.m setfiletype objc
 augroup END
 
 " don't quote signatures in mutt files
