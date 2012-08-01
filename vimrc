@@ -57,6 +57,8 @@ set smartcase               " ... unless capitals are included
 " old statusline (before powerline plugin)
 "set statusline=%<\ %2*[%n%H%M%R%W]%*\ %-40f\ %{fugitive#statusline()}%=%l*%y%*%*\ %10((%l/%L)%)\%P
 let g:Powerline_symbols='fancy'
+" trailing whitespace indicator
+call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""" AUTOCOMMANDS """""""""""""""""""""""""""
@@ -127,7 +129,7 @@ nnoremap <Leader>< g'[<']
 nnoremap S i<cr><esc>
 
 " remove all trailing whitespace
-nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR>:echo "Removed trailing whitespace"<CR>
 
 " convert current word to uppercase and lowercase
 nnoremap <leader>U gUiw
@@ -166,6 +168,15 @@ xnoremap in :<c-u>call <SID>NumberTextObject(1)<cr>
 nmap <Leader>s :%s/\<<c-r>=expand("<cword>")<cr>\>/
 vmap <Leader>s :<C-U>%s/\<<c-r>*\>/
 
+" next/previous word under cursor in same column (navigate amongst same blocks
+" of structure code, i.e.)
+nnoremap g* yiw:let c=col('.')<CR>:let @/="^.*\\%".c.'c\zs'.@"<CR>n
+nnoremap g# yiw:let c=col('.')<CR>:let @/="^.*\\%".c.'c\zs'.@"<CR>N
+
+" maps X in visual mode to expand -- edit selection in new split by itself
+" <leader>x to return
+xnoremap X y:let [f,s,v]=[&ft,&syn,getregtype('@"')]<CR><C-w>nVp:set ft=<c-r>=f<CR> syn=<c-r>=s<CR><CR>:nnoremap <buffer> <Leader>x :let @"=v<C-r>="<"<CR>CR>gg0@"G$d:bw!<C-r>="<"<CR>CR>gvp<CR>
+
 """""""""""""""""""""" WORD COMPLETION """""""""""""""""""""""""""
 " remap tab
 inoremap <tab><tab> <tab>
@@ -196,6 +207,14 @@ imap <tab>u	<C-X><C-U>
 imap <tab>v	<C-X><C-V>
 " complete tags
 imap <tab>]	<C-X><C-]>
+
+""""""""""""""""""""" FILETYPE MANAGEMENT """"""""""""""""""""""""
+map <leader><leader>c :set ft=c
+map <leader><leader>C :set ft=cpp
+map <leader><leader>o :set ft=objc
+map <leader><leader>p :set ft=python
+map <leader><leader>v :set ft=vim
+map <leader><leader>z :set ft=zsh
 
 """""""""""""""""" WINDOW/COMMAND MANAGEMENT """""""""""""""""""""
 " easier access to diff commands
@@ -411,7 +430,7 @@ function! SetExecutable()
     call SetExecutableBit()
     call SetShebang()
 endfunction
-map X :w<CR>:call SetExecutable()<CR>
+nmap X :w<CR>:call SetExecutable()<CR>
 
 " hexdumps the file (as a toggle)
 function! ToggleHexdump()
