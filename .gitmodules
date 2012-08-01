@@ -82,9 +82,15 @@
 [submodule "bundle/vim-signature"]
 	path = bundle/vim-signature
 	url = http://github.com/kshenoy/vim-signature.git
-[submodule "bundle/abolish"]
-	path = bundle/abolish
-	url = http://github.com/tpope/vim-abolish.git
 [submodule "bundle/vim-fswitch"]
 	path = bundle/vim-fswitch
 	url = http://github.com/vim-scripts/FSwitch.git
+[submodule "bundle/abolish"]
+	path = bundle/abolish
+	url = http://github.com/vim-scripts/abolish.vim/git
+[submodule "bundle/protodef"]
+	path = bundle/protodef
+	url = https://github.com/derekwyatt/vim-protodef.git
+[submodule "bundle/easytags"]
+	path = bundle/easytags
+	url = http://github.com/xolox/vim-easytags.git

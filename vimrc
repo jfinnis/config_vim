@@ -39,7 +39,7 @@ set tabstop=4
 
 " display settings
 colorscheme ir_black
-hi CursorLine term=none cterm=none ctermbg=0    " adjust highlight
+hi CursorLine term=none cterm=none ctermbg=0
 set laststatus=2            " always display status line
 set nocul                   " highlight current line
 set number                  " display line numbers
@@ -58,7 +58,8 @@ set smartcase               " ... unless capitals are included
 "set statusline=%<\ %2*[%n%H%M%R%W]%*\ %-40f\ %{fugitive#statusline()}%=%l*%y%*%*\ %10((%l/%L)%)\%P
 let g:Powerline_symbols='fancy'
 " trailing whitespace indicator
-call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
+" insert trailing whitespace notifier - disabled since it is buggy
+"call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""" AUTOCOMMANDS """""""""""""""""""""""""""
@@ -70,9 +71,9 @@ autocmd BufReadPost *.pdf silent %!pdftotext -nopgbrk -q -eol unix "%" - | fmt -
 autocmd BufReadPost *.rtf silent %!unrtf --text "%"
 autocmd BufWriteCmd *.pdf,*.rtf,*.odt,*.odp,*.doc set readonly
 
-" format tmux files
+" format specific filetypes
 augroup filetypedetect
-    au BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
+    autocmd BufNewFile,BufRead .tmux.conf*,tmux.conf* setfiletype tmux
 augroup END
 
 " don't quote signatures in mutt files
@@ -102,9 +103,6 @@ map <space>T :e ~/.tmux/tmux.conf <bar> :cd ~/.tmux<cr>
 map <space>Z :e ~/.zsh/zshrc <bar> :cd ~/.zsh<cr>
 
 """""""""""""""" EDITING - save some keystrokes """"""""""""""""""
-" since ^ is hard to reach and i don't use ,
-nnoremap , ^
-
 " format paragraph
 map Q gqip
 
@@ -131,30 +129,10 @@ nnoremap S i<cr><esc>
 " remove all trailing whitespace
 nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR>:echo "Removed trailing whitespace"<CR>
 
-" convert current word to uppercase and lowercase
-nnoremap <leader>U gUiw
-nnoremap <leader>u guiw
-
-" center screen for searches, foldcloses - to top for foldopen
-nnoremap n nzz
-nnoremap N Nzz
-nnoremap zc zczz
-nnoremap zo zozt
-
-" ... and folds (thanks to bairui)
-:for m in map(map(range(10), 'nr2char(48+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
-:for m in map(map(range(26), 'nr2char(65+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
-:for m in map(map(range(26), 'nr2char(97+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
-
 " can use zz/t/b in visual mode to center/top/bottom selection
 xnoremap <silent> zz :<C-u>call setpos('.',[0,(line("'>")-line("'<"))/2+line("'<"),0,0])<Bar>normal! zzgv<CR>
 xnoremap <silent> zt :<C-u>call setpos('.',[0,line("'<"),0,0])<Bar>normal! ztgv<CR>
 xnoremap <silent> zb :<C-u>call setpos('.',[0,line("'>"),0,0])<Bar>normal! zbgv<CR>
-
-" scroll up
-imap <tab>e	<C-X><C-E>
-" scroll down
-imap <tab>y	<C-X><C-Y>
 
 " add number object for modification (cin, etc)
 onoremap n :<c-u>call <SID>NumberTextObject(0)<cr>
@@ -217,6 +195,22 @@ map <leader><leader>v :set ft=vim
 map <leader><leader>z :set ft=zsh
 
 """""""""""""""""" WINDOW/COMMAND MANAGEMENT """""""""""""""""""""
+" scroll up
+imap <tab>e	<C-X><C-E>
+" scroll down
+imap <tab>y	<C-X><C-Y>
+
+" center screen for searches, foldcloses - to top for foldopen
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap zc zczz
+nnoremap zo zozt
+
+" ... and folds (thanks to bairui)
+:for m in map(map(range(10), 'nr2char(48+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
+:for m in map(map(range(26), 'nr2char(65+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
+:for m in map(map(range(26), 'nr2char(97+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
+
 " easier access to diff commands
 nnoremap df :diffthis<cr>
 nnoremap <silent> dF :diffoff!<cr>
@@ -261,6 +255,13 @@ nnoremap <silent> H      :call EasyMotion#F(0, 1)<cr>
 xnoremap <silent> L :<C-U>call EasyMotion#F(1, 0)<cr>
 xnoremap <silent> H :<C-U>call EasyMotion#F(1, 1)<cr>
 
+" easytags settings
+set tags=./tags;
+let g:easytags_by_filetype='~/.vim/tags/'
+let g:easytags_dynamic_files=1
+let g:easytags_file='~/.vim/easytags'
+let g:easytags_python_enabled=1
+
 " fugitive git wrapping
 map <Leader>gs :Gstatus<CR>
 map <Leader>ga :Git add %<CR>
@@ -272,6 +273,10 @@ map <Leader>gl :Glog<CR>
 map <Leader>gp :Git push origin master<CR>
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
+" jump-tracker settings
+let g:jump_line_color="DarkGrey"
+let g:jump_insert_mode_line=1
+
 " nerdtree bindings and settings
 map <Leader>n :NERDTreeToggle<CR>
 let NERDChDirMode=2
@@ -282,6 +287,7 @@ let NERDTreeShowBookmarks=1
 map R <Plug>(operator-replace)
 
 " signature options
+highlight SignColumn ctermbg=16
 map m<del> <Plug>SIG_PurgeMarks
 map m<space> :SignatureToggleDisplay<cr>
 
@@ -292,7 +298,7 @@ let g:snips_author='Joshua Finnis'
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_balloons=0
 let g:syntastic_loc_list_height=5
-let g:syntastic_enable_signs=0
+let g:syntastic_enable_signs=1
 map <F12> :SyntasticToggleMode<CR>
 
 " tabular settings to align at = and after : for blocks of code
@@ -307,10 +313,12 @@ let g:tagbar_autofocus=1
 let g:tagbar_compact=1
 let g:tagbar_autoshowtag=1
 map <Leader>tl :TagbarToggle<CR>
+"let g:tagbar_type_objc={'ctagstype':'ObjectiveC', 'kinds':['i:interface', 'I:implementation', 'p:Protocol', 'm:Object_method', 'c:Class_method', 'v:Global_variable', 'F:Object field', 'f:function', 'p:property', 't:type_alias', 's:type_structure', 'e:enumeration', 'M:preprocessor_macro'], 'sro':' ', 'kind2scope':{'i':'interface', 'I':'Implementation', 'p':'Protocol', 's':'type_structure', 'e':'enumeration'}, 'scope2kind':{'interface':'i', 'implementation':'I', 'Protocol':'p', 'type_structure':'s', 'enumeration':'e'}}
 
 " vimux commands
 map ! :call PromptVimTmuxCommand()<CR>
 map <leader>! :call RunLastVimTmuxCommand()<CR>
+map <leader>@ :CloseVimTmuxPanes<cr>
 let g:VimuxUseNearestPane=0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
