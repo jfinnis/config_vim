@@ -128,26 +128,10 @@ nnoremap S i<cr><esc>
 " remove all trailing whitespace
 nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
-" center screen for searches, foldcloses - to top for foldopen
-nnoremap n nzz
-nnoremap N Nzz
-nnoremap zc zczz
-nnoremap zo zozt
-
-" ... and folds (thanks to bairui)
-:for m in map(map(range(10), 'nr2char(48+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
-:for m in map(map(range(26), 'nr2char(65+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
-:for m in map(map(range(26), 'nr2char(97+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
-
 " can use zz/t/b in visual mode to center/top/bottom selection
 xnoremap <silent> zz :<C-u>call setpos('.',[0,(line("'>")-line("'<"))/2+line("'<"),0,0])<Bar>normal! zzgv<CR>
 xnoremap <silent> zt :<C-u>call setpos('.',[0,line("'<"),0,0])<Bar>normal! ztgv<CR>
 xnoremap <silent> zb :<C-u>call setpos('.',[0,line("'>"),0,0])<Bar>normal! zbgv<CR>
-
-" scroll up
-imap <tab>e	<C-X><C-E>
-" scroll down
-imap <tab>y	<C-X><C-Y>
 
 " add number object for modification (cin, etc)
 onoremap n :<c-u>call <SID>NumberTextObject(0)<cr>
@@ -193,6 +177,22 @@ imap <tab>v	<C-X><C-V>
 imap <tab>]	<C-X><C-]>
 
 """""""""""""""""" WINDOW/COMMAND MANAGEMENT """""""""""""""""""""
+" scroll up
+imap <tab>e	<C-X><C-E>
+" scroll down
+imap <tab>y	<C-X><C-Y>
+
+" center screen for searches, foldcloses - to top for foldopen
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap zc zczz
+nnoremap zo zozt
+
+" ... and folds (thanks to bairui)
+:for m in map(map(range(10), 'nr2char(48+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
+:for m in map(map(range(26), 'nr2char(65+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
+:for m in map(map(range(26), 'nr2char(97+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
+
 " easier access to diff commands
 nnoremap df :diffthis<cr>
 nnoremap <silent> dF :diffoff!<cr>
