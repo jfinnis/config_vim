@@ -102,9 +102,6 @@ map <space>T :e ~/.tmux/tmux.conf <bar> :cd ~/.tmux<cr>
 map <space>Z :e ~/.zsh/zshrc <bar> :cd ~/.zsh<cr>
 
 """""""""""""""" EDITING - save some keystrokes """"""""""""""""""
-" since ^ is hard to reach and i don't use ,
-nnoremap , ^
-
 " format paragraph
 map Q gqip
 
@@ -130,10 +127,6 @@ nnoremap S i<cr><esc>
 
 " remove all trailing whitespace
 nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR>
-
-" convert current word to uppercase and lowercase
-nnoremap <leader>U gUiw
-nnoremap <leader>u guiw
 
 " center screen for searches, foldcloses - to top for foldopen
 nnoremap n nzz
