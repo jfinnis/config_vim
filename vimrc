@@ -73,7 +73,6 @@ autocmd BufWriteCmd *.pdf,*.rtf,*.odt,*.odp,*.doc set readonly
 " format specific filetypes
 augroup filetypedetect
     autocmd BufNewFile,BufRead .tmux.conf*,tmux.conf* setfiletype tmux
-    autocmd! BufNewFile,BufRead *.m setfiletype objc
 augroup END
 
 " don't quote signatures in mutt files
@@ -301,6 +300,7 @@ map <Leader>tl :TagbarToggle<CR>
 " vimux commands
 map ! :call PromptVimTmuxCommand()<CR>
 map <leader>! :call RunLastVimTmuxCommand()<CR>
+map <leader>@ :CloseVimTmuxPanes<cr>
 let g:VimuxUseNearestPane=0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

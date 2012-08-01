@@ -1,0 +1,7 @@
+snippet objc
+	include $(GNUSTEP_MAKEFILES)/common.make
+
+	TOOL_NAME=${1:exe name}
+	$1_OBJC_FILES=${2:source file}
+
+	include $(GNUSTEP_MAKEFILES)/tool.make
