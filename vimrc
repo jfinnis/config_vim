@@ -94,6 +94,7 @@ map ZZ <nop>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""" KEY BINDINGS """""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>cd :cd %:h<cr>
 map <Leader>S :source ~/.vimrc<CR>
 
 """""""""""""""""""""" quick file access """""""""""""""""""""""""
@@ -128,11 +129,6 @@ nnoremap S i<cr><esc>
 
 " remove all trailing whitespace
 nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR>:echo "Removed trailing whitespace"<CR>
-
-" can use zz/t/b in visual mode to center/top/bottom selection
-xnoremap <silent> zz :<C-u>call setpos('.',[0,(line("'>")-line("'<"))/2+line("'<"),0,0])<Bar>normal! zzgv<CR>
-xnoremap <silent> zt :<C-u>call setpos('.',[0,line("'<"),0,0])<Bar>normal! ztgv<CR>
-xnoremap <silent> zb :<C-u>call setpos('.',[0,line("'>"),0,0])<Bar>normal! zbgv<CR>
 
 " add number object for modification (cin, etc)
 onoremap n :<c-u>call <SID>NumberTextObject(0)<cr>
@@ -194,15 +190,24 @@ map <leader><leader>p :set ft=python
 map <leader><leader>v :set ft=vim
 map <leader><leader>z :set ft=zsh
 
-"""""""""""""""""" WINDOW/COMMAND MANAGEMENT """""""""""""""""""""
+"""""""""""""""""" WINDOW/BUFFER MANAGEMENT """""""""""""""""""""
 " scroll up
 imap <tab>e	<C-X><C-E>
 " scroll down
 imap <tab>y	<C-X><C-Y>
 
-" center screen for searches, foldcloses - to top for foldopen
+" can use zz/t/b in visual mode to center/top/bottom selection
+xnoremap <silent> zz :<C-u>call setpos('.',[0,(line("'>")-line("'<"))/2+line("'<"),0,0])<Bar>normal! zzgv<CR>
+xnoremap <silent> zt :<C-u>call setpos('.',[0,line("'<"),0,0])<Bar>normal! ztgv<CR>
+xnoremap <silent> zb :<C-u>call setpos('.',[0,line("'>"),0,0])<Bar>normal! zbgv<CR>
+
+" center screen for searches, foldcloses, {, }, [[, ]]
 nnoremap n nzz
 nnoremap N Nzz
+nnoremap { {zz
+nnoremap } }zz
+nnoremap [[ [[zz
+nnoremap ]] ]]zz
 nnoremap zc zczz
 nnoremap zo zozt
 
