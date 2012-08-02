@@ -8,3 +8,5 @@ config/private/*
 yankring_history_v2.txt
 *.swp
 .netrwhist
+easytags
+tags/*
