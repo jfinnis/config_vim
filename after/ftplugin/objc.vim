@@ -46,34 +46,6 @@ nmap <buffer> <silent> <space>hK :FSSplitAbove<cr>
 nmap <buffer> <silent> <space>hj :FSBelow<cr>
 nmap <buffer> <silent> <space>hJ :FSSplitBelow<cr>
 
-" protodef settings - read in prototypes from header file
-" TODO fix this for objective c
-"nmap <buffer> <silent> <space>p :set paste<cr>i<c-r>=protodef#ReturnSkeletonsFromPrototypesForCurrentBuffer({})<cr><esc>='[:set nopaste<cr>:echo "Updated Skeleton Functions"<cr>
-"nmap <buffer> <silent> <space>P :set paste<cr>i<c-r>=protodef#ReturnSkeletonsFromPrototypesForCurrentBuffer({'includeNS':0})<cr><esc>='[:set nopaste<cr>:echo "Updated Skeleton Functions (no namespaces)"<cr>
-"let g:disable_protodef_sorting="true"
-"let g:disable_protodef_mapping="true"
-"let g:protodefvaluedefaults = 
-            "\ {
-            "\     'int'                  : '(0)',
-            "\     'unsigned int'         : '(0)',
-            "\     'const int'            : '(0)',
-            "\     'const unsigned int'   : '(0)',
-            "\     'long'                 : '(0)',
-            "\     'unsigned long'        : '(0)',
-            "\     'const long'           : '(0)',
-            "\     'const unsigned long'  : '(0)',
-            "\     'short'                : '(0)',
-            "\     'unsigned short'       : '(0)',
-            "\     'const short'          : '(0)',
-            "\     'const unsigned short' : '(0)',
-            "\     'char'                 : "'(a)'",
-            "\     'unsigned char'        : "'(a)'",
-            "\     'const char'           : "'(a)'",
-            "\     'const unsigned char'  : "'(a)'",
-            "\     'bool'                 : '(true)',
-            "\     'const bool'           : '(true)'
-            "\ }
-
 " only set once tagbar is opened
 " TODO look into getting tagbar to work with objective c
 "highlight cEnumTag ctermfg=11 ctermbg=24
@@ -92,9 +64,8 @@ nmap <buffer> <space>mj <c-w>j:e %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
 nmap <buffer> <space>mJ :set splitbelow<cr>:sp %:h/GNUmakefile<cr>:set nosplitbelow<cr>ggdGiobjc-alternate<tab>
 
 " make and run command in new tmux pane
-" TODO check for existance of makefile
-nmap <buffer> <space>R :call RunVimTmuxCommand("make && ./obj/$(awk -F= '/TOOL_NAME/ {print $2}' GNUmakefile)")<cr>
+nmap <buffer> <space>R :cd %:h<cr>:call RunVimTmuxCommand("make && ./obj/$(awk -F= '/TOOL_NAME/ {print $2}' GNUmakefile)")<cr>
 " pipe output to column
-nmap <buffer> <space>rc :call RunVimTmuxCommand("make && ./obj/$(awk -F= '/TOOL_NAME/ {print $2}' GNUmakefile) <bar> column")<cr>
+nmap <buffer> <space>rc :cd %:h<cr>::call RunVimTmuxCommand("make && ./obj/$(awk -F= '/TOOL_NAME/ {print $2}' GNUmakefile) <bar> column")<cr>
 " pipe output to less
-nmap <buffer> <space>rl :call RunVimTmuxCommand("make && ./obj/$(awk -F= '/TOOL_NAME/ {print $2}' GNUmakefile) <bar> less")<cr>
+nmap <buffer> <space>rl :cd %:h<cr>:call RunVimTmuxCommand("make && ./obj/$(awk -F= '/TOOL_NAME/ {print $2}' GNUmakefile) <bar> less")<cr>
