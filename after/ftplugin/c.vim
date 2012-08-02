@@ -1,11 +1,11 @@
-set formatoptions-=o        " don't put comment leader when using o
-set shiftwidth=3            " indent width using '<' and '>'
-set softtabstop=3           " 3 space tabs
-set tabstop=3
+setlocal formatoptions-=o        " don't put comment leader when using o
+setlocal shiftwidth=3            " indent width using '<' and '>'
+setlocal softtabstop=3           " 3 space tabs
+setlocal tabstop=3
 
 " feature-full folding plugin
 "source ~/.vim/after/ftplugin/c-fold.vim
-set foldmethod=indent
+setlocal foldmethod=indent
 
 " surround mappings for f, i, and w
 let b:surround_102="for (<++>)\n{\n\t\r\n}"
