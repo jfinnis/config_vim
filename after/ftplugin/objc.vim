@@ -35,17 +35,16 @@ function! ClearCommentDefine()
   syn clear MyCommentOut2
 endfunction
 
-" mappings to open corresponding header/source file
-" TODO fix this for objective c
-"nmap <buffer> <silent> <space>hf :FSHere<cr>
-"nmap <buffer> <silent> <space>hl :FSRight<cr>
-"nmap <buffer> <silent> <space>hL :FSSplitRight<cr>
-"nmap <buffer> <silent> <space>hh :FSLeft<cr>
-"nmap <buffer> <silent> <space>hH :FSSplitLeft<cr>
-"nmap <buffer> <silent> <space>hk :FSAbove<cr>
-"nmap <buffer> <silent> <space>hK :FSSplitAbove<cr>
-"nmap <buffer> <silent> <space>hj :FSBelow<cr>
-"nmap <buffer> <silent> <space>hJ :FSSplitBelow<cr>
+" fswitch mappings to open corresponding header/source file
+nmap <buffer> <silent> <space>hf :FSHere<cr>
+nmap <buffer> <silent> <space>hl :FSRight<cr>
+nmap <buffer> <silent> <space>hL :FSSplitRight<cr>
+nmap <buffer> <silent> <space>hh :FSLeft<cr>
+nmap <buffer> <silent> <space>hH :FSSplitLeft<cr>
+nmap <buffer> <silent> <space>hk :FSAbove<cr>
+nmap <buffer> <silent> <space>hK :FSSplitAbove<cr>
+nmap <buffer> <silent> <space>hj :FSBelow<cr>
+nmap <buffer> <silent> <space>hJ :FSSplitBelow<cr>
 
 " protodef settings - read in prototypes from header file
 " TODO fix this for objective c
