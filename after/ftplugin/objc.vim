@@ -93,8 +93,9 @@ nmap <buffer> <space>mj <c-w>j:e %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
 nmap <buffer> <space>mJ :set splitbelow<cr>:sp %:h/GNUmakefile<cr>:set nosplitbelow<cr>ggdGiobjc-alternate<tab>
 
 " make and run command in new tmux pane
+" TODO check for existance of makefile
 nmap <buffer> <space>R :call RunVimTmuxCommand("make && ./obj/$(awk -F= '/TOOL_NAME/ {print $2}' GNUmakefile)")<cr>
 " pipe output to column
-nmap <buffer> <space>rc :call RunVimTmuxCommand("make && ./obj/$(awk -F= '/TOOL_NAME/ {print $2}' GNUmakefile) | column")<cr>
+nmap <buffer> <space>rc :call RunVimTmuxCommand("make && ./obj/$(awk -F= '/TOOL_NAME/ {print $2}' GNUmakefile) <bar> column")<cr>
 " pipe output to less
-nmap <buffer> <space>rl :call RunVimTmuxCommand("make && ./obj/$(awk -F= '/TOOL_NAME/ {print $2}' GNUmakefile) | less")<cr>
+nmap <buffer> <space>rl :call RunVimTmuxCommand("make && ./obj/$(awk -F= '/TOOL_NAME/ {print $2}' GNUmakefile) <bar> less")<cr>
