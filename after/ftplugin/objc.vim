@@ -81,13 +81,20 @@ endfunction
 
 " create objective c makefiles using defined snippet
 " uses similar split management scheme as fswitch plugin
-nmap <space>mf :e %:h/GNUmakefile<cr>
-nmap <space>mF :e %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
-nmap <space>mh <c-w>h:e %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
-nmap <space>mH :set nosplitright<cr>:vs %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
-nmap <space>ml <c-w>l:e %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
-nmap <space>mL :set splitright<cr>:vs %:h/GNUmakefile<cr>:set nosplitright<cr>ggdGiobjc-alternate<tab>
-nmap <space>mk <c-w>k:e %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
-nmap <space>mK :set nosplitbelow<cr>:sp %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
-nmap <space>mj <c-w>j:e %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
-nmap <space>mJ :set splitbelow<cr>:sp %:h/GNUmakefile<cr>:set nosplitbelow<cr>ggdGiobjc-alternate<tab>
+nmap <buffer> <space>M :e %:h/GNUmakefile<cr>
+nmap <buffer> <space>mF :e %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
+nmap <buffer> <space>mh <c-w>h:e %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
+nmap <buffer> <space>mH :set nosplitright<cr>:vs %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
+nmap <buffer> <space>ml <c-w>l:e %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
+nmap <buffer> <space>mL :set splitright<cr>:vs %:h/GNUmakefile<cr>:set nosplitright<cr>ggdGiobjc-alternate<tab>
+nmap <buffer> <space>mk <c-w>k:e %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
+nmap <buffer> <space>mK :set nosplitbelow<cr>:sp %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
+nmap <buffer> <space>mj <c-w>j:e %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
+nmap <buffer> <space>mJ :set splitbelow<cr>:sp %:h/GNUmakefile<cr>:set nosplitbelow<cr>ggdGiobjc-alternate<tab>
+
+" make and run command in new tmux pane
+nmap <buffer> <space>R :call RunVimTmuxCommand("make && ./obj/$(awk -F= '/TOOL_NAME/ {print $2}' GNUmakefile)")<cr>
+" pipe output to column
+nmap <buffer> <space>rc :call RunVimTmuxCommand("make && ./obj/$(awk -F= '/TOOL_NAME/ {print $2}' GNUmakefile) | column")<cr>
+" pipe output to less
+nmap <buffer> <space>rl :call RunVimTmuxCommand("make && ./obj/$(awk -F= '/TOOL_NAME/ {print $2}' GNUmakefile) | less")<cr>
