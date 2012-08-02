@@ -1,3 +1,4 @@
+setlocal noexpandtab             " coding guidelines
 setlocal formatoptions-=o        " don't put comment leader when using o
 setlocal shiftwidth=3            " indent width using '<' and '>'
 setlocal softtabstop=3           " 3 space tabs
