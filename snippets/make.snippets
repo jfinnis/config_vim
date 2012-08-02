@@ -11,6 +11,6 @@ snippet objc-alternate
 	include $(GNUSTEP_MAKEFILES)/common.make
 
 	TOOL_NAME=${1:executable_name}
-	$1_OBJC_FILES=${2:`expand('#')`}
+	$1_OBJC_FILES=${2:`expand('#:t')`}
 
 	include $(GNUSTEP_MAKEFILES)/tool.make

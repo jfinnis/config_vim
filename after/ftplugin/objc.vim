@@ -79,8 +79,15 @@ endfunction
 " TODO look into getting tagbar to work with objective c
 "highlight cEnumTag ctermfg=11 ctermbg=24
 
-" create objective c makefile using defined snippet
-" TODO mapping that checks for file existing already
-nmap <space>m :e GNUmakefile<cr>iobjc-alternate<tab>
-" create in split objective c makefile using defined snippet
-nmap <space>M :vs GNUmakefile<cr>iobjc-alternate<tab>
+" create objective c makefiles using defined snippet
+" uses similar split management scheme as fswitch plugin
+nmap <space>mf :e %:h/GNUmakefile<cr>
+nmap <space>mF :e %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
+nmap <space>mh <c-w>h:e %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
+nmap <space>mH :set nosplitright<cr>:vs %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
+nmap <space>ml <c-w>l:e %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
+nmap <space>mL :set splitright<cr>:vs %:h/GNUmakefile<cr>:set nosplitright<cr>ggdGiobjc-alternate<tab>
+nmap <space>mk <c-w>k:e %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
+nmap <space>mK :set nosplitbelow<cr>:sp %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
+nmap <space>mj <c-w>j:e %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
+nmap <space>mJ :set splitbelow<cr>:sp %:h/GNUmakefile<cr>:set nosplitbelow<cr>ggdGiobjc-alternate<tab>
