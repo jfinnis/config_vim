@@ -289,6 +289,7 @@ map <Leader>n :NERDTreeToggle<CR>
 let NERDChDirMode=2
 let NERDTreeIgnore=['\~$', '\.aux$', '\.blg$', '\.bbl$', '\.log$', '\.dvi$']
 let NERDTreeShowBookmarks=1
+let NERDTreeBookmarksFile="NERDTreeBookmarks"
 
 " replace set to R, allows for R to delete and replace motions
 map R <Plug>(operator-replace)
