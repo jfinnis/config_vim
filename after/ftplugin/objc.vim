@@ -15,7 +15,9 @@ nmap <buffer> <space>mJ :set splitbelow<cr>:sp %:h/GNUmakefile<cr>:set nosplitbe
 
 " make and run command in new tmux pane
 nmap <silent> <buffer> <space>R :cd %:h<cr>:call RunVimTmuxCommand("make && ./obj/$(awk '/TOOL_NAME/ {print $3}' GNUmakefile)")<cr>:echo "Building GNUmakefile and running command"<cr>
-" pipe output to column
-nmap <silent> <buffer> <space>rc :cd %:h<cr>::call RunVimTmuxCommand("make && ./obj/$(awk '/TOOL_NAME/ {print $3}' GNUmakefile) <bar> column")<cr>:echo "Building GNUmakefile and running command"<cr>
-" pipe output to less
-nmap <silent> <buffer> <space>rl :cd %:h<cr>:call RunVimTmuxCommand("make && ./obj/$(awk '/TOOL_NAME/ {print $3}' GNUmakefile) <bar> less")<cr>:echo "Building GNUmakefile and running command"<cr>
+" get rid of default NSlog info
+nmap <silent> <buffer> <space>rr :cd %:h<cr>::call RunVimTmuxCommand("make && ./obj/$(awk '/TOOL_NAME/ {print $3}' GNUmakefile) <bar>& cut -d\\\  -f4- ")<cr>:echo "Building GNUmakefile and running command"<cr>
+" ... and pipe output to column
+nmap <silent> <buffer> <space>rc :cd %:h<cr>::call RunVimTmuxCommand("make && ./obj/$(awk '/TOOL_NAME/ {print $3}' GNUmakefile) <bar>& cut -d\\\  -f4- <bar> column")<cr>:echo "Building GNUmakefile and running command"<cr>
+" ... and pipe output to less
+nmap <silent> <buffer> <space>rl :cd %:h<cr>:call RunVimTmuxCommand("make && ./obj/$(awk '/TOOL_NAME/ {print $3}' GNUmakefile) <bar>& cut -d\\\  -f4- <bar> less")<cr>:echo "Building GNUmakefile and running command"<cr>

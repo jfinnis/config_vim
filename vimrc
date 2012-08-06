@@ -120,19 +120,7 @@ nnoremap S i<cr><esc>
 " remove all trailing whitespace --------------------------------------- {{{2
 nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR>:echo "Removed trailing whitespace"<CR>
 
-<<<<<<< HEAD
-" add number object for modification (cin, etc)
-onoremap n :<c-u>call <SID>NumberTextObject(0)<cr>
-xnoremap n :<c-u>call <SID>NumberTextObject(0)<cr>
-onoremap an :<c-u>call <SID>NumberTextObject(1)<cr>
-xnoremap an :<c-u>call <SID>NumberTextObject(1)<cr>
-onoremap in :<c-u>call <SID>NumberTextObject(1)<cr>
-xnoremap in :<c-u>call <SID>NumberTextObject(1)<cr>
-
-" global substitute word under cursor
-=======
 " global substitute word under cursor ---------------------------------- {{{2
->>>>>>> 64b51ebc2e8f64390b2e5b7d70a31f1fb3936aee
 nmap <Leader>s :%s/\<<c-r>=expand("<cword>")<cr>\>/
 vmap <Leader>s :<C-U>%s/\<<c-r>*\>/
 
@@ -221,7 +209,6 @@ nnoremap zo zozz
 :for m in map(map(range(26), 'nr2char(65+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
 :for m in map(map(range(26), 'nr2char(97+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
 
-<<<<<<< HEAD
 " can use zz/t/b in visual mode to center/top/bottom selection
 xnoremap <silent> zz :<C-u>call setpos('.',[0,(line("'>")-line("'<"))/2+line("'<"),0,0])<Bar>normal! zzgv<CR>
 xnoremap <silent> zt :<C-u>call setpos('.',[0,line("'<"),0,0])<Bar>normal! ztgv<CR>
@@ -481,3 +468,4 @@ endfunction
 map <F8> :call ToggleHexdump()<CR>
 
 " free keys: , _ M Z \ ` F2-7 {{{2
+"{{{1 vim:fdm=marker:
