@@ -1,9 +1,11 @@
+" VIMRC """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
+" pathogen -------------------------------------------------------------- {{{2
 filetype off
 call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
 
-" general settings
+" general settings ------------------------------------------------------ {{{2
 set nocompatible
 syntax on
 let mapleader=";"
@@ -19,7 +21,7 @@ set ttyfast
 set wildmenu                " tab menu completion
 set wildmode=longest,list   " tab completion settings
 
-" editing settings
+" editing settings ------------------------------------------------------ {{{2
 set bs=indent,eol,start     " backspace over everything in insert mode
 set gdefault                " always do g option for substitute
 set linebreak
@@ -31,13 +33,13 @@ set virtualedit+=block      " allows cursor anywhere in visual block mode
 set whichwrap+=h,l          " cursor keys wrap lines
 set wrap
 
-" tab settings
+" tab settings ---------------------------------------------------------- {{{2
 set expandtab               " replace tabs with spaces
 set shiftwidth=4            " indent width using '<' and '>'
 set softtabstop=4           " 4 space tabs
 set tabstop=4
 
-" display settings
+" display settings ------------------------------------------------------ {{{2
 colorscheme ir_black
 hi CursorLine term=none cterm=none ctermbg=0
 set laststatus=2            " always display status line
@@ -48,72 +50,58 @@ set title                   " show file in titlebar
 set t_Co=256                " number of colors:
 "set relativenumber          " number lines relative to cursor
 
-" search settings
+" search settings ------------------------------------------------------- {{{2
 set hlsearch                " highlight search terms
 set ignorecase              " ignore case in searches
 set incsearch               " search incrementally
 set smartcase               " ... unless capitals are included
 
-" old statusline (before powerline plugin)
-"set statusline=%<\ %2*[%n%H%M%R%W]%*\ %-40f\ %{fugitive#statusline()}%=%l*%y%*%*\ %10((%l/%L)%)\%P
+" statusline ------------------------------------------------------------ {{{2
 let g:Powerline_symbols='fancy'
 " trailing whitespace indicator
 " insert trailing whitespace notifier - disabled since it is buggy
 "call Pl#Theme#InsertSegment('ws_marker', 'after', 'lineinfo')
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""" AUTOCOMMANDS """""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" viewing formatted files
+" AUTOCOMMANDS """""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
+" viewing formatted files ----------------------------------------------- {{{2
 autocmd BufReadPost *.doc silent %!antiword "%"
 autocmd BufReadPost *.odt,*.odp silent %!odt2txt "%"
 autocmd BufReadPost *.pdf silent %!pdftotext -nopgbrk -q -eol unix "%" - | fmt -w78
 autocmd BufReadPost *.rtf silent %!unrtf --text "%"
 autocmd BufWriteCmd *.pdf,*.rtf,*.odt,*.odp,*.doc set readonly
 
-" format specific filetypes
+" format specific filetypes --------------------------------------------- {{{2
 augroup filetypedetect
     autocmd BufNewFile,BufRead .tmux.conf*,tmux.conf* setfiletype tmux
 augroup END
 
-" don't quote signatures in mutt files
+" don't quote signatures in mutt files ---------------------------------- {{{2
 au BufRead /tmp/mutt* normal :g/^> -- $/,/^$/-1d^M/^$^M^L
 
-" turn on rainbow colored parentheses
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"""""""""""""""""""""""" KEY UNBINDINGS """"""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" KEY UNBINDINGS """""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
+" nop dumb bindings """"""""""""""""""""""""""""""""""""""""""""""""""""" {{{2
 map ZQ <nop>
 map ZZ <nop>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""" KEY BINDINGS """""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" KEY BINDINGS """""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
+" quick file access ----------------------------------------------------- {{{2
 map <Leader>S :source ~/.vimrc<CR>
-
-"""""""""""""""""""""" quick file access """""""""""""""""""""""""
+map <leader>cd :cd %:h<cr>
 map <space>V :e ~/.vim/vimrc <bar> :cd ~/.vim<cr>
 map <space>M :e ~/.mutt/cfg/muttrc <bar> :cd ~/.mutt/cfg<cr>
 map <space>T :e ~/.tmux/tmux.conf <bar> :cd ~/.tmux<cr>
 map <space>Z :e ~/.zsh/zshrc <bar> :cd ~/.zsh<cr>
 
-"""""""""""""""" EDITING - save some keystrokes """"""""""""""""""
-" format paragraph
+" formatting mappings --------------------------------------------------- {{{2
+" reformat paragraph
 map Q gqip
 
 " reindent whole file and return cursor position
 nmap g= gg=G<C-O><C-O>
 
+" yanking/pasting improvements ------------------------------------------ {{{2
 " make Y behave like other capitals
 map Y y$
-
-" vreplace mode
-nnoremap gr gR
 
 " easier clipboard access
 map <leader>y "+y
@@ -123,12 +111,16 @@ map <leader>p :set paste<bar>put + <bar>set nopaste<cr>
 nnoremap <Leader>> g'[>']
 nnoremap <Leader>< g'[<']
 
-" split line at the current cursor position
+" vreplace mode -------------------------------------------------------- {{{2
+nnoremap gr gR
+
+" split line at the current cursor position ---------------------------- {{{2
 nnoremap S i<cr><esc>
 
-" remove all trailing whitespace
+" remove all trailing whitespace --------------------------------------- {{{2
 nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR>:echo "Removed trailing whitespace"<CR>
 
+<<<<<<< HEAD
 " add number object for modification (cin, etc)
 onoremap n :<c-u>call <SID>NumberTextObject(0)<cr>
 xnoremap n :<c-u>call <SID>NumberTextObject(0)<cr>
@@ -138,22 +130,35 @@ onoremap in :<c-u>call <SID>NumberTextObject(1)<cr>
 xnoremap in :<c-u>call <SID>NumberTextObject(1)<cr>
 
 " global substitute word under cursor
+=======
+" global substitute word under cursor ---------------------------------- {{{2
+>>>>>>> 64b51ebc2e8f64390b2e5b7d70a31f1fb3936aee
 nmap <Leader>s :%s/\<<c-r>=expand("<cword>")<cr>\>/
 vmap <Leader>s :<C-U>%s/\<<c-r>*\>/
 
-" next/previous word under cursor in same column (navigate amongst same blocks
-" of structure code, i.e.)
+" next/previous word under cursor in same column  ---------------------- {{{2
+" i.e., to navigate amongst same blocks of structure code
 nnoremap g* yiw:let c=col('.')<CR>:let @/="^.*\\%".c.'c\zs'.@"<CR>n
 nnoremap g# yiw:let c=col('.')<CR>:let @/="^.*\\%".c.'c\zs'.@"<CR>N
 
-" maps X in visual mode to expand -- edit selection in new split by itself
+" edit selection in new split by itself -------------------------------- {{{2
 " <leader>x to return
 xnoremap X y:let [f,s,v]=[&ft,&syn,getregtype('@"')]<CR><C-w>nVp:set ft=<c-r>=f<CR> syn=<c-r>=s<CR><CR>:nnoremap <buffer> <Leader>x :let @"=v<C-r>="<"<CR>CR>gg0@"G$d:bw!<C-r>="<"<CR>CR>gvp<CR>
 
-"""""""""""""""""""""" WORD COMPLETION """""""""""""""""""""""""""
+" use M to lookup with man --------------------------------------------- {{{2
+nnoremap M K
+
+" add number object for modification (cin, etc) ------------------------ {{{2
+onoremap n :<c-u>call <SID>NumberTextObject(0)<cr>
+xnoremap n :<c-u>call <SID>NumberTextObject(0)<cr>
+onoremap an :<c-u>call <SID>NumberTextObject(1)<cr>
+xnoremap an :<c-u>call <SID>NumberTextObject(1)<cr>
+onoremap in :<c-u>call <SID>NumberTextObject(1)<cr>
+xnoremap in :<c-u>call <SID>NumberTextObject(1)<cr>
+
+" word completion ------------------------------------------------------ {{{2
 " remap tab
 inoremap <tab><tab> <tab>
-
 " complete defined identifiers
 imap <tab>d	<C-X><C-D>
 " complete file names
@@ -181,7 +186,7 @@ imap <tab>v	<C-X><C-V>
 " complete tags
 imap <tab>]	<C-X><C-]>
 
-""""""""""""""""""""" FILETYPE MANAGEMENT """"""""""""""""""""""""
+" filetype management --------------------------------------------------- {{{2
 map <leader><leader>c :set ft=c
 map <leader><leader>C :set ft=cpp
 map <leader><leader>o :set ft=objc
@@ -189,23 +194,34 @@ map <leader><leader>p :set ft=python
 map <leader><leader>v :set ft=vim
 map <leader><leader>z :set ft=zsh
 
-"""""""""""""""""" WINDOW/COMMAND MANAGEMENT """""""""""""""""""""
+" WINDOW/BUFFER MAPPINGS """"""""""""""""""""""""""""""""""""""""""""""" {{{1
+" window positioning --------------------------------------------------- {{{2
 " scroll up
 imap <tab>e	<C-X><C-E>
 " scroll down
 imap <tab>y	<C-X><C-Y>
 
-" center screen for searches, foldcloses - to top for foldopen
+" can use zz/t/b in visual mode to center/top/bottom selection
+xnoremap <silent> zz :<C-u>call setpos('.',[0,(line("'>")-line("'<"))/2+line("'<"),0,0])<Bar>normal! zzgv<CR>
+xnoremap <silent> zt :<C-u>call setpos('.',[0,line("'<"),0,0])<Bar>normal! ztgv<CR>
+xnoremap <silent> zb :<C-u>call setpos('.',[0,line("'>"),0,0])<Bar>normal! zbgv<CR>
+
+" center screen for searches, foldcloses, {, }, [[, ]]
 nnoremap n nzz
 nnoremap N Nzz
+nnoremap { {zz
+nnoremap } }zz
+nnoremap [[ [[zz
+nnoremap ]] ]]zz
 nnoremap zc zczz
-nnoremap zo zozt
+nnoremap zo zozz
 
 " ... and folds (thanks to bairui)
 :for m in map(map(range(10), 'nr2char(48+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
 :for m in map(map(range(26), 'nr2char(65+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
 :for m in map(map(range(26), 'nr2char(97+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
 
+<<<<<<< HEAD
 " can use zz/t/b in visual mode to center/top/bottom selection
 xnoremap <silent> zz :<C-u>call setpos('.',[0,(line("'>")-line("'<"))/2+line("'<"),0,0])<Bar>normal! zzgv<CR>
 xnoremap <silent> zt :<C-u>call setpos('.',[0,line("'<"),0,0])<Bar>normal! ztgv<CR>
@@ -216,7 +232,7 @@ nnoremap df :diffthis<cr>
 nnoremap <silent> dF :diffoff!<cr>
 nnoremap du :diffupdate<cr>
 
-" window management
+" window management ---------------------------------------------------- {{{2
 map <Leader>h <C-W>h                  " ;[hjkl] to navigate split windows
 map <Leader>j <C-W>j
 map <Leader>k <C-W>k
@@ -224,12 +240,7 @@ map <Leader>l <C-W>l
 map + <C-W>_                         " max window
 map - <C-W>=                         " same size
 
-" location list popup
-map <space>l :llist<CR>
-" use M to lookup with man
-nnoremap M K
-
-" buffer management
+" buffer management ---------------------------------------------------- {{{2
 " :q - close window and keep buffer, ]b, [b prev/next buffer, K list
 nnoremap K :ls<CR>:b<space>
 map , :e #<CR>                        " open alternate buffer
@@ -237,12 +248,20 @@ map <Leader>q :bd<CR>                 " close current buffer and close window
 map <Leader>Q :Bclose<CR>             " close current buffer and keep window
 map <Leader>bo :BufOnly<CR>           " close all buffers and windows except this
 
-"""""""""""""""""" PLUGIN SPECIFIC BINDINGS """"""""""""""""""""""
-" Ack command/shortcut
+" diff mappings -------------------------------------------------------- {{{2
+nnoremap df :diffthis<cr>
+nnoremap <silent> dF :diffoff!<cr>
+nnoremap du :diffupdate<cr>
+
+" location list popup -------------------------------------------------- {{{2
+map <space>l :llist<CR>
+
+" PLUGIN SPECIFIC BINDINGS """""""""""""""""""""""""""""""""""""""""""""" {{{1
+" Ack command/shortcut -------------------------------------------------- {{{2
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nnoremap <leader>a :Ack
 
-" start ctrlp
+" start ctrlp ----------------------------------------------------------- {{{2
 let g:ctrlp_map='<Leader>N'
 let g:ctrlp_by_filename=1
 let g:ctrlp_match_window_bottom=0
@@ -250,21 +269,21 @@ let g:ctrlp_max_height=15
 let g:ctrlp_open_multiple_files='1vr'
 let g:ctrlp_custom_ignore = {'dir':'\.git$\|\.hg$\|\.svn$'}
 
-" easymotion options and bindings (visual binding screws up snippets)
+" easymotion options and bindings (visual binding screws up snippets) --- {{{2
 let EasyMotion_do_mapping=0
 nnoremap <silent> L      :call EasyMotion#F(0, 0)<cr>
 nnoremap <silent> H      :call EasyMotion#F(0, 1)<cr>
 xnoremap <silent> L :<C-U>call EasyMotion#F(1, 0)<cr>
 xnoremap <silent> H :<C-U>call EasyMotion#F(1, 1)<cr>
 
-" easytags settings
+" easytags settings ----------------------------------------------------- {{{2
 set tags=./tags;
 let g:easytags_by_filetype='~/.vim/tags/'
 let g:easytags_dynamic_files=1
 let g:easytags_file='~/.vim/easytags'
 let g:easytags_python_enabled=1
 
-" fugitive git wrapping
+" fugitive git wrapping ------------------------------------------------- {{{2
 map <Leader>gs :Gstatus<CR>
 map <Leader>ga :Git add %<CR>
 map <Leader>gb :Gblame<CR>
@@ -275,41 +294,44 @@ map <Leader>gl :Glog<CR>
 map <Leader>gp :Git push origin master<CR>
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
-" jump-tracker settings
-let g:jump_line_color="DarkGrey"
-let g:jump_insert_mode_line=1
-
-" nerdtree bindings and settings
+" nerdtree bindings and settings ---------------------------------------- {{{2
 map <Leader>n :NERDTreeToggle<CR>
 let NERDChDirMode=2
 let NERDTreeIgnore=['\~$', '\.aux$', '\.blg$', '\.bbl$', '\.log$', '\.dvi$']
 let NERDTreeShowBookmarks=1
+let NERDTreeBookmarksFile="NERDTreeBookmarks"
 
-" replace set to R, allows for R to delete and replace motions
+" rainbow colored parentheses ------------------------------------------- {{{2
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+" replace set to R, allows for R to delete and replace motions ---------- {{{2
 map R <Plug>(operator-replace)
 
-" signature options
+" signature options ----------------------------------------------------- {{{2
 highlight SignColumn ctermbg=16
 map m<del> <Plug>SIG_PurgeMarks
 map m<space> :SignatureToggleDisplay<cr>
 
-" snippets variable
+" snippets variable ----------------------------------------------------- {{{2
 let g:snips_author='Joshua Finnis'
 
-" syntastic settings
+" syntastic settings ---------------------------------------------------- {{{2
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_balloons=0
 let g:syntastic_loc_list_height=5
 let g:syntastic_enable_signs=1
 map <F12> :SyntasticToggleMode<CR>
 
-" tabular settings to align at = and after : for blocks of code
+" tabular settings to align at = and after : for blocks of code --------- {{{2
 nmap <Leader>= :Tabularize /=<CR>
 vmap <Leader>= :Tabularize /=<CR>
 nmap <Leader>: :Tabularize /:\zs/l0l1<CR>
 vmap <Leader>: :Tabularize /:\zs/l0l1<CR>
 
-" tagbar settings
+" tagbar settings ------------------------------------------------------- {{{2
 let g:tagbar_width=30
 let g:tagbar_autofocus=1
 let g:tagbar_compact=1
@@ -317,15 +339,14 @@ let g:tagbar_autoshowtag=1
 map <Leader>tl :TagbarToggle<CR>
 "let g:tagbar_type_objc={'ctagstype':'ObjectiveC', 'kinds':['i:interface', 'I:implementation', 'p:Protocol', 'm:Object_method', 'c:Class_method', 'v:Global_variable', 'F:Object field', 'f:function', 'p:property', 't:type_alias', 's:type_structure', 'e:enumeration', 'M:preprocessor_macro'], 'sro':' ', 'kind2scope':{'i':'interface', 'I':'Implementation', 'p':'Protocol', 's':'type_structure', 'e':'enumeration'}, 'scope2kind':{'interface':'i', 'implementation':'I', 'Protocol':'p', 'type_structure':'s', 'enumeration':'e'}}
 
-" vimux commands
+" vimux commands -------------------------------------------------------- {{{2
 map ! :call PromptVimTmuxCommand()<CR>
 map <leader>! :call RunLastVimTmuxCommand()<CR>
 map <leader>@ :CloseVimTmuxPanes<cr>
 let g:VimuxUseNearestPane=0
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""" COMMANDS """""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" COMMANDS """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
+" align according to |s ------------------------------------------------- {{{2
 " assuming the first line has appropriate table format, format following lines '|'
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 function! s:align()
@@ -339,7 +360,7 @@ function! s:align()
   endif
 endfunction
 
-" close buffer without closing window
+" close buffer without closing window ---------------------------------- {{{2
 command! Bclose call <SID>BufcloseCloseIt()
 function! <SID>BufcloseCloseIt()
    let l:currentBufNum = bufnr("%")
@@ -357,7 +378,7 @@ function! <SID>BufcloseCloseIt()
    endif
 endfunction
 
-" add number text object (e.g., for accessing "afajl123456-aiajf")
+" add number text object (e.g., for accessing "afajl123456-aiajf") ------ {{{2
 function! s:NumberTextObject(whole)
   normal! v
   while getline('.')[col('.')] =~# '\v[0-9]'
@@ -371,10 +392,10 @@ function! s:NumberTextObject(whole)
   endif
 endfunction
 
-" command to save a file with sudo priveleges
+" command to save a file with sudo priveleges --------------------------- {{{2
 command! -bar -nargs=0 Sudow 	:silent exe "write !sudo tee % >/dev/null"|silent edit
 
-" in this mode, don't obey wrap rules for moving down and up through lines
+" toggle wrap rules for moving down and up through lines ---------------- {{{2
 function! ToggleSingleLine()
   if !exists("s:imove")
     let s:imove=1 "zero: not enabled
@@ -405,7 +426,7 @@ function! ToggleSingleLine()
 endfunction
 map <F9> :call ToggleSingleLine()<CR>
 
-" functions to set scripts as executable and add a shebang to beginning
+" set scripts as executable and add a shebang to beginning -------------- {{{2
 function! SetExecutableBit()
 	" This function is taken from
 	" http://vim.wikia.com/wiki/Setting_file_attributes_without_reloading_a_buffer
@@ -417,6 +438,7 @@ function! SetExecutableBit()
 	checktime
 	execute "au! FileChangedShell " . fname
 endfunction
+
 function! SetShebang()
 python << endpython
 import vim
@@ -436,13 +458,14 @@ if not vim.current.buffer[0].startswith('#!'):
 		vim.current.buffer[0:0] = [ shebang[filetype] ]
 endpython
 endfunction
+
 function! SetExecutable()
     call SetExecutableBit()
     call SetShebang()
 endfunction
 nmap X :w<CR>:call SetExecutable()<CR>
 
-" hexdumps the file (as a toggle)
+" hexdumps the file (as a toggle) -------------------------------------- {{{2
 function! ToggleHexdump()
     if !exists("s:xxd")
         let s:xxd=1 "zero: not enabled
@@ -457,4 +480,4 @@ function! ToggleHexdump()
 endfunction
 map <F8> :call ToggleHexdump()<CR>
 
-" free keys: , _ M Z \ ` F2-7
+" free keys: , _ M Z \ ` F2-7 {{{2
