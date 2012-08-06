@@ -1,3 +1,4 @@
+setlocal noexpandtab             " don't convert tabs to spaces, ugh coding standards
 setlocal formatoptions-=o        " don't put comment leader when using o
 setlocal shiftwidth=3            " indent width using '<' and '>'
 setlocal softtabstop=3           " 3 space tabs
@@ -64,8 +65,8 @@ nmap <buffer> <space>mj <c-w>j:e %:h/GNUmakefile<cr>ggdGiobjc-alternate<tab>
 nmap <buffer> <space>mJ :set splitbelow<cr>:sp %:h/GNUmakefile<cr>:set nosplitbelow<cr>ggdGiobjc-alternate<tab>
 
 " make and run command in new tmux pane
-nmap <buffer> <space>R :cd %:h<cr>:call RunVimTmuxCommand("make && ./obj/$(awk -F= '/TOOL_NAME/ {print $2}' GNUmakefile)")<cr>
+nmap <silent> <buffer> <space>R :cd %:h<cr>:call RunVimTmuxCommand("make && ./obj/$(awk '/TOOL_NAME/ {print $3}' GNUmakefile)")<cr>:echo "Building GNUmakefile and running command"<cr>
 " pipe output to column
-nmap <buffer> <space>rc :cd %:h<cr>::call RunVimTmuxCommand("make && ./obj/$(awk -F= '/TOOL_NAME/ {print $2}' GNUmakefile) <bar> column")<cr>
+nmap <silent> <buffer> <space>rc :cd %:h<cr>::call RunVimTmuxCommand("make && ./obj/$(awk '/TOOL_NAME/ {print $3}' GNUmakefile) <bar> column")<cr>:echo "Building GNUmakefile and running command"<cr>
 " pipe output to less
-nmap <buffer> <space>rl :cd %:h<cr>:call RunVimTmuxCommand("make && ./obj/$(awk -F= '/TOOL_NAME/ {print $2}' GNUmakefile) <bar> less")<cr>
+nmap <silent> <buffer> <space>rl :cd %:h<cr>:call RunVimTmuxCommand("make && ./obj/$(awk '/TOOL_NAME/ {print $3}' GNUmakefile) <bar> less")<cr>:echo "Building GNUmakefile and running command"<cr>

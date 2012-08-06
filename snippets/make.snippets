@@ -2,15 +2,15 @@
 snippet objc
 	include $(GNUSTEP_MAKEFILES)/common.make
 
-	TOOL_NAME=${1:executable_name}
-	$1_OBJC_FILES=${2:space delimited filenames}
+	TOOL_NAME = ${1:executable_name}
+	$1_OBJC_FILES = ${2:space delimited filenames}
 
 	include $(GNUSTEP_MAKEFILES)/tool.make
 # includes name of alternate buffer (for calling from the objc makefile function)
 snippet objc-alternate
 	include $(GNUSTEP_MAKEFILES)/common.make
 
-	TOOL_NAME=${1:executable_name}
-	$1_OBJC_FILES=${2:`expand('#:t')`}
+	TOOL_NAME = ${1:executable_name}
+	$1_OBJC_FILES = ${2:`expand('#:t')`}
 
 	include $(GNUSTEP_MAKEFILES)/tool.make
