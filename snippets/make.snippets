@@ -14,3 +14,7 @@ snippet objc-alternate
 	$1_OBJC_FILES = ${2:`expand('#:t')`}
 
 	include $(GNUSTEP_MAKEFILES)/tool.make
+# expands .m objc files in current directory
+snippet FM
+	`system("ls -x *.m | sed 's/[[:space:]][[:space:]]*/ /g'")`
+
