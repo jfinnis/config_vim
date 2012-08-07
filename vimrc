@@ -79,7 +79,7 @@ augroup END
 au BufRead /tmp/mutt* normal :g/^> -- $/,/^$/-1d^M/^$^M^L
 
 " KEY UNBINDINGS """""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
-" nop dumb bindings """"""""""""""""""""""""""""""""""""""""""""""""""""" {{{2
+" nop dumb bindings ----------------------------------------------------- {{{2
 map ZQ <nop>
 map ZZ <nop>
 
@@ -111,32 +111,32 @@ map <leader>p :set paste<bar>put + <bar>set nopaste<cr>
 nnoremap <Leader>> g'[>']
 nnoremap <Leader>< g'[<']
 
-" vreplace mode -------------------------------------------------------- {{{2
+" vreplace mode --------------------------------------------------------- {{{2
 nnoremap gr gR
 
-" split line at the current cursor position ---------------------------- {{{2
+" split line at the current cursor position ----------------------------- {{{2
 nnoremap S i<cr><esc>
 
-" remove all trailing whitespace --------------------------------------- {{{2
+" remove all trailing whitespace ---------------------------------------- {{{2
 nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR>:echo "Removed trailing whitespace"<CR>
 
-" global substitute word under cursor ---------------------------------- {{{2
+" global substitute word under cursor ----------------------------------- {{{2
 nmap <Leader>s :%s/\<<c-r>=expand("<cword>")<cr>\>/
 vmap <Leader>s :<C-U>%s/\<<c-r>*\>/
 
-" next/previous word under cursor in same column  ---------------------- {{{2
+" next/previous word under cursor in same column  ----------------------- {{{2
 " i.e., to navigate amongst same blocks of structure code
 nnoremap g* yiw:let c=col('.')<CR>:let @/="^.*\\%".c.'c\zs'.@"<CR>n
 nnoremap g# yiw:let c=col('.')<CR>:let @/="^.*\\%".c.'c\zs'.@"<CR>N
 
-" edit selection in new split by itself -------------------------------- {{{2
+" edit selection in new split by itself --------------------------------- {{{2
 " <leader>x to return
 xnoremap X y:let [f,s,v]=[&ft,&syn,getregtype('@"')]<CR><C-w>nVp:set ft=<c-r>=f<CR> syn=<c-r>=s<CR><CR>:nnoremap <buffer> <Leader>x :let @"=v<C-r>="<"<CR>CR>gg0@"G$d:bw!<C-r>="<"<CR>CR>gvp<CR>
 
-" use M to lookup with man --------------------------------------------- {{{2
+" use M to lookup with man ---------------------------------------------- {{{2
 nnoremap M K
 
-" add number object for modification (cin, etc) ------------------------ {{{2
+" add number object for modification (cin, etc) ------------------------- {{{2
 onoremap n :<c-u>call <SID>NumberTextObject(0)<cr>
 xnoremap n :<c-u>call <SID>NumberTextObject(0)<cr>
 onoremap an :<c-u>call <SID>NumberTextObject(1)<cr>
@@ -144,7 +144,7 @@ xnoremap an :<c-u>call <SID>NumberTextObject(1)<cr>
 onoremap in :<c-u>call <SID>NumberTextObject(1)<cr>
 xnoremap in :<c-u>call <SID>NumberTextObject(1)<cr>
 
-" word completion ------------------------------------------------------ {{{2
+" word completion ------------------------------------------------------- {{{2
 " remap tab
 inoremap <tab><tab> <tab>
 " complete defined identifiers
@@ -187,13 +187,15 @@ map <leader><leader>v :set ft=vim
 map <leader><leader>z :set ft=zsh
 
 " WINDOW/BUFFER MAPPINGS """""""""""""""""""""""""""""""""""""""""""""""" {{{1
-" window resizing ------------------------------------------------------- {{{2
-nnoremap <silent> <C-W>< <C-W><:let g:LastWindowResize="in-horiz"<CR>
-nnoremap <silent> <C-W>> <C-W>>:let g:LastWindowResize="out-horiz"<CR>
-nnoremap <silent> <C-W>+ <C-W>+:let g:LastWindowResize="out-vert"<CR>
-nnoremap <silent> <C-W>- <C-W>-:let g:LastWindowResize="in-vert"<CR>
+" diff mappings --------------------------------------------------------- {{{2
+nnoremap df :diffthis<cr>
+nnoremap <silent> dF :diffoff!<cr>
+nnoremap du :diffupdate<cr>
 
-" window management ---------------------------------------------------- {{{2
+" location list popup --------------------------------------------------- {{{2
+map <space>l :llist<CR>
+
+" window management ----------------------------------------------------- {{{2
 map <Leader>h <C-W>h                  " ;[hjkl] to navigate split windows
 map <Leader>j <C-W>j
 map <Leader>k <C-W>k
@@ -201,15 +203,21 @@ map <Leader>l <C-W>l
 map + <C-W>_                         " max window
 map - <C-W>=                         " same size
 
-" buffer management ---------------------------------------------------- {{{2
-" :q - close window and keep buffer, ]b, [b prev/next buffer, K list
+" window resizing ------------------------------------------------------- {{{2
+nnoremap <silent> <C-W>< <C-W><:let g:LastWindowResize="in-horiz"<CR>
+nnoremap <silent> <C-W>> <C-W>>:let g:LastWindowResize="out-horiz"<CR>
+nnoremap <silent> <C-W>+ <C-W>+:let g:LastWindowResize="out-vert"<CR>
+nnoremap <silent> <C-W>- <C-W>-:let g:LastWindowResize="in-vert"<CR>
+
+" buffer management ----------------------------------------------------- {{{2
+" :q - close window and keep buffer, ]b, [b prev/next buffer, K list buffers
 nnoremap K :ls<CR>:b<space>
 map <Leader>, :e #<CR>                " open alternate buffer
 map <Leader>q :bd<CR>                 " close current buffer and close window
 map <Leader>Q :Bclose<CR>             " close current buffer and keep window
 map <Leader>bo :BufOnly<CR>           " close all buffers and windows except this
 
-" centering text ------------------------------------------------------- {{{2
+" automatically centering text ------------------------------------------ {{{2
 " can use zz/t/b in visual mode to center/top/bottom selection
 xnoremap <silent> zz :<C-u>call setpos('.',[0,(line("'>")-line("'<"))/2+line("'<"),0,0])<Bar>normal! zzgv<CR>
 xnoremap <silent> zt :<C-u>call setpos('.',[0,line("'<"),0,0])<Bar>normal! ztgv<CR>
@@ -234,14 +242,6 @@ nnoremap zo zozz
 xnoremap <silent> zz :<C-u>call setpos('.',[0,(line("'>")-line("'<"))/2+line("'<"),0,0])<Bar>normal! zzgv<CR>
 xnoremap <silent> zt :<C-u>call setpos('.',[0,line("'<"),0,0])<Bar>normal! ztgv<CR>
 xnoremap <silent> zb :<C-u>call setpos('.',[0,line("'>"),0,0])<Bar>normal! zbgv<CR>
-
-" diff mappings -------------------------------------------------------- {{{2
-nnoremap df :diffthis<cr>
-nnoremap <silent> dF :diffoff!<cr>
-nnoremap du :diffupdate<cr>
-
-" location list popup -------------------------------------------------- {{{2
-map <space>l :llist<CR>
 
 " PLUGIN SPECIFIC BINDINGS """""""""""""""""""""""""""""""""""""""""""""" {{{1
 " Ack command/shortcut -------------------------------------------------- {{{2
@@ -348,7 +348,7 @@ function! s:align()
   endif
 endfunction
 
-" close buffer without closing window ---------------------------------- {{{2
+" close buffer without closing window ----------------------------------- {{{2
 command! Bclose call <SID>BufcloseCloseIt()
 function! <SID>BufcloseCloseIt()
    let l:currentBufNum = bufnr("%")
@@ -453,7 +453,7 @@ function! SetExecutable()
 endfunction
 nmap X :w<CR>:call SetExecutable()<CR>
 
-" hexdumps the file (as a toggle) -------------------------------------- {{{2
+" hexdumps the file (as a toggle) --------------------------------------- {{{2
 function! ToggleHexdump()
     if !exists("s:xxd")
         let s:xxd=1 "zero: not enabled
@@ -468,7 +468,7 @@ function! ToggleHexdump()
 endfunction
 map <F8> :call ToggleHexdump()<CR>
 
-" resize window according to last resize ------------------------------- {{{2
+" resize window according to last resize -------------------------------- {{{2
 function! RepeatResize()
     if exists("g:LastWindowResize")
         if match(g:LastWindowResize, "in-horiz") == 0
@@ -482,7 +482,7 @@ function! RepeatResize()
         endif
     endif
 endfunction
-map , :call RepeatResize()<CR>
+map <silent> , :call RepeatResize()<CR>
 
-" free keys: , _ M Z \ ` F2-7 {{{2
+" free keys: _ Z \ ` F2-7 {{{2
 "{{{1 vim:fdm=marker:
