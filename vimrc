@@ -173,6 +173,10 @@ imap <tab>u	<C-X><C-U>
 imap <tab>v	<C-X><C-V>
 " complete tags
 imap <tab>]	<C-X><C-]>
+" scroll up in insert mode
+imap <tab>e	<C-X><C-E>
+" scroll down in insert mode
+imap <tab>y	<C-X><C-Y>
 
 " filetype management --------------------------------------------------- {{{2
 map <leader><leader>c :set ft=c
@@ -213,27 +217,6 @@ nnoremap zo zozz
 xnoremap <silent> zz :<C-u>call setpos('.',[0,(line("'>")-line("'<"))/2+line("'<"),0,0])<Bar>normal! zzgv<CR>
 xnoremap <silent> zt :<C-u>call setpos('.',[0,line("'<"),0,0])<Bar>normal! ztgv<CR>
 xnoremap <silent> zb :<C-u>call setpos('.',[0,line("'>"),0,0])<Bar>normal! zbgv<CR>
-
-" easier access to diff commands
-nnoremap df :diffthis<cr>
-nnoremap <silent> dF :diffoff!<cr>
-nnoremap du :diffupdate<cr>
-
-" window management ---------------------------------------------------- {{{2
-map <Leader>h <C-W>h                  " ;[hjkl] to navigate split windows
-map <Leader>j <C-W>j
-map <Leader>k <C-W>k
-map <Leader>l <C-W>l
-map + <C-W>_                         " max window
-map - <C-W>=                         " same size
-
-" buffer management ---------------------------------------------------- {{{2
-" :q - close window and keep buffer, ]b, [b prev/next buffer, K list
-nnoremap K :ls<CR>:b<space>
-map , :e #<CR>                        " open alternate buffer
-map <Leader>q :bd<CR>                 " close current buffer and close window
-map <Leader>Q :Bclose<CR>             " close current buffer and keep window
-map <Leader>bo :BufOnly<CR>           " close all buffers and windows except this
 
 " diff mappings -------------------------------------------------------- {{{2
 nnoremap df :diffthis<cr>
