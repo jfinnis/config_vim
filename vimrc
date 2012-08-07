@@ -257,8 +257,9 @@ xnoremap <silent> H :<C-U>call EasyMotion#F(1, 1)<cr>
 set tags=./tags;
 let g:easytags_by_filetype='~/.vim/tags/'
 let g:easytags_dynamic_files=1
-let g:easytags_file='~/.vim/easytags'
+let g:easytags_file='~/.vim/easytagsFile'
 let g:easytags_python_enabled=1
+map <space>u :UpdateTags<CR>
 
 " fugitive git wrapping ------------------------------------------------- {{{2
 map <Leader>gs :Gstatus<CR>
