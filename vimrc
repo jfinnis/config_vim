@@ -186,13 +186,30 @@ map <leader><leader>p :set ft=python
 map <leader><leader>v :set ft=vim
 map <leader><leader>z :set ft=zsh
 
-" WINDOW/BUFFER MAPPINGS """"""""""""""""""""""""""""""""""""""""""""""" {{{1
-" window positioning --------------------------------------------------- {{{2
-" scroll up
-imap <tab>e	<C-X><C-E>
-" scroll down
-imap <tab>y	<C-X><C-Y>
+" WINDOW/BUFFER MAPPINGS """""""""""""""""""""""""""""""""""""""""""""""" {{{1
+" window resizing ------------------------------------------------------- {{{2
+nnoremap <silent> <C-W>< <C-W><:let g:LastWindowResize="in-horiz"<CR>
+nnoremap <silent> <C-W>> <C-W>>:let g:LastWindowResize="out-horiz"<CR>
+nnoremap <silent> <C-W>+ <C-W>+:let g:LastWindowResize="out-vert"<CR>
+nnoremap <silent> <C-W>- <C-W>-:let g:LastWindowResize="in-vert"<CR>
 
+" window management ---------------------------------------------------- {{{2
+map <Leader>h <C-W>h                  " ;[hjkl] to navigate split windows
+map <Leader>j <C-W>j
+map <Leader>k <C-W>k
+map <Leader>l <C-W>l
+map + <C-W>_                         " max window
+map - <C-W>=                         " same size
+
+" buffer management ---------------------------------------------------- {{{2
+" :q - close window and keep buffer, ]b, [b prev/next buffer, K list
+nnoremap K :ls<CR>:b<space>
+map <Leader>, :e #<CR>                " open alternate buffer
+map <Leader>q :bd<CR>                 " close current buffer and close window
+map <Leader>Q :Bclose<CR>             " close current buffer and keep window
+map <Leader>bo :BufOnly<CR>           " close all buffers and windows except this
+
+" centering text ------------------------------------------------------- {{{2
 " can use zz/t/b in visual mode to center/top/bottom selection
 xnoremap <silent> zz :<C-u>call setpos('.',[0,(line("'>")-line("'<"))/2+line("'<"),0,0])<Bar>normal! zzgv<CR>
 xnoremap <silent> zt :<C-u>call setpos('.',[0,line("'<"),0,0])<Bar>normal! ztgv<CR>
@@ -450,6 +467,22 @@ function! ToggleHexdump()
     endif
 endfunction
 map <F8> :call ToggleHexdump()<CR>
+
+" resize window according to last resize ------------------------------- {{{2
+function! RepeatResize()
+    if exists("g:LastWindowResize")
+        if match(g:LastWindowResize, "in-horiz") == 0
+            normal! <
+        elseif match(g:LastWindowResize, "out-horiz") == 0
+            normal! >
+        elseif match(g:LastWindowResize, "out-vert") == 0
+            normal! +
+        else
+            normal! -
+        endif
+    endif
+endfunction
+map , :call RepeatResize()<CR>
 
 " free keys: , _ M Z \ ` F2-7 {{{2
 "{{{1 vim:fdm=marker:
