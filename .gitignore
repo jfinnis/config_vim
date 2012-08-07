@@ -8,7 +8,7 @@ config/private/*
 yankring_history_v2.txt
 *.swp
 .netrwhist
-easytags
+easytagsFile
 tags/*
 NERDTreeBookmarks
 spell/*

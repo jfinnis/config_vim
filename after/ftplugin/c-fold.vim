@@ -385,4 +385,4 @@ endfun
 setlocal foldmethod=expr
 
 " ======================================================================
-" vim600: set fdm=marker:
+" vim:fdm=marker:

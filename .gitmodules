@@ -93,4 +93,4 @@
 	url = https://github.com/derekwyatt/vim-protodef.git
 [submodule "bundle/easytags"]
 	path = bundle/easytags
-	url = http://github.com/xolox/vim-easytags.git
+	url = https://github.com/vim-scripts/easytags.vim.git
