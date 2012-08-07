@@ -7,9 +7,8 @@ setlocal softtabstop=3           " 3 space tabs
 setlocal tabstop=3
 
 " folding settings ----------------------------------------------------- {{{2
-setlocal foldmethod=indent
-" feature-full folding plugin - find better folding plugin
-"source ~/.vim/after/ftplugin/c-fold.vim
+" custom folding plugin
+source ~/.vim/after/ftplugin/c-fold.vim
 
 " MAPPINGS """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
 " surround mappings for f, i, and w ------------------------------------ {{{2
