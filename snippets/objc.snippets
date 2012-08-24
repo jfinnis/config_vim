@@ -1,2 +1,9 @@
 snippet dbgo
 	if (DEBUG) NSLog("${1}");
+snippet abstract
+	// objective-c has no support for abstract methods, so we're going to take
+	// matters into our own hands
+	NSException* ex = [NSException exceptionWithName:@"Abstract Method Not Overriden"
+	                                          reason:[NSString stringWithFormat:@"You MUST override the %@ method", __PRETTY_FUNCTION__]
+	                                        userInfo:nil];
+	[ex raise];
