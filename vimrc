@@ -232,6 +232,8 @@ nnoremap [[ [[zz
 nnoremap ]] ]]zz
 nnoremap zc zczz
 nnoremap zo zozz
+nnoremap ]c ]czz
+nnoremap [c [czz
 
 " ... and folds (thanks to bairui)
 :for m in map(map(range(10), 'nr2char(48+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
