@@ -147,6 +147,7 @@ xnoremap in :<c-u>call <SID>NumberTextObject(1)<cr>
 " word completion ------------------------------------------------------- {{{2
 " remap tab
 inoremap <tab><tab> <tab>
+inoremap <tab><space> <tab>
 " complete defined identifiers
 imap <tab>d	<C-X><C-D>
 " complete file names
