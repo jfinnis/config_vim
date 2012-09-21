@@ -84,8 +84,12 @@ map ZQ <nop>
 map ZZ <nop>
 
 " KEY BINDINGS """""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
+" insert mode mappings -------------------------------------------------- {{{2
+" display ! marker on any "\TODO:" message
+inoremap TODO: TODO:<c-o>:norm m1<cr>
+
 " quick file access ----------------------------------------------------- {{{2
-map <Leader>S :source ~/.vimrc<CR>
+map <Leader>S :source ~/.vimrc<cr>:filetype detect<cr>:echo Sourced vimrc<cr>
 map <leader>cd :cd %:h<cr>
 map <space>V :e ~/.vim/vimrc <bar> :cd ~/.vim<cr>
 map <space>M :e ~/.mutt/cfg/muttrc <bar> :cd ~/.mutt/cfg<cr>
@@ -236,7 +240,7 @@ nnoremap zo zozz
 nnoremap ]c ]czz
 nnoremap [c [czz
 
-" ... and folds (thanks to bairui)
+" ... and marks (thanks to bairui)
 :for m in map(map(range(10), 'nr2char(48+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
 :for m in map(map(range(26), 'nr2char(65+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
 :for m in map(map(range(26), 'nr2char(97+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
