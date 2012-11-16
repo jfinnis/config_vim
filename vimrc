@@ -336,8 +336,8 @@ map <Leader>tl :TagbarToggle<CR>
 
 " vimux commands -------------------------------------------------------- {{{2
 map ! :call PromptVimTmuxCommand()<CR>
-map <leader>! :call RunLastVimTmuxCommand()<CR>
-map <leader>@ :CloseVimTmuxPanes<cr>
+map <space>! :call RunLastVimTmuxCommand()<CR>
+map <space>@ :CloseVimTmuxPanes<cr>
 let g:VimuxUseNearestPane=0
 
 " COMMANDS """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1

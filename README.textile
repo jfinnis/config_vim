@@ -3,38 +3,38 @@
 
 *Included plugins*
 * Abolish         (cr[c/m/_] to change case, :S/:%S for smart search/substitute, record abbreviations)
-* Ack             (&lt;Leader:a shortcut, output of search in quickfix)
+* Ack             (&lt;Leader&gt;a shortcut, output of search in quickfix)
 * Arpeggio        (allows mapping two keys pressed) <-- unused
-* BufOnly         (:Leader:bo removes all other open buffers)
-* CtrlP           (:Leader:N to open window, quick find file in project, C-F switch type, C-Z/C-O to mark/open, C-V vsplit, CR opens)
+* BufOnly         (&lt;Leader&gt;bo removes all other open buffers)
+* CtrlP           (&lt;Leader&gt;N to open window, quick find file in project, C-F switch type, C-Z/C-O to mark/open, C-V vsplit, CR opens)
 * EasyMotion      (H and L to specify specific letter to go to, back/forward)
-* Fswitch         (:space:h,hjklHJKL mappings to open source/header file)
-* Fugitive        (:Leader:gs/gc/gd/gl/gp - status (- stage/unstage, p patch, C commit), commit, diff, log, push, diffput/get to stage/checkout, :Gedit)
+* Fswitch         (&lt;space&gt;h,hjklHJKL mappings to open source/header file)
+* Fugitive        (&lt;Leader&gt;gs/gc/gd/gl/gp - status (- stage/unstage, p patch, C commit), commit, diff, log, push, diffput/get to stage/checkout, :Gedit)
 * Git             (syntax highlighting for git)
-* Latex-suite     (templates - :Leader:tt, macros - EEQ/SSS/`a/`D, F7 expands commands, F9 completes labels/cites, :Leader:ll compiles [visual]) <-- overkill
+* Latex-suite     (templates - &lt;Leader&gt;tt, macros - EEQ/SSS/`a/`D, F7 expands commands, F9 completes labels/cites, &lt;Leader&gt;ll compiles [visual]) <-- overkill
 * Mash            (highlight current searched for term differently)
 * MatchIt         (extends % to if/else/endif, can configure more matchpairs)
-* NERDCommenter   (:Leader:c:space:/ci/cm/cb/cA)
-* NERDTree        (:Leader:n opens directory tree, o, s, t to open/vsplit/tab, C changeroot, r refresh, I hidden files)
+* NERDCommenter   (&lt;Leader&gt;c&lt;space&gt;/ci/cm/cb/cA)
+* NERDTree        (&lt;Leader&gt;n opens directory tree, o, s, t to open/vsplit/tab, C changeroot, r refresh, I hidden files)
 * Oper-Replace    (R is multipurpose replace command, Rib, "xR$, etc)
 * Oper-User       (utility plugin for defining new operators)
 * Powerline       (awesome statuslines, colored, symbols, really cool)
-* Protodef        (:space:p/P to read prototypes from header file)
-* Pydoc           (:space:d/D to bring up python doc for cursor word)
+* Protodef        (&lt;space&gt;p/P to read prototypes from header file)
+* Pydoc           (&lt;space&gt;d/D to bring up python doc for cursor word)
 * Rainbow Paren.  (colored nested parentheses/brackets/etc)
 * Repeat          (utility plugin to allow . to work for plugin mappings)
 * Signature       (display marks, '] next mark, '] alphabetical order, m1/m! markers, m<space> toggle)
 * Snipmate        (expands snippets after, date:tab:, for:tab: ifmain:tab: etc)
 * Surround        (s text object when followed by bracket/tag/paren/quote/etc)
 * Syntastic       (run checker on files on open/save-store in location list, [f, ]f for errors)
-* Tabular         (:Leader:a=/a: to automatically align, |s autoalign tables)
+* Tabular         (&lt;Leader&gt;a=/a: to automatically align, |s autoalign tables)
 * Tagbar          (better taglist, ;tl, o to toggle fold, space/enter)
 * Textobj-Args    (defines argument text objects for functions)
 * Textobj-Column  (text objects ac aC ic iC for manipulating blocks)
 * Textobj-Indent  (defines indent text objects, ai aI ii iI)
 * Textobj-User    (utility plugin for defining text objects)
 * Tmux            (syntax highlighting and filetype recognition for tmux)
-* Unimpaired      (consistent [ and ] motions, [:space: adds spaces, [e exchanges lines, [b buffer navigation)
+* Unimpaired      (consistent [ and ] motions, [&lt;space&gt; adds spaces, [e exchanges lines, [b buffer navigation)
 * Vimux           (! and ;! run a tmux pane with new command/last command)
 
 *Included colorscheme*
@@ -44,19 +44,25 @@
 * Python
 ** jpythonfold script
 ** snippets - #!, docs, wh, cl, def, deff, defs, property, ld, ., try, ifmain, _, ae, from
-** gd goes to function definition in module
 ** preview window on tab completion
-** can compile with and evaluate visual blocks with :space:d
-** pydoc script, lookup in docs under cursor with :space:d/D
+** gd goes to function definition in module
+** pydoc script, lookup in docs under cursor with K, &lt;space&gt;d/D
+** can compile with and evaluate visual blocks with &lt;space&gt;d
 ** <space>b/B adds/removes breakpoints
+** run file in left/below tmux window, pipe to less/column with &lt;space&gt;l/j, &lt;space&gt;[LJ]c/l
 ** X makes executable script
 * C/C++
-** space+g/G -> color "#ifdef DEBUG" blocks as comments
-** space+c -> comment comment block beginning //- 
-** space+C -> add end of block/#endif comment markers
-** space+p/P -> read prototypes from header file
+** &lt;space&gt;+c -> comment comment block beginning //- 
+** &lt;space&gt;+C -> add end of block/#endif comment markers
+** &lt;space&gt;+g/G -> color "#ifdef DEBUG" blocks as comments
+** &lt;space&gt;+hf/hl/hL/... -> open corresponding header/source file in appropriate window
+** &lt;space&gt;+p/P -> read prototypes from header file (cpp only)
+** &lt;space&gt;+v/V -> selects inner/outer function
 ** surround with f/i/w (i.e., v:motion:Sf) to add for/if/while blocks around code
 ** snippets - c/cc/ch/cf/chh
+* Objective-C
+** &lt;space&gt;mF/mh/mH/... -> create GNUmakefile in appropriate window
+** &lt;space&gt;R/rr/rc/rl -> run in tmux pane/remove nslog info/pipe to column/less)
 * Ocaml, SML indent scripts
 * LaTeX 
 

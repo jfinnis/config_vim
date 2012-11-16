@@ -1,37 +1,23 @@
-""""""""""""""""""" CONFIGURATION """""""""""""""""""""""
-set tabstop=4
-set softtabstop=4
+" OPTIONS """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
+" tab and formatting guidelines ---------------------------------------- {{{2
+set formatoptions=cq
 set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 set textwidth=0
-set smarttab expandtab
+
+set expandtab
 set nosmartindent
-set fo=cq
+set smarttab 
 
-" auto-open tagbar if closed
+" auto-open tagbar if closed ------------------------------------------ {{{2
 " :TagbarOpen
-
-" jpythonfold script http://www.vim.org/scripts/script.php?script_id=2527
-source ~/.vim/ftplugin/jpythonfold.vim
-
-" use python ctags
 set tags+=$HOME/.vim/tags/python.ctags
 
-" highlight syntax errors
-let python_highlight_all=1
-syn match WhitespaceEOL /\s\+$/
-syn match pythonError "^\s*def\s\+\w\+(.*)\s*$" display
-syn match pythonError "^\s*class\s\+\w\+(.*)\s*$" display
-syn match pythonError "^\s*for\s.*[^:]$" display
-syn match pythonError "^\s*except\s*$" display
-syn match pythonError "^\s*finally\s*$" display
-syn match pythonError "^\s*try\s*$" display
-syn match pythonError "^\s*else\s*$" display
-syn match pythonError "^\s*else\s*[^:].*$" display
-syn match pythonError "^\s*if\s.*[^\:]$" display
-syn match pythonError "[;]$" display
-syn keyword pythonError do
+" folding script http://www.vim.org/scripts/script.php?script_id=2527 - {{{2
+source ~/.vim/ftplugin/jpythonfold.vim
 
-" Add the virtualenv's site-packages to vim path
+" setup environment --------------------------------------------------- {{{2
 py << EOF
 import os.path
 import sys
@@ -50,16 +36,32 @@ for p in sys.path:
   if os.path.isdir(p): vim.command(r"set path+=%s" % p.replace(" ", r"\ "))
 EOF
 
-"""""""""""""""""" CODE COMPLETION """"""""""""""""""""""
-set omnifunc=pythoncomplete#Complete
+" COMPLETION """"""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
+" show window for tab complete ----------------------------------------- {{{2
 set completeopt=menuone,longest,preview
+set omnifunc=pythoncomplete#Complete
 
-"""""""""""""""""""" NAVIGATION """""""""""""""""""""""""
-" definition lookup
+" SYNTAX/HIGHLIGHTING """""""""""""""""""""""""""""""""""""""""""""""""" {{{1
+" highlight syntax errors ---------------------------------------------- {{{2
+let python_highlight_all=1
+syn match WhitespaceEOL /\s\+$/
+syn match pythonError "^\s*def\s\+\w\+(.*)\s*$" display
+syn match pythonError "^\s*class\s\+\w\+(.*)\s*$" display
+syn match pythonError "^\s*for\s.*[^:]$" display
+syn match pythonError "^\s*except\s*$" display
+syn match pythonError "^\s*finally\s*$" display
+syn match pythonError "^\s*try\s*$" display
+syn match pythonError "^\s*else\s*$" display
+syn match pythonError "^\s*else\s*[^:].*$" display
+syn match pythonError "^\s*if\s.*[^\:]$" display
+syn match pythonError "[;]$" display
+syn keyword pythonError do
+
+" MAPPINGS """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
+" gd = go to function definition under cursor -------------------------- {{{2
 map <buffer> gd /def <C-R><C-W><CR>
 
-""""""""""""""""""""" EVALUTATION """""""""""""""""""""""
-" use space-e to evaluate a visually selected block
+" space-e = evaluate a visually selected block ------------------------- {{{2
 python << EOL
 import vim
 def EvaluateCurrentRange():
@@ -67,12 +69,19 @@ def EvaluateCurrentRange():
 EOL
 vmap <space>e :py EvaluateCurrentRange()<cr>
 
-" run current script in right or bottom pane (kills other windows)
-nmap <silent> <space>rl :w<cr>:let g:VimuxOrientation="h"<cr>:let g:VimuxHeight="40"<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:call RunVimTmuxCommand("python %")<cr>
-nmap <silent> <space>rj :w<cr>:let g:VimuxOrientation="v"<cr>:let g:VimuxHeight="30"<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:call RunVimTmuxCommand("python %")<cr>
+" space-j/Jl/Jc, space-l/Ll/Lc ----------------------------------------- {{{2
+" run command in below or right window
+nmap <silent> <space>j :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="v"<cr>:let g:VimuxHeight="30"<cr>:call RunVimTmuxCommand("python %")<cr>:echo "Executing file..."<cr>
+nmap <silent> <space>l :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="h"<cr>:let g:VimuxHeight="40"<cr>:call RunVimTmuxCommand("python %")<cr>:echo "Executing file..."<cr>
 
-"""""""""""""""""""""""" DEBUG """"""""""""""""""""""""""
-" space b/B to add/remove breakpoints
+" run and pipe to column or less
+nmap <silent> <space>Jc :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="v"<cr>:let g:VimuxHeight="30"<cr>:call RunVimTmuxCommand("python % <bar> column")<cr>:echo "Executing file..."<cr>
+nmap <silent> <space>Lc :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="h"<cr>:let g:VimuxHeight="40"<cr>:call RunVimTmuxCommand("python % <bar> column")<cr>:echo "Executing file..."<cr>
+
+nmap <silent> <space>Jl :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="v"<cr>:let g:VimuxHeight="30"<cr>:call RunVimTmuxCommand("python % <bar> less")<cr>:echo "Executing file..."<cr>
+nmap <silent> <space>Ll :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="h"<cr>:let g:VimuxHeight="40"<cr>:call RunVimTmuxCommand("python % <bar> less")<cr>:echo "Executing file..."<cr>
+
+" space-b/B = add/remove breakpoints ----------------------------------- {{{2
 python << EOF
 def SetBreakpoint():
     import re
@@ -108,3 +117,5 @@ def RemoveBreakpoints():
     vim.command( 'normal %dG' % nCurrentLine)
 vim.command('map <space>B :py RemoveBreakpoints()<cr>')
 EOF
+
+"{{{1 vim:fdm=marker:
