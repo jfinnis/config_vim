@@ -8,7 +8,7 @@ set nosmartindent
 set fo=cq
 
 " auto-open tagbar if closed
-:TagbarOpen
+" :TagbarOpen
 
 " jpythonfold script http://www.vim.org/scripts/script.php?script_id=2527
 source ~/.vim/ftplugin/jpythonfold.vim
@@ -43,6 +43,13 @@ if 'VIRTUAL_ENV' in os.environ:
     execfile(activate_this, dict(__file__=activate_this))
 EOF
 
+python << EOF
+import os, sys
+import vim
+for p in sys.path:
+  if os.path.isdir(p): vim.command(r"set path+=%s" % p.replace(" ", r"\ "))
+EOF
+
 """""""""""""""""" CODE COMPLETION """"""""""""""""""""""
 set omnifunc=pythoncomplete#Complete
 set completeopt=menuone,longest,preview
@@ -51,21 +58,7 @@ set completeopt=menuone,longest,preview
 " definition lookup
 map <buffer> gd /def <C-R><C-W><CR>
 
-" use gf to to go python library file
-python << EOF
-import os, sys
-import vim
-for p in sys.path:
-  if os.path.isdir(p): vim.command(r"set path+=%s" % p.replace(" ", r"\ "))
-EOF
-
-""""""""""""""""""""" COMPILATION """""""""""""""""""""""
-" set up make
-" set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
-" set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m 
-" compile whole file with M
-" nmap M :make
-
+""""""""""""""""""""" EVALUTATION """""""""""""""""""""""
 " use space-e to evaluate a visually selected block
 python << EOL
 import vim
@@ -73,6 +66,10 @@ def EvaluateCurrentRange():
   eval(compile('\n'.join(vim.current.range),'','exec'),globals())
 EOL
 vmap <space>e :py EvaluateCurrentRange()<cr>
+
+" run current script in right or bottom pane (kills other windows)
+nmap <silent> <space>rl :w<cr>:let g:VimuxOrientation="h"<cr>:let g:VimuxHeight="40"<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:call RunVimTmuxCommand("python %")<cr>
+nmap <silent> <space>rj :w<cr>:let g:VimuxOrientation="v"<cr>:let g:VimuxHeight="30"<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:call RunVimTmuxCommand("python %")<cr>
 
 """""""""""""""""""""""" DEBUG """"""""""""""""""""""""""
 " space b/B to add/remove breakpoints
