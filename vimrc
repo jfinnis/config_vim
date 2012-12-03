@@ -197,6 +197,10 @@ nnoremap df :diffthis<cr>
 nnoremap <silent> dF :diffoff!<cr>
 nnoremap du :diffupdate<cr>
 
+" recovery file diffing automated --------------------------------------- {{{2
+nnoremap <silent> <Leader>d :sav! %_diff_tmpfile<cr>:vs<cr>:e #<cr>:diffthis<cr>l:diffthis<cr>
+nnoremap <silent> <Leader>D :Bclose<cr>o:diffoff!<cr>:echo "Deleted tmpfile..."
+
 " location list popup --------------------------------------------------- {{{2
 map <space>l :llist<CR>
 
