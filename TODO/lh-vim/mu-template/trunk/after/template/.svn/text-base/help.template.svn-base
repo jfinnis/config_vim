@@ -1,0 +1,32 @@
+VimL: " $Id$
+VimL: "Help File Template, Luc Hermitte, Last change: $Date$
+VimL: let s:value_start  = '¡'
+VimL: let s:value_end    = '¡'
+VimL: let s:marker_open  = '<+'
+VimL: let s:marker_close = '+>'
+VimL: let s:name = '*'.expand('%:t').'*'
+VimL: let s:align = repeat(' ', 24-strlen(s:name))
+¡s:name.s:align¡<+Title+> (v<+0.0.1+>)
+                        For Vim version ¡v:version/100¡+.    Last change: ¡'$'¡Date$
+
+                        By ¡Author(1)¡
+                        ¡lh#option#get('author_email',  '<+email+>')¡
+
+
+------------------------------------------------------------------------------
+CONTENTS                                      *<+plugin+>-contents*      {{{1
+|<+plugin+>-presentation|       Presentation
+|<+link+>|              <+title+>
+|add-local-help|        Instructions on installing this file
+
+
+------------------------------------------------------------------------------
+PRESENTATION                            *<+plugin+>-presentation* {{{1
+<++>
+
+------------------------------------------------------------------------------
+ © ¡Author(1)¡, ¡strftime('%Y')¡, ¡lh#option#get('url', '<+URL+>')¡
+ ¡'$'¡Id$
+VimL:" This trick with ¡ and $ is used to distract SVN/CVS
+ VIM: let b:VS_language = 'american' 
+ vim:ts=8:sw=4:tw=80:fo=tcq2:isk=!-~,^*,^\|,^\":ft=help:fdm=marker:

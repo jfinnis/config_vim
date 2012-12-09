@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/427/mu-template/tags/2.3.0/after/template/sh
+END
+if-nb-args.template
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/427/mu-template/tags/2.3.0/after/template/sh/if-nb-args.template
+END
+for.template
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/427/mu-template/tags/2.3.0/after/template/sh/for.template
+END
+if.template
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/427/mu-template/tags/2.3.0/after/template/sh/if.template
+END

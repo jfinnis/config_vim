@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/609/cpp/trunk/after/template/dox
+END
+function.template
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/565/cpp/trunk/after/template/dox/function.template
+END
+tt.template
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/609/cpp/trunk/after/template/dox/tt.template
+END
+code.template
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/566/cpp/trunk/after/template/dox/code.template
+END
+group.template
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/565/cpp/trunk/after/template/dox/group.template
+END
+file.template
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/573/cpp/trunk/after/template/dox/file.template
+END
+em.template
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/609/cpp/trunk/after/template/dox/em.template
+END
+author.template
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/565/cpp/trunk/after/template/dox/author.template
+END
+html.template
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/609/cpp/trunk/after/template/dox/html.template
+END

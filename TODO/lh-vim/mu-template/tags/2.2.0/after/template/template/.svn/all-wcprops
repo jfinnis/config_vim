@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/327/mu-template/tags/2.2.0/after/template/template
+END
+include.template
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/327/mu-template/tags/2.2.0/after/template/template/include.template
+END

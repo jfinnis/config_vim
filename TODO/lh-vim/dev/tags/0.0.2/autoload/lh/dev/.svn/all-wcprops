@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/348/dev/tags/0.0.2/autoload/lh/dev
+END
+class.vim
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/348/dev/tags/0.0.2/autoload/lh/dev/class.vim
+END
+function.vim
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/348/dev/tags/0.0.2/autoload/lh/dev/function.vim
+END
+option.vim
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/348/dev/tags/0.0.2/autoload/lh/dev/option.vim
+END
+naming.vim
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/348/dev/tags/0.0.2/autoload/lh/dev/naming.vim
+END

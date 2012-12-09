@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/627/misc/trunk/plugin
+END
+Triggers.vim
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/184/misc/trunk/plugin/Triggers.vim
+END
+count.vim
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/282/misc/trunk/plugin/count.vim
+END
+help.vim
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/130/misc/trunk/plugin/help.vim
+END
+rotate_substitute.vim
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/449/misc/trunk/plugin/rotate_substitute.vim
+END
+local_vimrc.vim
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/570/misc/trunk/plugin/local_vimrc.vim
+END
+omap-any-bracket.vim
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/322/misc/trunk/plugin/omap-any-bracket.vim
+END
+diffsaved.vim
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/580/misc/trunk/plugin/diffsaved.vim
+END
+footnote.vim
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/130/misc/trunk/plugin/footnote.vim
+END
+v_star.vim
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/537/misc/trunk/plugin/v_star.vim
+END
+occ-global.vim
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/290/misc/trunk/plugin/occ-global.vim
+END
+searchfile.vim
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/627/misc/trunk/plugin/searchfile.vim
+END
+vim-tip-swap-word.vim
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/281/misc/trunk/plugin/vim-tip-swap-word.vim
+END
+MoveToCol.vim
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/142/misc/trunk/plugin/MoveToCol.vim
+END
+DirDiff.vim
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/486/misc/trunk/plugin/DirDiff.vim
+END
+block-indent.vim
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/130/misc/trunk/plugin/block-indent.vim
+END
+markring.vim
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/284/misc/trunk/plugin/markring.vim
+END
+fr-abbr.vim
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/599/misc/trunk/plugin/fr-abbr.vim
+END
+let-modeline.vim
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/429/misc/trunk/plugin/let-modeline.vim
+END

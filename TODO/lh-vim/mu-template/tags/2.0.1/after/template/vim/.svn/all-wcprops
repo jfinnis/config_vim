@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/48/mu-template/tags/2.0.1/after/template/vim
+END
+foreach.template
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/48/mu-template/tags/2.0.1/after/template/vim/foreach.template
+END
+fori.template
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/48/mu-template/tags/2.0.1/after/template/vim/fori.template
+END
+loop-arg.template
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/48/mu-template/tags/2.0.1/after/template/vim/loop-arg.template
+END

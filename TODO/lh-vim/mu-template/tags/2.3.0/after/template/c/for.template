@@ -1,0 +1,11 @@
+VimL:" $Id: for.template 409 2011-06-24 09:50:07Z luc.hermitte $
+VimL:"{for} Template-File, Luc Hermitte
+VimL:" hint: for (init;cond;iter) { action }
+VimL: let s:value_start  = '¡'
+VimL: let s:value_end    = '¡'
+VimL: let s:reindent     = 1 
+VimL: let s:marker_open  = '<+'
+VimL: let s:marker_close = '+>'
+for¡C_nl_before_bracket()¡(<+init+>;<+cond+>;<+iteration+>)¡C_nl_before_curlyB()¡{
+    ¡s:Surround(1, '<+code+>')¡
+}<++>

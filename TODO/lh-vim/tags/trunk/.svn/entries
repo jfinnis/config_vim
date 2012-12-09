@@ -1,0 +1,77 @@
+10
+
+dir
+633
+http://lh-vim.googlecode.com/svn/tags/trunk
+http://lh-vim.googlecode.com/svn
+
+
+
+2012-05-25T17:02:57.918493Z
+600
+luc.hermitte@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+50c58283-e937-0410-a8aa-d7cab3d61977
+
+mkVba
+dir
+
+doc
+dir
+
+ftplugin
+dir
+
+autoload
+dir
+
+lh-tags-addon-info.txt
+file
+
+
+
+
+2012-09-04T00:27:20.506669Z
+0ff38cd11bf9ebec43bb8d1cb3637e4e
+2011-06-24T11:20:43.026019Z
+422
+luc.hermitte
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+568
+
+plugin
+dir
+

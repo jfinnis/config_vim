@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/250/mu-template/tags/2.0.4/after/template/c/internals
+END
+c-file-header.template
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/250/mu-template/tags/2.0.4/after/template/c/internals/c-file-header.template
+END
+c-imp.template
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/250/mu-template/tags/2.0.4/after/template/c/internals/c-imp.template
+END
+c-header.template
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/250/mu-template/tags/2.0.4/after/template/c/internals/c-header.template
+END
+c-header-typical.template
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/250/mu-template/tags/2.0.4/after/template/c/internals/c-header-typical.template
+END

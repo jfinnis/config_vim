@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/591/mu-template/trunk/after/template/sh
+END
+if-nb-args.template
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/409/mu-template/trunk/after/template/sh/if-nb-args.template
+END
+for.template
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/409/mu-template/trunk/after/template/sh/for.template
+END
+does_match.template
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/591/mu-template/trunk/after/template/sh/does_match.template
+END
+lvalue.template
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/433/mu-template/trunk/after/template/sh/lvalue.template
+END
+case.template
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/498/mu-template/trunk/after/template/sh/case.template
+END
+current-dir.template
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/485/mu-template/trunk/after/template/sh/current-dir.template
+END
+if.template
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/409/mu-template/trunk/after/template/sh/if.template
+END
+rvalue.template
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/433/mu-template/trunk/after/template/sh/rvalue.template
+END
+field.template
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/495/mu-template/trunk/after/template/sh/field.template
+END

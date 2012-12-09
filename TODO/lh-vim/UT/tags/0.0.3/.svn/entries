@@ -1,0 +1,80 @@
+10
+
+dir
+633
+http://lh-vim.googlecode.com/svn/UT/tags/0.0.3
+http://lh-vim.googlecode.com/svn
+
+
+
+2010-05-17T23:27:11.195477Z
+195
+luc.hermitte
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+50c58283-e937-0410-a8aa-d7cab3d61977
+
+mkVba
+dir
+
+tests
+dir
+
+UT.README
+file
+
+
+
+
+2012-09-04T00:27:12.674669Z
+994ab437213ed962391fa8c035c91400
+2010-05-17T23:10:03.811525Z
+193
+luc.hermitte
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+592
+
+doc
+dir
+
+ftplugin
+dir
+
+autoload
+dir
+
+plugin
+dir
+

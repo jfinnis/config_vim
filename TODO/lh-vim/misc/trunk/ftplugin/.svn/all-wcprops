@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/604/misc/trunk/ftplugin
+END
+sh_set.vim
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/294/misc/trunk/ftplugin/sh_set.vim
+END
+vim_set.vim
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/343/misc/trunk/ftplugin/vim_set.vim
+END
+cmake.vim
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/604/misc/trunk/ftplugin/cmake.vim
+END

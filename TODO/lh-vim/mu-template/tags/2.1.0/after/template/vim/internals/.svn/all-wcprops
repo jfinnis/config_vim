@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/275/mu-template/tags/2.1.0/after/template/vim/internals
+END
+vim-autoload-debug.template
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/275/mu-template/tags/2.1.0/after/template/vim/internals/vim-autoload-debug.template
+END
+vim-rc-local.template
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/275/mu-template/tags/2.1.0/after/template/vim/internals/vim-rc-local.template
+END
+vim-plugin.template
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/275/mu-template/tags/2.1.0/after/template/vim/internals/vim-plugin.template
+END
+vim-footer.template
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/275/mu-template/tags/2.1.0/after/template/vim/internals/vim-footer.template
+END
+vim-mkvba.template
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/275/mu-template/tags/2.1.0/after/template/vim/internals/vim-mkvba.template
+END
+vim-autoload-plugin.template
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/275/mu-template/tags/2.1.0/after/template/vim/internals/vim-autoload-plugin.template
+END
+vim-other-scripts.template
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/275/mu-template/tags/2.1.0/after/template/vim/internals/vim-other-scripts.template
+END
+vim-header.template
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/275/mu-template/tags/2.1.0/after/template/vim/internals/vim-header.template
+END
+vim-ftplugin.template
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/275/mu-template/tags/2.1.0/after/template/vim/internals/vim-ftplugin.template
+END
+get-script-kind.template
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/275/mu-template/tags/2.1.0/after/template/vim/internals/get-script-kind.template
+END
+vim-autoload-function.template
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/275/mu-template/tags/2.1.0/after/template/vim/internals/vim-autoload-function.template
+END
