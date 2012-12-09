@@ -10,6 +10,9 @@ setlocal tabstop=3
 " custom folding plugin
 source ~/.vim/after/ftplugin/c-fold.vim
 
+" OmniCppComplete initialization --------------------------------------- {{{2
+"call omni#cpp#complete#Init()
+
 " MAPPINGS """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
 " surround mappings for f, i, and w ------------------------------------ {{{2
 let b:surround_102="for ()\n{\n\t\r\n}"

@@ -26,3 +26,6 @@ let g:protodefvaluedefaults =
             \     'bool'                 : '(true)',
             \     'const bool'           : '(true)'
             \ }
+
+" OmniCppComplete initialization
+"call omni#cpp#complete#Init()
