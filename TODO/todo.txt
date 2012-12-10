@@ -1,7 +1,5 @@
 ------- todo -------
 easytags
-textobj-entire
-textobj-line
 lhvim
 switch.vim
 speeddating
