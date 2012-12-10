@@ -26,6 +26,7 @@
 * RelOps          (modifies operators to display relative line numberings)
 * Signature       (display marks, '] next mark, '] alphabetical order, m1/m! markers, m<space> toggle)
 * Snipmate        (expands snippets after, date:tab:, for:tab: ifmain:tab: etc)
+* Speeddating     (&lt;C-A&gt; and &lt;C-X&gt; increment/decrement times and dates, visual do ranges)
 * Surround        (s text object when followed by bracket/tag/paren/quote/etc)
 * Syntastic       (run checker on files on open/save-store in location list, [f, ]f for errors)
 * Tabular         (&lt;Leader&gt;a=/a: to automatically align, |s autoalign tables)

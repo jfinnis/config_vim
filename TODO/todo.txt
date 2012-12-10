@@ -2,7 +2,6 @@
 easytags
 lhvim
 switch.vim
-speeddating
 replace operator cancel out of?
 
 C stuff
