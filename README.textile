@@ -23,6 +23,7 @@
 * Pydoc           (&lt;space&gt;d/D to bring up python doc for cursor word)
 * Rainbow Paren.  (colored nested parentheses/brackets/etc)
 * Repeat          (utility plugin to allow . to work for plugin mappings)
+* RelOps          (modifies operators to display relative line numberings)
 * Signature       (display marks, '] next mark, '] alphabetical order, m1/m! markers, m<space> toggle)
 * Snipmate        (expands snippets after, date:tab:, for:tab: ifmain:tab: etc)
 * Surround        (s text object when followed by bracket/tag/paren/quote/etc)

@@ -1,7 +1,18 @@
+------- todo -------
 easytags
 textobj-entire
 textobj-line
 lhvim
-relops
 switch.vim
 speeddating
+replace operator cancel out of?
+
+C stuff
+- code complete plugin, cctree, http://cscope.sourceforge.net/cscope_vim_tutorial.html
+ - check c omnicomplete
+   - fix long load times
+ - cocoa.vim
+ - ctags objc
+ - protodef plugin - defaults for (*this) and output streams
+ - hard way book with c
+ - read up on splint
