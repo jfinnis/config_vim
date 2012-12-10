@@ -1,0 +1,7 @@
+easytags
+textobj-entire
+textobj-line
+lhvim
+relops
+switch.vim
+speeddating
