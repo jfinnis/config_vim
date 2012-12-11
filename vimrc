@@ -17,6 +17,7 @@ set history=100
 set mouse=a
 set shortmess=filmnrxtTI
 set scrolloff=4             " lines below cursor while scrolling
+set timeoutlen=500          " mappings must be completed within # milliseconds
 set ttyfast
 set wildmenu                " tab menu completion
 set wildmode=longest,list   " tab completion settings
@@ -305,6 +306,9 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+" relops extra operators ------------------------------------------------ {{{2
+let g:relops_mappings=['R']
 
 " replace set to R, allows for R to delete and replace motions ---------- {{{2
 map R <Plug>(operator-replace)
