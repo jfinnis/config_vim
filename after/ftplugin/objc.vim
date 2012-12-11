@@ -1,5 +1,9 @@
 " reads in settings and mappings from after/ftplugin/c.vim
 
+let b:switch_definitions = [
+      \ ['YES', 'NO'],
+      \ ]
+
 " create makefiles and fill in makefiles 
 " uses similar split management scheme as fswitch plugin
 nmap <buffer> <space>M :e %:h/GNUmakefile<cr>
@@ -21,3 +25,4 @@ nmap <silent> <buffer> <space>rr :w<cr>:cd %:h<cr>:call RunVimTmuxCommand("make 
 nmap <silent> <buffer> <space>rc :w<cr>:cd %:h<cr>:call RunVimTmuxCommand("make && ./obj/$(awk '/TOOL_NAME/ {print $3}' GNUmakefile) <bar>& cut -d\\\  -f4- <bar> column")<cr>:echo "Building GNUmakefile and running command"<cr>
 " ... and pipe output to less
 nmap <silent> <buffer> <space>rl :w<cr>:cd %:h<cr>:call RunVimTmuxCommand("make && ./obj/$(awk '/TOOL_NAME/ {print $3}' GNUmakefile) <bar>& cut -d\\\  -f4- <bar> less")<cr>:echo "Building GNUmakefile and running command"<cr>
+

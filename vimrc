@@ -211,7 +211,7 @@ map <Leader>j <C-W>j
 map <Leader>k <C-W>k
 map <Leader>l <C-W>l
 map + <C-W>_                         " max window
-map - <C-W>=                         " same size
+map _ <C-W>=                         " same size
 
 " window resizing ------------------------------------------------------- {{{2
 nnoremap <silent> <C-W>< <C-W><:let g:LastWindowResize="in-horiz"<CR>
@@ -320,6 +320,9 @@ map m<space> :SignatureToggleDisplay<cr>
 
 " snippets variable ----------------------------------------------------- {{{2
 let g:snips_author='Joshua Finnis'
+
+" switch bindings ------------------------------------------------------- {{{2
+nnoremap - :Switch<CR>
 
 " syntastic settings ---------------------------------------------------- {{{2
 let g:syntastic_check_on_open=1

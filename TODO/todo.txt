@@ -1,9 +1,9 @@
 ------- todo -------
+replace operator cancel out of?
 easytags
 lhvim
-switch.vim
 python-mode
-replace operator cancel out of?
+quicktask
 
 C stuff
 - code complete plugin, cctree, http://cscope.sourceforge.net/cscope_vim_tutorial.html
