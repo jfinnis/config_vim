@@ -5,3 +5,4 @@ lhvim
 relops
 switch.vim
 speeddating
+python-mode
