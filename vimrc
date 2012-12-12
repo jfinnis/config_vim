@@ -301,6 +301,12 @@ let NERDTreeIgnore=['\~$', '\.aux$', '\.blg$', '\.bbl$', '\.log$', '\.dvi$']
 let NERDTreeShowBookmarks=1
 let NERDTreeBookmarksFile="NERDTreeBookmarks"
 
+" quicktask options and bindings ---------------------------------------- {{{2
+let g:quicktask_autosave=1
+let g:quicktask_snip_path="/home/josh/.vim/quicktask-snips"
+let g:quicktask_snip_win_maximize=1
+" autocmds and mappings defined in ftplugin/quicktask
+
 " rainbow colored parentheses ------------------------------------------- {{{2
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound

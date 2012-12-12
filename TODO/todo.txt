@@ -1,9 +1,11 @@
 ------- todo -------
+quicktask
+ - fold task
 replace operator cancel out of?
+
 easytags
 lhvim
 python-mode
-quicktask
 
 C stuff
 - code complete plugin, cctree, http://cscope.sourceforge.net/cscope_vim_tutorial.html
