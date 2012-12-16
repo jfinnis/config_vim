@@ -267,6 +267,7 @@ let g:ctrlp_match_window_bottom=0
 let g:ctrlp_max_height=15
 let g:ctrlp_open_multiple_files='1vr'
 let g:ctrlp_custom_ignore = {'dir':'\.git$\|\.hg$\|\.svn$'}
+nnoremap <leader>. :CtrlPTag<cr>
 
 " easymotion options and bindings (visual binding screws up snippets) --- {{{2
 let EasyMotion_do_mapping=0
