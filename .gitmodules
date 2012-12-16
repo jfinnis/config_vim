@@ -112,3 +112,6 @@
 [submodule "bundle/quicktask"]
 	path = bundle/quicktask
 	url = https://github.com/aaronbieber/quicktask.git
+[submodule "bundle/SimpylFold"]
+	path = bundle/SimpylFold
+	url = https://github.com/tmhedberg/SimpylFold.git

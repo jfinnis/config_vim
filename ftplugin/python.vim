@@ -14,9 +14,6 @@ set smarttab
 " :TagbarOpen
 set tags+=$HOME/.vim/tags/python.ctags
 
-" folding script http://www.vim.org/scripts/script.php?script_id=2527 - {{{2
-source ~/.vim/ftplugin/jpythonfold.vim
-
 " setup environment --------------------------------------------------- {{{2
 py << EOF
 import os.path
