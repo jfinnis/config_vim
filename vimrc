@@ -298,9 +298,10 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 " nerdtree bindings and settings ---------------------------------------- {{{2
 map <Leader>n :NERDTreeToggle<CR>
 let NERDChDirMode=2
+let NERDTreeAutoDeleteBuffer=1
+let NERDTreeBookmarksFile="NERDTreeBookmarks"
 let NERDTreeIgnore=['\~$', '\.aux$', '\.blg$', '\.bbl$', '\.log$', '\.dvi$']
 let NERDTreeShowBookmarks=1
-let NERDTreeBookmarksFile="NERDTreeBookmarks"
 
 " quicktask options and bindings ---------------------------------------- {{{2
 let g:quicktask_autosave=1
