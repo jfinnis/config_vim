@@ -258,7 +258,8 @@ xnoremap <silent> zb :<C-u>call setpos('.',[0,line("'>"),0,0])<Bar>normal! zbgv<
 " PLUGIN SPECIFIC BINDINGS """""""""""""""""""""""""""""""""""""""""""""" {{{1
 " Ack command/shortcut -------------------------------------------------- {{{2
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-nnoremap <leader>a :Ack
+nnoremap <leader>a :Ack 
+nnoremap <leader>K :AckHelp 
 
 " start ctrlp ----------------------------------------------------------- {{{2
 let g:ctrlp_map='<Leader>N'
@@ -508,5 +509,5 @@ function! RepeatResize()
 endfunction
 map <silent> , :call RepeatResize()<CR>
 
-" free keys: _ Z \ ` F2-7 {{{2
+" free keys: Z \ ` F2-7 {{{2
 "{{{1 vim:fdm=marker:
