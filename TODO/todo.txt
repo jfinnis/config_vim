@@ -8,6 +8,7 @@ lhvim
 python-mode
 jedi-vim (python-autoc)
 skybison
+origami fold align
 
 C stuff
 - clang complete
