@@ -3,7 +3,7 @@
 
 *Included plugins*
 * Abolish         (cr[c/m/_] to change case, :S/:%S for smart search/substitute, record abbreviations)
-* Ack             (&lt;Leader&gt;a shortcut, output of search in quickfix)
+* Ack             (&lt;Leader&gt;a search repo, &lt;Leader&gt;K search help, output in quickfix)
 * Arpeggio        (allows mapping two keys pressed) <-- unused
 * BufOnly         (&lt;Leader&gt;bo removes all other open buffers)
 * CtrlP           (&lt;Leader&gt;N to open window, quick find file in project, C-F switch type, C-Z/C-O to mark/open, C-V vsplit, CR opens)
