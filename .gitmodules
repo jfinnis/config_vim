@@ -118,6 +118,3 @@
 [submodule "bundle/SkyBison"]
 	path = bundle/SkyBison
 	url = https://github.com/paradigm/SkyBison.git
-[submodule "bundle/origami"]
-	path = bundle/origami
-	url = https://github.com/kshenoy/vim-origami.git

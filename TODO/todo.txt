@@ -1,6 +1,4 @@
 ------- todo -------
-quicktask
- - fold task
 replace operator cancel out of?
 
 easytags
@@ -8,7 +6,6 @@ lhvim
 python-mode
 jedi-vim (python-autoc)
 skybison
-origami fold align
 vimux, syntastic, tagbar, signature not a repo?
 
 
