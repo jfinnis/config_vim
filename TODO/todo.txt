@@ -3,9 +3,8 @@ replace operator cancel out of?
 
 
 python-mode
-simpylfold
 jedi-vim (python-autoc)
-switch, easytags, vimux, syntastic, tagbar, signature not a repo?
+switch, easytags, syntastic, tagbar, signature not a repo?
 
 C stuff
 - lhvim
