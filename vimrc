@@ -326,6 +326,9 @@ highlight SignColumn ctermbg=16
 map m<del> <Plug>SIG_PurgeMarks
 map m<space> :SignatureToggleDisplay<cr>
 
+" SimpylFold options ---------------------------------------------------- {{{2
+let g:SimpylFold_docstring_preview=1
+
 " skybison mappings ----------------------------------------------------- {{{2
 nnoremap <space>; :<c-u>call SkyBison("")<cr>
 nnoremap K 2:<c-u>call SkyBison("b ")<cr>
