@@ -1,10 +1,8 @@
 ------- todo -------
 replace operator cancel out of?
 
-
 python-mode
 jedi-vim (python-autoc)
-switch, easytags not a repo?
 
 C stuff
 - lhvim
