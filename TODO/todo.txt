@@ -4,7 +4,7 @@ replace operator cancel out of?
 
 python-mode
 jedi-vim (python-autoc)
-switch, easytags, syntastic, tagbar, signature not a repo?
+switch, easytags, signature not a repo?
 
 C stuff
 - lhvim

@@ -52,9 +52,6 @@
 [submodule "bundle/vim-easymotion"]
 	path = bundle/vim-easymotion
 	url = http://github.com/Lokaltog/vim-easymotion.git
-[submodule "bundle/tagbar"]
-	path = bundle/tagbar
-	url = http://github.com/majutsushi/tagbar
 [submodule "bundle/textobj-arguments"]
 	path = bundle/textobj-arguments
 	url = http://github.com/vim-scripts/argtextobj.vim.git
@@ -124,3 +121,6 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = http://github.com/majutsushi/tagbar
