@@ -115,3 +115,6 @@
 [submodule "bundle/SkyBison"]
 	path = bundle/SkyBison
 	url = https://github.com/paradigm/SkyBison.git
+[submodule "bundle/SimpylFold"]
+	path = bundle/SimpylFold
+	url = https://github.com/tmhedberg/SimpylFold.git
