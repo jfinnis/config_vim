@@ -5,7 +5,6 @@ easytags
 lhvim
 python-mode
 jedi-vim (python-autoc)
-skybison
 vimux, syntastic, tagbar, signature not a repo?
 
 

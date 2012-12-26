@@ -220,8 +220,7 @@ nnoremap <silent> <C-W>+ <C-W>+:let g:LastWindowResize="out-vert"<CR>
 nnoremap <silent> <C-W>- <C-W>-:let g:LastWindowResize="in-vert"<CR>
 
 " buffer management ----------------------------------------------------- {{{2
-" :q - close window and keep buffer, ]b, [b prev/next buffer, K list buffers
-nnoremap K :ls<CR>:b<space>
+" :q - close window and keep buffer, ]b, [b prev/next buffer
 map <Leader>, :e #<CR>                " open alternate buffer
 map <Leader>q :bd<CR>                 " close current buffer and close window
 map <Leader>Q :Bclose<CR>             " close current buffer and keep window
@@ -326,6 +325,11 @@ map R <Plug>(operator-replace)
 highlight SignColumn ctermbg=16
 map m<del> <Plug>SIG_PurgeMarks
 map m<space> :SignatureToggleDisplay<cr>
+
+" skybison mappings ----------------------------------------------------- {{{2
+nnoremap <space>; :<c-u>call SkyBison("")<cr>
+nnoremap K 2:<c-u>call SkyBison("b ")<cr>
+cnoremap <c-l> <c-r>=SkyBison("")<cr><cr>
 
 " snippets variable ----------------------------------------------------- {{{2
 let g:snips_author='Joshua Finnis'
