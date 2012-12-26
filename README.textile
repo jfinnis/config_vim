@@ -1,27 +1,22 @@
 *Instructions*
 * link vimrc to ~/.vimrc
 
-*Included plugins*
+*Active plugins*
 * Abolish         (cr[c/m/_] to change case, :S/:%S for smart search/substitute, record abbreviations)
 * Ack             (&lt;Leader&gt;a search repo, &lt;Leader&gt;K search help, output in quickfix)
-* Arpeggio        (allows mapping two keys pressed) <-- unused
 * BufOnly         (&lt;Leader&gt;bo removes all other open buffers)
 * CtrlP           (&lt;Leader&gt;N to open window, quick find file in project, C-F switch type, C-Z/C-O to mark/open, C-V vsplit, CR opens)
 * EasyMotion      (H and L to specify specific letter to go to, back/forward)
 * Fswitch         (&lt;space&gt;h,hjklHJKL mappings to open source/header file)
 * Fugitive        (&lt;Leader&gt;gs/gc/gd/gl/gp - status (- stage/unstage, p patch, C commit), commit, diff, log, push, diffput/get to stage/checkout, :Gedit)
-* Git             (syntax highlighting for git)
 * Latex-suite     (templates - &lt;Leader&gt;tt, macros - EEQ/SSS/`a/`D, F7 expands commands, F9 completes labels/cites, &lt;Leader&gt;ll compiles [visual]) <-- overkill
-* Mash            (highlight current searched for term differently)
 * MatchIt         (extends % to if/else/endif, can configure more matchpairs)
 * NERDCommenter   (&lt;Leader&gt;c&lt;space&gt;/ci/cm/cb/cA)
 * NERDTree        (&lt;Leader&gt;n opens directory tree, o, s, t to open/vsplit/tab, C changeroot, r refresh, I hidden files)
 * Oper-Replace    (R is multipurpose replace command, Rib, "xR$, etc)
 * Oper-User       (utility plugin for defining new operators)
-* Powerline       (awesome statuslines, colored, symbols, really cool)
 * Protodef        (&lt;space&gt;p/P to read prototypes from header file)
 * Pydoc           (&lt;space&gt;d/D to bring up python doc for cursor word)
-* Rainbow Paren.  (colored nested parentheses/brackets/etc)
 * Repeat          (utility plugin to allow . to work for plugin mappings)
 * RelOps          (modifies operators to display relative line numberings)
 * Signature       (display marks, '] next mark, '] alphabetical order, m1/m! markers, m<space> toggle)
@@ -38,9 +33,15 @@
 * Textobj-Indent  (defines indent text objects, ai aI ii iI)
 * Textobj-Line    (defines line text objects, al il)
 * Textobj-User    (utility plugin for defining text objects)
-* Tmux            (syntax highlighting and filetype recognition for tmux)
 * Unimpaired      (consistent [ and ] motions, [&lt;space&gt; adds spaces, [e exchanges lines, [b buffer navigation)
 * Vimux           (! and ;! run a tmux pane with new command/last command)
+
+*Passive plugins*
+* Git             (syntax highlighting for git)
+* Mash            (highlight current searched for term differently)
+* Powerline       (awesome statuslines, colored, symbols, really cool)
+* Rainbow Paren.  (colored nested parentheses/brackets/etc)
+* Tmux            (syntax highlighting and filetype recognition for tmux)
 
 *Included colorscheme*
 * IR_Black
