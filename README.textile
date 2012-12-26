@@ -18,7 +18,6 @@
 * Protodef        (&lt;space&gt;p/P to read prototypes from header file)
 * Pydoc           (&lt;space&gt;d/D to bring up python doc for cursor word)
 * Repeat          (utility plugin to allow . to work for plugin mappings)
-* RelOps          (modifies operators to display relative line numberings)
 * Signature       (display marks, '] next mark, '] alphabetical order, m1/m! markers, m<space> toggle)
 * SkyBison        (better command line, &lt;space&gt;; to display, cmap &lt;c-l&gt; to switch)
 * Snipmate        (expands snippets after, date:tab:, for:tab: ifmain:tab: etc)
@@ -41,6 +40,7 @@
 * Mash            (highlight current searched for term differently)
 * Powerline       (awesome statuslines, colored, symbols, really cool)
 * Rainbow Paren.  (colored nested parentheses/brackets/etc)
+* RelOps          (modifies operators to display relative line numberings)
 * Tmux            (syntax highlighting and filetype recognition for tmux)
 
 *Included colorscheme*
