@@ -1,24 +1,20 @@
 ------- todo -------
 replace operator cancel out of?
 
-easytags
-lhvim
+
 python-mode
+simpylfold
 jedi-vim (python-autoc)
-vimux, syntastic, tagbar, signature not a repo?
-
-
-updated - 
- -easytags
- through nerdtree
+switch, easytags, vimux, syntastic, tagbar, signature not a repo?
 
 C stuff
+- lhvim
 - clang complete
 - code complete plugin, cctree, http://cscope.sourceforge.net/cscope_vim_tutorial.html
- - check c omnicomplete
-   - fix long load times
- - cocoa.vim
- - ctags objc
- - protodef plugin - defaults for (*this) and output streams
- - hard way book with c
- - read up on splint
+- check c omnicomplete
+  - fix long load times
+- cocoa.vim
+- ctags objc
+- protodef plugin - defaults for (*this) and output streams
+- hard way book with c
+- read up on splint
