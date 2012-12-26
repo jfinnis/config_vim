@@ -111,7 +111,7 @@
 	url = http://github.com/peterhoeg/vim-tmux.git
 [submodule "bundle/unimpaired"]
 	path = bundle/unimpaired
-	url = https://github.com/tpope/unimpaired.git
+	url = http://github.com/tpope/unimpaired.git
 [submodule "bundle/vimux"]
 	path = bundle/vimux
 	url = http://github.com/benmills/vimux.git
