@@ -3,8 +3,10 @@ replace operator cancel out of?
 
 python-mode
 jedi-vim (python-autoc)
+easytags
 
 C stuff
+- omnicppcomplete
 - lhvim
 - clang complete
 - code complete plugin, cctree, http://cscope.sourceforge.net/cscope_vim_tutorial.html

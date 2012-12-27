@@ -17,12 +17,14 @@
 * Oper-User       (utility plugin for defining new operators)
 * Protodef        (&lt;space&gt;p/P to read prototypes from header file)
 * Pydoc           (&lt;space&gt;d/D to bring up python doc for cursor word)
+* Quicktask       (notes plugin, :QTInit to create quicktask, mappings on &lt;space&gt;)
 * Repeat          (utility plugin to allow . to work for plugin mappings)
 * Signature       (display marks, '] next mark, '] alphabetical order, m1/m! markers, m<space> toggle)
 * SkyBison        (better command line, &lt;space&gt;; to display, cmap &lt;c-l&gt; to switch)
 * Snipmate        (expands snippets after, date:tab:, for:tab: ifmain:tab: etc)
 * Speeddating     (&lt;C-A&gt; and &lt;C-X&gt; increment/decrement times and dates, visual do ranges)
 * Surround        (s text object when followed by bracket/tag/paren/quote/etc)
+* Switch          ('-' toggles preset words, e.g., true->TRUE->True->true)
 * Syntastic       (run checker on files on open/save-store in location list, [f, ]f for errors)
 * Tabular         (&lt;Leader&gt;a=/a: to automatically align, |s autoalign tables)
 * Tagbar          (better taglist, ;tl, o to toggle fold, space/enter)
@@ -41,6 +43,7 @@
 * Powerline       (awesome statuslines, colored, symbols, really cool)
 * Rainbow Paren.  (colored nested parentheses/brackets/etc)
 * RelOps          (modifies operators to display relative line numberings)
+* SimpylFold      (folding of classes+functions for Python)
 * Tmux            (syntax highlighting and filetype recognition for tmux)
 
 *Included colorscheme*
@@ -48,7 +51,7 @@
  
 *Language specific settings*
 * Python
-** jpythonfold script
+** Simpylfold plugin
 ** snippets - #!, docs, wh, cl, def, deff, defs, property, ld, ., try, ifmain, _, ae, from
 ** preview window on tab completion
 ** gd goes to function definition in module
