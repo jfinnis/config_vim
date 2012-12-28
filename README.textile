@@ -7,6 +7,7 @@
 * BufOnly         (&lt;Leader&gt;bo removes all other open buffers)
 * CtrlP           (&lt;Leader&gt;N to open window, quick find file in project, C-F switch type, C-Z/C-O to mark/open, C-V vsplit, CR opens)
 * EasyMotion      (H and L to specify specific letter to go to, back/forward)
+* Easytags
 * Fswitch         (&lt;space&gt;h,hjklHJKL mappings to open source/header file)
 * Fugitive        (&lt;Leader&gt;gs/gc/gd/gl/gp - status (- stage/unstage, p patch, C commit), commit, diff, log, push, diffput/get to stage/checkout, :Gedit)
 * Latex-suite     (templates - &lt;Leader&gt;tt, macros - EEQ/SSS/`a/`D, F7 expands commands, F9 completes labels/cites, &lt;Leader&gt;ll compiles [visual]) <-- overkill

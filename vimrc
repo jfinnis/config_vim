@@ -277,10 +277,10 @@ xnoremap <silent> L :<C-U>call EasyMotion#F(1, 0)<cr>
 xnoremap <silent> H :<C-U>call EasyMotion#F(1, 1)<cr>
 
 " easytags settings ----------------------------------------------------- {{{2
-set tags=./tags;
-let g:easytags_by_filetype='~/.vim/tags/'
+set tags=./.tags;
+let g:easytags_by_filetype='~/.vim/.tags/'
 let g:easytags_dynamic_files=1
-let g:easytags_file='~/.vim/easytagsFile'
+let g:easytags_file='~/.vim/.easytagsFile'
 let g:easytags_python_enabled=1
 map <space>u :UpdateTags<CR>
 

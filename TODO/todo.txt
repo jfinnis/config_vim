@@ -3,7 +3,6 @@ replace operator cancel out of?
 
 python-mode
 jedi-vim (python-autoc)
-easytags
 
 C stuff
 - omnicppcomplete
