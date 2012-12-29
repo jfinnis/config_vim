@@ -112,6 +112,9 @@
 [submodule "bundle/unimpaired"]
 	path = bundle/unimpaired
 	url = http://github.com/tpope/unimpaired.git
+[submodule "bundle/vdebug"]
+	path = bundle/vdebug
+	url = https://github.com/joonty/vdebug.git
 [submodule "bundle/vimux"]
 	path = bundle/vimux
 	url = http://github.com/benmills/vimux.git
