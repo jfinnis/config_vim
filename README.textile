@@ -39,13 +39,15 @@
 * Vimux           (! and ;! run a tmux pane with new command/last command)
 
 *Passive plugins*
-* Git             (syntax highlighting for git)
-* Mash            (highlight current searched for term differently)
-* Powerline       (awesome statuslines, colored, symbols, really cool)
-* Rainbow Paren.  (colored nested parentheses/brackets/etc)
-* RelOps          (modifies operators to display relative line numberings)
-* SimpylFold      (folding of classes+functions for Python)
-* Tmux            (syntax highlighting and filetype recognition for tmux)
+* Git               (syntax highlighting for git)
+* Mash              (highlight current searched for term differently)
+* Paren. Crosshairs (emphasizes the parenthesis cursor is on)
+* Powerline         (awesome statuslines, colored, symbols, really cool)
+* Rainbow Paren.    (colored nested parentheses/brackets/etc)
+* Recover           (better handling of vim recovery files, can merge on startup)
+* RelOps            (modifies operators to display relative line numberings)
+* SimpylFold        (folding of classes+functions for Python)
+* Tmux              (syntax highlighting and filetype recognition for tmux)
 
 *Included colorscheme*
 * IR_Black

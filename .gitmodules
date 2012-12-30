@@ -52,6 +52,9 @@
 [submodule "bundle/rainbow_parentheses"]
 	path = bundle/rainbow_parentheses
 	url = http://github.com/kien/rainbow_parentheses.vim.git
+[submodule "bundle/recover"]
+	path = bundle/recover
+	url = https://github.com/chrisbra/Recover.vim.git
 [submodule "bundle/relOps"]
 	path = bundle/relOps
 	url = https://github.com/vim-scripts/RelOps.git
