@@ -22,6 +22,9 @@
 [submodule "bundle/git"]
 	path = bundle/git
 	url = http://github.com/tpope/vim-git.git
+[submodule "bundle/jedi-vim"]
+	path = bundle/jedi-vim
+	url = http://github.com/davidhalter/jedi-vim
 [submodule "bundle/mash"]
 	path = bundle/mash
 	url = http://github.com/dahu/vim-mash.git
@@ -37,9 +40,6 @@
 [submodule "bundle/operator-user"]
 	path = bundle/operator-user
 	url = http://github.com/kana/vim-operator-user.git
-[submodule "bundle/pydoc"]
-	path = bundle/pydoc
-	url = http://github.com/fs111/pydoc.vim
 [submodule "bundle/powerline"]
 	path = bundle/powerline
 	url = http://github.com/Lokaltog/vim-powerline.git
@@ -58,9 +58,6 @@
 [submodule "bundle/repeat"]
 	path = bundle/repeat
 	url = http://github.com/tpope/vim-repeat.git
-[submodule "bundle/signature"]
-	path = bundle/signature
-	url = http://github.com/kshenoy/vim-signature.git
 [submodule "bundle/SimpylFold"]
 	path = bundle/SimpylFold
 	url = https://github.com/tmhedberg/SimpylFold.git
