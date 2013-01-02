@@ -12,7 +12,7 @@ set smarttab
 
 " auto-open tagbar if closed ------------------------------------------ {{{2
 " :TagbarOpen
-set tags+=$HOME/.vim/tags/python.ctags
+set tags+=$HOME/.vim/.tags/python.ctags
 
 " setup environment --------------------------------------------------- {{{2
 py << EOF
@@ -34,9 +34,7 @@ for p in sys.path:
 EOF
 
 " COMPLETION """"""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
-" show window for tab complete ----------------------------------------- {{{2
-set completeopt=menuone,longest,preview
-set omnifunc=pythoncomplete#Complete
+" jedi-vim plugin
 
 " SYNTAX/HIGHLIGHTING """""""""""""""""""""""""""""""""""""""""""""""""" {{{1
 " highlight syntax errors ---------------------------------------------- {{{2
@@ -54,10 +52,13 @@ syn match pythonError "^\s*if\s.*[^\:]$" display
 syn match pythonError "[;]$" display
 syn keyword pythonError do
 
-" MAPPINGS """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
-" gd = go to function definition under cursor -------------------------- {{{2
-map <buffer> gd /def <C-R><C-W><CR>
+" highlight autocomplete menu ------------------------------------------ {{{2
+highlight Pmenu ctermfg=11 ctermbg=24
+highlight PmenuSel ctermfg=11 ctermbg=30
+highlight PmenuSbar ctermbg=24
+highlight PmenuThumb ctermfg=11
 
+" MAPPINGS """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
 " space-e = evaluate a visually selected block ------------------------- {{{2
 python << EOL
 import vim

@@ -10,6 +10,7 @@
 * Easytags
 * Fswitch         (&lt;space&gt;h,hjklHJKL mappings to open source/header file)
 * Fugitive        (&lt;Leader&gt;gs/gc/gd/gl/gp - status (- stage/unstage, p patch, C commit), commit, diff, log, push, diffput/get to stage/checkout, :Gedit)
+* Jedi-vim        (python autocomplete library, better gd, &lt;space&gt;g goto, &lt;space&gt;d pydoc, &lt;space&gt;r refactor, &lt;ctl-space&gt; autocomplete)
 * Latex-suite     (templates - &lt;Leader&gt;tt, macros - EEQ/SSS/`a/`D, F7 expands commands, F9 completes labels/cites, &lt;Leader&gt;ll compiles [visual]) <-- overkill
 * MatchIt         (extends % to if/else/endif, can configure more matchpairs)
 * NERDCommenter   (&lt;Leader&gt;c&lt;space&gt;/ci/cm/cb/cA)
@@ -17,10 +18,8 @@
 * Oper-Replace    (R is multipurpose replace command, Rib, "xR$, etc)
 * Oper-User       (utility plugin for defining new operators)
 * Protodef        (&lt;space&gt;p/P to read prototypes from header file)
-* Pydoc           (&lt;space&gt;d/D to bring up python doc for cursor word)
 * Quicktask       (notes plugin, :QTInit to create quicktask, mappings on &lt;space&gt;)
 * Repeat          (utility plugin to allow . to work for plugin mappings)
-* Signature       (display marks, '] next mark, '] alphabetical order, m1/m! markers, m<space> toggle)
 * SkyBison        (better command line, &lt;space&gt;; to display, cmap &lt;c-l&gt; to switch)
 * Snipmate        (expands snippets after, date:tab:, for:tab: ifmain:tab: etc)
 * Speeddating     (&lt;C-A&gt; and &lt;C-X&gt; increment/decrement times and dates, visual do ranges)
@@ -56,9 +55,7 @@
 * Python
 ** Simpylfold plugin
 ** snippets - #!, docs, wh, cl, def, deff, defs, property, ld, ., try, ifmain, _, ae, from
-** preview window on tab completion
-** gd goes to function definition in module
-** pydoc script, lookup in docs under cursor with K, &lt;space&gt;d/D
+** jedi-vim autocomplete library, preview window, goto, function definition, lookup docs, refactor
 ** can compile with and evaluate visual blocks with &lt;space&gt;d
 ** <space>b/B adds/removes breakpoints
 ** run file in left/below tmux window, pipe to less/column with &lt;space&gt;l/j, &lt;space&gt;[LJ]c/l

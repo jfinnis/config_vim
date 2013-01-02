@@ -4,7 +4,6 @@ replace operator cancel out of?
 vdebug
 lhvim
 python-mode
-jedi-vim (python-autoc)
 
 C stuff
 - omnicppcomplete

@@ -90,12 +90,12 @@ map ZZ <nop>
 inoremap TODO: TODO:<c-o>:norm m1<cr>
 
 " quick file access ----------------------------------------------------- {{{2
-map <Leader>S :source ~/.vimrc<cr>:filetype detect<cr>:echo Sourced vimrc<cr>
+map <Leader>S :source ~/.vimrc<cr>:filetype detect<cr>:echo "Sourced vimrc"<cr>
 map <leader>cd :cd %:h<cr>
-map <space>V :e ~/.vim/vimrc <bar> :cd ~/.vim<cr>
-map <space>M :e ~/.mutt/cfg/muttrc <bar> :cd ~/.mutt/cfg<cr>
-map <space>T :e ~/.tmux/tmux.conf <bar> :cd ~/.tmux<cr>
-map <space>Z :e ~/.zsh/zshrc <bar> :cd ~/.zsh<cr>
+map <leader>V :e ~/.vim/vimrc <bar> :cd ~/.vim<cr>
+map <leader>M :e ~/.mutt/cfg/muttrc <bar> :cd ~/.mutt/cfg<cr>
+map <leader>T :e ~/.tmux/tmux.conf <bar> :cd ~/.tmux<cr>
+map <leader>Z :e ~/.zsh/zshrc <bar> :cd ~/.zsh<cr>
 
 " formatting mappings --------------------------------------------------- {{{2
 " reformat paragraph
@@ -294,6 +294,14 @@ map <Leader>gd :Gdiff<CR>
 map <Leader>gl :Glog<CR>
 map <Leader>gp :Git push origin master<CR>
 autocmd BufReadPost fugitive://* set bufhidden=delete
+
+" jedi python autocomplete ---------------------------------------------- {{{2
+let g:jedi#get_definition_command="gd"
+let g:jedi#goto_command="<space>g"
+let g:jedi#related_names_command=""
+let g:jedi#rename_command="<space>r"
+let g:jedi#pydoc="<space>d"
+let g:jedi#use_tabs_not_buffers=0
 
 " nerdtree bindings and settings ---------------------------------------- {{{2
 map <Leader>n :NERDTreeToggle<CR>
