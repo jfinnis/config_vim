@@ -61,9 +61,6 @@
 [submodule "bundle/repeat"]
 	path = bundle/repeat
 	url = http://github.com/tpope/vim-repeat.git
-[submodule "bundle/SimpylFold"]
-	path = bundle/SimpylFold
-	url = https://github.com/tmhedberg/SimpylFold.git
 [submodule "bundle/SkyBison"]
 	path = bundle/SkyBison
 	url = https://github.com/paradigm/SkyBison.git
