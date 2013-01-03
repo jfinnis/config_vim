@@ -3,7 +3,6 @@ replace operator cancel out of?
 
 vdebug
 lhvim
-python-mode
 
 C stuff
 - omnicppcomplete
