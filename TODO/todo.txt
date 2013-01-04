@@ -6,7 +6,6 @@ github/fugitive screencasts
 replace operator cancel out of?
 aC/iC overlap
 vdebug
-powerline beta
 
 C stuff
 - omnicppcomplete
