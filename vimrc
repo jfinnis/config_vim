@@ -261,13 +261,13 @@ nnoremap <leader>a :Ack
 nnoremap <leader>K :AckHelp 
 
 " start ctrlp ----------------------------------------------------------- {{{2
-let g:ctrlp_map='<Leader>N'
+let g:ctrlp_map='<Leader>n'
 let g:ctrlp_by_filename=1
 let g:ctrlp_match_window_bottom=0
 let g:ctrlp_max_height=15
 let g:ctrlp_open_multiple_files='1vr'
 let g:ctrlp_custom_ignore = {'dir':'\.git$\|\.hg$\|\.svn$'}
-nnoremap <leader>. :CtrlPTag<cr>
+nnoremap <leader>] :CtrlPTag<cr>
 
 " easymotion options and bindings (visual binding screws up snippets) --- {{{2
 let EasyMotion_do_mapping=0
@@ -304,12 +304,16 @@ let g:jedi#pydoc="<space>d"
 let g:jedi#use_tabs_not_buffers=0
 
 " nerdtree bindings and settings ---------------------------------------- {{{2
-map <Leader>n :NERDTreeToggle<CR>
+map <Leader>N :NERDTreeToggle<CR>
 let NERDChDirMode=2
 let NERDTreeAutoDeleteBuffer=1
 let NERDTreeBookmarksFile="NERDTreeBookmarks"
 let NERDTreeIgnore=['\~$', '\.aux$', '\.blg$', '\.bbl$', '\.log$', '\.dvi$']
 let NERDTreeShowBookmarks=1
+" open NERDTree if vim is started with no arguments
+autocmd vimenter * if !argc() | NERDTree | endif
+" close vim if NERDTree is last window open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " quicktask options and bindings ---------------------------------------- {{{2
 let g:quicktask_autosave=1
@@ -328,14 +332,6 @@ let g:relops_mappings=['R']
 
 " replace set to R, allows for R to delete and replace motions ---------- {{{2
 map R <Plug>(operator-replace)
-
-" signature options ----------------------------------------------------- {{{2
-highlight SignColumn ctermbg=16
-map m<del> <Plug>SIG_PurgeMarks
-map m<space> :SignatureToggleDisplay<cr>
-
-" SimpylFold options ---------------------------------------------------- {{{2
-let g:SimpylFold_docstring_preview=1
 
 " skybison mappings ----------------------------------------------------- {{{2
 nnoremap <space>; :<c-u>call SkyBison("")<cr>

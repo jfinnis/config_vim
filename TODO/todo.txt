@@ -1,8 +1,12 @@
-------- todo -------
-replace operator cancel out of?
+------ todo -------
+game theory nyt blog
+github/fugitive screencasts
 
+------- vim -------
+replace operator cancel out of?
+aC/iC overlap
 vdebug
-lhvim
+powerline beta
 
 C stuff
 - omnicppcomplete

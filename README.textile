@@ -2,58 +2,57 @@
 * link vimrc to ~/.vimrc
 
 *Active plugins*
-* Abolish         (cr[c/m/_] to change case, :S/:%S for smart search/substitute, record abbreviations)
-* Ack             (&lt;Leader&gt;a search repo, &lt;Leader&gt;K search help, output in quickfix)
-* BufOnly         (&lt;Leader&gt;bo removes all other open buffers)
-* CtrlP           (&lt;Leader&gt;N to open window, quick find file in project, C-F switch type, C-Z/C-O to mark/open, C-V vsplit, CR opens)
-* EasyMotion      (H and L to specify specific letter to go to, back/forward)
-* Easytags
-* Fswitch         (&lt;space&gt;h,hjklHJKL mappings to open source/header file)
-* Fugitive        (&lt;Leader&gt;gs/gc/gd/gl/gp - status (- stage/unstage, p patch, C commit), commit, diff, log, push, diffput/get to stage/checkout, :Gedit)
-* Jedi-vim        (python autocomplete library, better gd, &lt;space&gt;g goto, &lt;space&gt;d pydoc, &lt;space&gt;r refactor, &lt;ctl-space&gt; autocomplete)
-* Latex-suite     (templates - &lt;Leader&gt;tt, macros - EEQ/SSS/`a/`D, F7 expands commands, F9 completes labels/cites, &lt;Leader&gt;ll compiles [visual]) <-- overkill
-* MatchIt         (extends % to if/else/endif, can configure more matchpairs)
-* NERDCommenter   (&lt;Leader&gt;c&lt;space&gt;/ci/cm/cb/cA)
-* NERDTree        (&lt;Leader&gt;n opens directory tree, o, s, t to open/vsplit/tab, C changeroot, r refresh, I hidden files)
-* Oper-Replace    (R is multipurpose replace command, Rib, "xR$, etc)
-* Oper-User       (utility plugin for defining new operators)
-* Protodef        (&lt;space&gt;p/P to read prototypes from header file)
-* Quicktask       (notes plugin, :QTInit to create quicktask, mappings on &lt;space&gt;)
-* Repeat          (utility plugin to allow . to work for plugin mappings)
-* SkyBison        (better command line, &lt;space&gt;; to display, cmap &lt;c-l&gt; to switch)
-* Snipmate        (expands snippets after, date:tab:, for:tab: ifmain:tab: etc)
-* Speeddating     (&lt;C-A&gt; and &lt;C-X&gt; increment/decrement times and dates, visual do ranges)
-* Surround        (s text object when followed by bracket/tag/paren/quote/etc)
-* Switch          ('-' toggles preset words, e.g., true->TRUE->True->true)
-* Syntastic       (run checker on files on open/save-store in location list, [f, ]f for errors)
-* Tabular         (&lt;Leader&gt;a=/a: to automatically align, |s autoalign tables)
-* Tagbar          (better taglist, ;tl, o to toggle fold, space/enter)
-* Textobj-Args    (defines argument text objects for functions)
-* Textobj-Column  (text objects ac aC ic iC for manipulating blocks)
-* Textobj-Entire  (defines entire buffer text objects, ae, ie)
-* Textobj-Indent  (defines indent text objects, ai aI ii iI)
-* Textobj-Line    (defines line text objects, al il)
-* Textobj-User    (utility plugin for defining text objects)
-* Unimpaired      (consistent [ and ] motions, [&lt;space&gt; adds spaces, [e exchanges lines, [b buffer navigation)
-* Vimux           (! and ;! run a tmux pane with new command/last command)
+* Abolish            (cr[c/m/_] to change case, :S/:%S for smart search/substitute, record abbreviations)
+* Ack                (&lt;Leader&gt;a search repo, &lt;Leader&gt;K search help, output in quickfix)
+* BufOnly            (&lt;Leader&gt;bo removes all other open buffers)
+* CtrlP              (&lt;Leader&gt;n to open window, quick find file in project, C-F switch type, C-Z/C-O to mark/open, C-V vsplit, CR opens, &lt;Leader&gt;] ctrlpTag)
+* EasyMotion         (H and L to specify specific letter to go to, back/forward)
+* Fswitch            (&lt;space&gt;h,hjklHJKL mappings to open source/header file)
+* Fugitive           (&lt;Leader&gt;gs/gc/gd/gl/gp - status (- stage/unstage, p patch, C commit), commit, diff, log, push, diffput/get to stage/checkout, :Gedit)
+* Jedi-vim           (python autocomplete library, better gd, &lt;space&gt;g goto, &lt;space&gt;d pydoc, &lt;space&gt;r refactor, &lt;ctl-space&gt; autocomplete)
+* Latex-suite        (templates - &lt;Leader&gt;tt, macros - EEQ/SSS/`a/`D, F7 expands commands, F9 completes labels/cites, &lt;Leader&gt;ll compiles [visual]) <-- overkill
+* MatchIt            (extends % to if/else/endif, can configure more matchpairs)
+* NERDCommenter      (&lt;Leader&gt;c&lt;space&gt;/ci/cm/cb/cA)
+* NERDTree           (&lt;Leader&gt;N opens directory tree, o, s, t to open/vsplit/tab, C changeroot, r refresh, I hidden files)
+* OmniCppComplete    ()
+* Operator-Replace   (R is multipurpose replace command, Rib, "xR$, etc)
+* Protodef           (&lt;space&gt;p/P to read prototypes from header file)
+* Quicktask          (notes plugin, :QTInit to create quicktask, mappings on &lt;space&gt;)
+* SkyBison           (better command line, &lt;space&gt;; to display, cmap &lt;c-l&gt; to switch)
+* Snipmate           (expands snippets after, date:tab:, for:tab: ifmain:tab: etc)
+* Speeddating        (&lt;C-A&gt; and &lt;C-X&gt; increment/decrement times and dates, visual do ranges)
+* Surround           (s text object when followed by bracket/tag/paren/quote/etc)
+* Switch             ('-' toggles preset words, e.g., true->TRUE->True->true)
+* Syntastic          (run checker on files on open/save-store in location list, [f, ]f for errors)
+* Tagbar             (better taglist, ;tl, o to toggle fold, space/enter)
+* Textobj-Arguments  (defines argument text objects for functions)
+* Textobj-Column     (text objects ac aC ic iC for manipulating blocks)
+* Textobj-Entire     (defines entire buffer text objects, ae, ie)
+* Textobj-Indent     (defines indent text objects, ai aI ii iI)
+* Textobj-Line       (defines line text objects, al il)
+* Textobj-Underscore (defines _ for surrounding textobjects)
+* Unimpaired         (consistent [ and ] motions, [&lt;space&gt; adds spaces, [e exchanges lines, [b buffer navigation)
+* VDebug             ()
+* Vimux              (! and ;! run a tmux pane with new command/last command)
 
 *Passive plugins*
-* Git               (syntax highlighting for git)
-* Mash              (highlight current searched for term differently)
-* Paren. Crosshairs (emphasizes the parenthesis cursor is on)
-* Powerline         (awesome statuslines, colored, symbols, really cool)
-* Rainbow Paren.    (colored nested parentheses/brackets/etc)
-* Recover           (better handling of vim recovery files, can merge on startup)
-* RelOps            (modifies operators to display relative line numberings)
-* SimpylFold        (folding of classes+functions for Python)
-* Tmux              (syntax highlighting and filetype recognition for tmux)
+* Easytags        (automatically manage tags)
+* Mash            (highlight current searched for term differently)
+* Operator-User   (utility plugin for defining new operators)
+* Powerline       (awesome statuslines, colored, symbols, really cool)
+* Rainbow Paren.  (colored nested parentheses/brackets/etc)
+* Repeat          (utility plugin to allow . to work for plugin mappings)
+* Recover         (better handling of vim recovery files, can merge on startup)
+* RelOps          (modifies operators to display relative line numberings)
+* Textobj-User    (utility plugin for defining text objects)
+* Tmux            (syntax highlighting and filetype recognition for tmux)
 
 *Included colorscheme*
 * IR_Black
  
 *Language specific settings*
 * Python
-** Simpylfold plugin
+** python-mode folding and motions on [[, [M, [C, aC, aM
 ** snippets - #!, docs, wh, cl, def, deff, defs, property, ld, ., try, ifmain, _, ae, from
 ** jedi-vim autocomplete library, preview window, goto, function definition, lookup docs, refactor
 ** can compile with and evaluate visual blocks with &lt;space&gt;d
