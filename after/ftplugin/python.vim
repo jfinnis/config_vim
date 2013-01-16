@@ -102,15 +102,15 @@ vmap <space>e :py EvaluateCurrentRange()<cr>
 
 " space-j/Jl/Jc, space-l/Ll/Lc ----------------------------------------- {{{2
 " run command in below or right window
-nmap <silent> <space>j :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="v"<cr>:let g:VimuxHeight="30"<cr>:call RunVimTmuxCommand("python %")<cr>:echo "Executing file..."<cr>
-nmap <silent> <space>l :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="h"<cr>:let g:VimuxHeight="40"<cr>:call RunVimTmuxCommand("python %")<cr>:echo "Executing file..."<cr>
+nnoremap <buffer> <silent> <space>j :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="v"<cr>:let g:VimuxHeight="30"<cr>:call RunVimTmuxCommand("python %")<cr>:echo "Executing file..."<cr>
+nnoremap <buffer> <silent> <space>l :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="h"<cr>:let g:VimuxHeight="40"<cr>:call RunVimTmuxCommand("python %")<cr>:echo "Executing file..."<cr>
 
-" run and pipe to column or less
-nmap <silent> <space>Jc :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="v"<cr>:let g:VimuxHeight="30"<cr>:call RunVimTmuxCommand("python % <bar> column")<cr>:echo "Executing file..."<cr>
-nmap <silent> <space>Lc :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="h"<cr>:let g:VimuxHeight="40"<cr>:call RunVimTmuxCommand("python % <bar> column")<cr>:echo "Executing file..."<cr>
+"" run and pipe to column or less
+nnoremap <buffer> <silent> <space>Jc :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="v"<cr>:let g:VimuxHeight="30"<cr>:call RunVimTmuxCommand("python % <bar> column")<cr>:echo "Executing file..."<cr>
+nnoremap <buffer> <silent> <space>Lc :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="h"<cr>:let g:VimuxHeight="40"<cr>:call RunVimTmuxCommand("python % <bar> column")<cr>:echo "Executing file..."<cr>
 
-nmap <silent> <space>Jl :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="v"<cr>:let g:VimuxHeight="30"<cr>:call RunVimTmuxCommand("python % <bar> less")<cr>:echo "Executing file..."<cr>
-nmap <silent> <space>Ll :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="h"<cr>:let g:VimuxHeight="40"<cr>:call RunVimTmuxCommand("python % <bar> less")<cr>:echo "Executing file..."<cr>
+nnoremap <buffer> <silent> <space>Jl :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="v"<cr>:let g:VimuxHeight="30"<cr>:call RunVimTmuxCommand("python % <bar> less")<cr>:echo "Executing file..."<cr>
+nnoremap <buffer> <silent> <space>Ll :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="h"<cr>:let g:VimuxHeight="40"<cr>:call RunVimTmuxCommand("python % <bar> less")<cr>:echo "Executing file..."<cr>
 
 " COMMANDS """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
 " space-b/B = add/remove breakpoints ----------------------------------- {{{2
