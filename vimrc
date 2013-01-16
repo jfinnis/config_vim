@@ -308,7 +308,7 @@ map <Leader>N :NERDTreeToggle<CR>
 let NERDChDirMode=2
 let NERDTreeAutoDeleteBuffer=1
 let NERDTreeBookmarksFile="NERDTreeBookmarks"
-let NERDTreeIgnore=['\~$', '\.aux$', '\.blg$', '\.bbl$', '\.log$', '\.dvi$']
+let NERDTreeIgnore=['\~$', '\.aux$', '\.blg$', '\.bbl$', '\.log$', '\.dvi$', '\.gif$', '\.png$', '\.jpg$', '\.doc$', '\.bmp$']
 let NERDTreeShowBookmarks=1
 " open NERDTree if vim is started with no arguments
 autocmd vimenter * if !argc() | NERDTree | endif
