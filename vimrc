@@ -71,6 +71,10 @@ autocmd BufReadPost *.pdf silent %!pdftotext -nopgbrk -q -eol unix "%" - | fmt -
 autocmd BufReadPost *.rtf silent %!unrtf --text "%"
 autocmd BufWriteCmd *.pdf,*.rtf,*.odt,*.odp,*.doc set readonly
 
+" open images ----------------------------------------------------------- {{{2
+autocmd BufReadPost *.png,.jpg,*.gif,*.bmp silent !eog "%"
+autocmd BufReadPost *.png,.jpg,*.gif,*.bmp silent :normal ;Q
+
 " format specific filetypes --------------------------------------------- {{{2
 augroup filetypedetect
     autocmd BufNewFile,BufRead .tmux.conf*,tmux.conf* setfiletype tmux

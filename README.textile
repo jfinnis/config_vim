@@ -49,6 +49,10 @@
 
 *Included colorscheme*
 * IR_Black
+
+*General modifications*
+** Can open .doc/.odt/.pdf/.rtf files (read-only)
+** Can launch external browser for .png/.jpg/.gif/.bmp images
  
 *Language specific settings*
 * Python
@@ -75,7 +79,7 @@
 * LaTeX 
 
 *Required programs*
-* pdftotext, odt2txt, antiword, unrtf, python, ruby
+* pdftotext, odt2txt, antiword, unrtf, python, ruby, eog
 
 *Compiling
 * vim7.3 - @./configure --with-features=huge --enable-rubyinterp=yes --enable-pythoninterp=yes
