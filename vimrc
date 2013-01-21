@@ -127,7 +127,7 @@ nnoremap gr gR
 nnoremap S i<cr><esc>
 
 " remove all trailing whitespace ---------------------------------------- {{{2
-nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<CR>:echo "Removed trailing whitespace"<CR>
+nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<cr>:echo "Removed trailing whitespace"<cr>
 
 " global substitute word under cursor ----------------------------------- {{{2
 nmap <Leader>s :%s/\<<c-r>=expand("<cword>")<cr>\>/
@@ -135,12 +135,12 @@ vmap <Leader>s :<C-U>%s/\<<c-r>*\>/
 
 " next/previous word under cursor in same column  ----------------------- {{{2
 " i.e., to navigate amongst same blocks of structure code
-nnoremap g* yiw:let c=col('.')<CR>:let @/="^.*\\%".c.'c\zs'.@"<CR>n
-nnoremap g# yiw:let c=col('.')<CR>:let @/="^.*\\%".c.'c\zs'.@"<CR>N
+nnoremap g* yiw:let c=col('.')<cr>:let @/="^.*\\%".c.'c\zs'.@"<cr>n
+nnoremap g# yiw:let c=col('.')<cr>:let @/="^.*\\%".c.'c\zs'.@"<cr>N
 
 " edit selection in new split by itself --------------------------------- {{{2
 " <leader>x to return
-xnoremap X y:let [f,s,v]=[&ft,&syn,getregtype('@"')]<CR><C-w>nVp:set ft=<c-r>=f<CR> syn=<c-r>=s<CR><CR>:nnoremap <buffer> <Leader>x :let @"=v<C-r>="<"<CR>CR>gg0@"G$d:bw!<C-r>="<"<CR>CR>gvp<CR>
+xnoremap X y:let [f,s,v]=[&ft,&syn,getregtype('@"')]<cr><C-w>nVp:set ft=<c-r>=f<cr> syn=<c-r>=s<cr><cr>:nnoremap <buffer> <Leader>x :let @"=v<C-r>="<"<cr>gg0@"G$d:bw!<C-r>="<"<cr>gvp<cr>
 
 " use M to lookup with man ---------------------------------------------- {{{2
 nnoremap M K
@@ -207,7 +207,7 @@ nnoremap <silent> <Leader>d :sav! %_diff_tmpfile<cr>:vs<cr>:e #<cr>:diffthis<cr
 nnoremap <silent> <Leader>D :Bclose<cr>o:diffoff!<cr>:!rm %_diff_tmpfile<cr>:echo "Deleted tmpfile..."<cr>
 
 " location list popup --------------------------------------------------- {{{2
-map <space>l :llist<CR>
+map <space>l :llist<cr>
 
 " window management ----------------------------------------------------- {{{2
 map <Leader>h <C-W>h                  " ;[hjkl] to navigate split windows
@@ -218,23 +218,23 @@ map + <C-W>_                         " max window
 map _ <C-W>=                         " same size
 
 " window resizing ------------------------------------------------------- {{{2
-nnoremap <silent> <C-W>< <C-W><:let g:LastWindowResize="in-horiz"<CR>
-nnoremap <silent> <C-W>> <C-W>>:let g:LastWindowResize="out-horiz"<CR>
-nnoremap <silent> <C-W>+ <C-W>+:let g:LastWindowResize="out-vert"<CR>
-nnoremap <silent> <C-W>- <C-W>-:let g:LastWindowResize="in-vert"<CR>
+nnoremap <silent> <C-W>< <C-W><:let g:LastWindowResize="in-horiz"<cr>
+nnoremap <silent> <C-W>> <C-W>>:let g:LastWindowResize="out-horiz"<cr>
+nnoremap <silent> <C-W>+ <C-W>+:let g:LastWindowResize="out-vert"<cr>
+nnoremap <silent> <C-W>- <C-W>-:let g:LastWindowResize="in-vert"<cr>
 
 " buffer management ----------------------------------------------------- {{{2
 " :q - close window and keep buffer, ]b, [b prev/next buffer
-map <Leader>, :e #<CR>                " open alternate buffer
-map <Leader>q :bd<CR>                 " close current buffer and close window
-map <Leader>Q :Bclose<CR>             " close current buffer and keep window
-map <Leader>bo :BufOnly<CR>           " close all buffers and windows except this
+map <Leader>, :e #<cr>                " open alternate buffer
+map <Leader>q :bd<cr>                 " close current buffer and close window
+map <Leader>Q :Bclose<cr>             " close current buffer and keep window
+map <Leader>bo :BufOnly<cr>           " close all buffers and windows except this
 
 " automatically centering text ------------------------------------------ {{{2
 " can use zz/t/b in visual mode to center/top/bottom selection
-xnoremap <silent> zz :<C-u>call setpos('.',[0,(line("'>")-line("'<"))/2+line("'<"),0,0])<Bar>normal! zzgv<CR>
-xnoremap <silent> zt :<C-u>call setpos('.',[0,line("'<"),0,0])<Bar>normal! ztgv<CR>
-xnoremap <silent> zb :<C-u>call setpos('.',[0,line("'>"),0,0])<Bar>normal! zbgv<CR>
+xnoremap <silent> zz :<C-u>call setpos('.',[0,(line("'>")-line("'<"))/2+line("'<"),0,0])<Bar>normal! zzgv<cr>
+xnoremap <silent> zt :<C-u>call setpos('.',[0,line("'<"),0,0])<Bar>normal! ztgv<cr>
+xnoremap <silent> zb :<C-u>call setpos('.',[0,line("'>"),0,0])<Bar>normal! zbgv<cr>
 
 " center screen for searches, foldcloses, {, }, [[, ]]
 nnoremap n nzz
@@ -254,9 +254,9 @@ nnoremap [c [czz
 :for m in map(map(range(26), 'nr2char(97+v:val)'), '"nnoremap ''".v:val." ''".v:val."zz"') | exe m | endfor
 
 " can use zz/t/b in visual mode to center/top/bottom selection
-xnoremap <silent> zz :<C-u>call setpos('.',[0,(line("'>")-line("'<"))/2+line("'<"),0,0])<Bar>normal! zzgv<CR>
-xnoremap <silent> zt :<C-u>call setpos('.',[0,line("'<"),0,0])<Bar>normal! ztgv<CR>
-xnoremap <silent> zb :<C-u>call setpos('.',[0,line("'>"),0,0])<Bar>normal! zbgv<CR>
+xnoremap <silent> zz :<C-u>call setpos('.',[0,(line("'>")-line("'<"))/2+line("'<"),0,0])<Bar>normal! zzgv<cr>
+xnoremap <silent> zt :<C-u>call setpos('.',[0,line("'<"),0,0])<Bar>normal! ztgv<cr>
+xnoremap <silent> zb :<C-u>call setpos('.',[0,line("'>"),0,0])<Bar>normal! zbgv<cr>
 
 " PLUGIN SPECIFIC BINDINGS """""""""""""""""""""""""""""""""""""""""""""" {{{1
 " Ack command/shortcut -------------------------------------------------- {{{2
@@ -286,17 +286,17 @@ let g:easytags_by_filetype='~/.vim/.tags/'
 let g:easytags_dynamic_files=1
 let g:easytags_file='~/.vim/.easytagsFile'
 let g:easytags_python_enabled=1
-map <space>u :UpdateTags<CR>
+map <space>u :UpdateTags<cr>
 
 " fugitive git wrapping ------------------------------------------------- {{{2
-map <Leader>gs :Gstatus<CR>
-map <Leader>ga :Git add %<CR>
-map <Leader>gb :Gblame<CR>
-map <Leader>gw :Gbrowse<CR>
-map <Leader>gc :Gcommit -a<CR>
-map <Leader>gd :Gdiff<CR>
-map <Leader>gl :Glog<CR>
-map <Leader>gp :Git push origin master<CR>
+map <Leader>gs :Gstatus<cr>
+map <Leader>ga :Git add %<cr>
+map <Leader>gb :Gblame<cr>
+map <Leader>gw :Gbrowse<cr>
+map <Leader>gc :Gcommit -a<cr>
+map <Leader>gd :Gdiff<cr>
+map <Leader>gl :Glog<cr>
+map <Leader>gp :Git push origin master<cr>
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " jedi python autocomplete ---------------------------------------------- {{{2
@@ -308,7 +308,7 @@ let g:jedi#pydoc="<space>d"
 let g:jedi#use_tabs_not_buffers=0
 
 " nerdtree bindings and settings ---------------------------------------- {{{2
-map <Leader>N :NERDTreeToggle<CR>
+map <Leader>N :NERDTreeToggle<cr>
 let NERDChDirMode=2
 let NERDTreeAutoDeleteBuffer=1
 let NERDTreeBookmarksFile="NERDTreeBookmarks"
@@ -346,39 +346,39 @@ cnoremap <c-l> <c-r>=SkyBison("")<cr><cr>
 let g:snips_author='Joshua Finnis'
 
 " switch bindings ------------------------------------------------------- {{{2
-nnoremap - :Switch<CR>
+nnoremap - :Switch<cr>
 
 " syntastic settings ---------------------------------------------------- {{{2
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_balloons=0
 let g:syntastic_loc_list_height=5
 let g:syntastic_enable_signs=1
-map <F12> :SyntasticToggleMode<CR>
+map <F12> :SyntasticToggleMode<cr>
 
 " tabular settings to align at = and after : for blocks of code --------- {{{2
-nmap <Leader>= :Tabularize /=<CR>
-vmap <Leader>= :Tabularize /=<CR>
-nmap <Leader>: :Tabularize /:\zs/l0l1<CR>
-vmap <Leader>: :Tabularize /:\zs/l0l1<CR>
+nmap <Leader>= :Tabularize /=<cr>
+vmap <Leader>= :Tabularize /=<cr>
+nmap <Leader>: :Tabularize /:\zs/l0l1<cr>
+vmap <Leader>: :Tabularize /:\zs/l0l1<cr>
 
 " tagbar settings ------------------------------------------------------- {{{2
 let g:tagbar_width=30
 let g:tagbar_autofocus=1
 let g:tagbar_compact=1
 let g:tagbar_autoshowtag=1
-map <Leader>tl :TagbarToggle<CR>
+map <Leader>tl :TagbarToggle<cr>
 "let g:tagbar_type_objc={'ctagstype':'ObjectiveC', 'kinds':['i:interface', 'I:implementation', 'p:Protocol', 'm:Object_method', 'c:Class_method', 'v:Global_variable', 'F:Object field', 'f:function', 'p:property', 't:type_alias', 's:type_structure', 'e:enumeration', 'M:preprocessor_macro'], 'sro':' ', 'kind2scope':{'i':'interface', 'I':'Implementation', 'p':'Protocol', 's':'type_structure', 'e':'enumeration'}, 'scope2kind':{'interface':'i', 'implementation':'I', 'Protocol':'p', 'type_structure':'s', 'enumeration':'e'}}
 
 " vimux commands -------------------------------------------------------- {{{2
-map ! :call PromptVimTmuxCommand()<CR>
-map <space>! :call RunLastVimTmuxCommand()<CR>
+map ! :call PromptVimTmuxCommand()<cr>
+map <space>! :call RunLastVimTmuxCommand()<cr>
 map <space>@ :CloseVimTmuxPanes<cr>
 let g:VimuxUseNearestPane=0
 
 " COMMANDS """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
 " align according to |s ------------------------------------------------- {{{2
 " assuming the first line has appropriate table format, format following lines '|'
-inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<cr>a
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
   if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
@@ -454,7 +454,7 @@ function! ToggleSingleLine()
     echo "Toggle: normal vim movements"
   endif
 endfunction
-map <F9> :call ToggleSingleLine()<CR>
+map <F9> :call ToggleSingleLine()<cr>
 
 " set scripts as executable and add a shebang to beginning -------------- {{{2
 function! SetExecutableBit()
@@ -493,7 +493,7 @@ function! SetExecutable()
     call SetExecutableBit()
     call SetShebang()
 endfunction
-nmap X :w<CR>:call SetExecutable()<CR>
+nmap X :w<cr>:call SetExecutable()<cr>
 
 " hexdumps the file (as a toggle) --------------------------------------- {{{2
 function! ToggleHexdump()
@@ -508,7 +508,7 @@ function! ToggleHexdump()
         let s:xxd=1
     endif
 endfunction
-map <F8> :call ToggleHexdump()<CR>
+map <F8> :call ToggleHexdump()<cr>
 
 " resize window according to last resize -------------------------------- {{{2
 function! RepeatResize()
@@ -524,7 +524,7 @@ function! RepeatResize()
         endif
     endif
 endfunction
-map <silent> , :call RepeatResize()<CR>
+map <silent> , :call RepeatResize()<cr>
 
 " free keys: Z \ ` F2-7 {{{2
 "{{{1 vim:fdm=marker:
