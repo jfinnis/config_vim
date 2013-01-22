@@ -1,8 +1,8 @@
 ------ todo -------
-game theory nyt blog
 github/fugitive screencasts
 
 ------- vim -------
+scriptease
 replace operator cancel out of?
 aC/iC overlap
 vdebug
