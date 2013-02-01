@@ -56,7 +56,7 @@
  
 *Language specific settings*
 * Python
-** python-mode folding and motions on [[, [M, [C, aC, aM
+** python-mode folding and motions on [[, [M, [m, am, iM, etc
 ** snippets - #!, docs, wh, cl, def, deff, defs, property, ld, ., try, ifmain, _, ae, from
 ** jedi-vim autocomplete library, preview window, goto, function definition, lookup docs, refactor
 ** can compile with and evaluate visual blocks with &lt;space&gt;d

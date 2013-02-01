@@ -60,37 +60,37 @@ highlight PmenuSbar ctermbg=24
 highlight PmenuThumb ctermfg=11
 
 " MAPPINGS """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
-" remapped motions - ]], ]M, ]C, aC, iC, etc --------------------------- {{{2
+" remapped motions - ]], ]M, ]m, aM, im, etc --------------------------- {{{2
 nnoremap <silent> <buffer> ]]  :<C-U>call PymodeMotionMove('^\(class\\|def\)\s', '')<CR>
 nnoremap <silent> <buffer> [[  :<C-U>call PymodeMotionMove('^\(class\\|def\)\s', 'b')<CR>
-nnoremap <silent> <buffer> ]C  :<C-U>call PymodeMotionMove('^\(class\\|def\)\s', '')<CR>
-nnoremap <silent> <buffer> [C  :<C-U>call PymodeMotionMove('^\(class\\|def\)\s', 'b')<CR>
-nnoremap <silent> <buffer> ]M  :<C-U>call PymodeMotionMove('^\s*def\s', '')<CR>
-nnoremap <silent> <buffer> [M  :<C-U>call PymodeMotionMove('^\s*def\s', 'b')<CR>
+nnoremap <silent> <buffer> ]M  :<C-U>call PymodeMotionMove('^\(class\\|def\)\s', '')<CR>
+nnoremap <silent> <buffer> [M  :<C-U>call PymodeMotionMove('^\(class\\|def\)\s', 'b')<CR>
+nnoremap <silent> <buffer> ]m  :<C-U>call PymodeMotionMove('^\s*def\s', '')<CR>
+nnoremap <silent> <buffer> [m  :<C-U>call PymodeMotionMove('^\s*def\s', 'b')<CR>
 
 onoremap <silent> <buffer> ]]  :<C-U>call PymodeMotionMove('^\(class\\|def\)\s', '')<CR>
 onoremap <silent> <buffer> [[  :<C-U>call PymodeMotionMove('^\(class\\|def\)\s', 'b')<CR>
-onoremap <silent> <buffer> ]C  :<C-U>call PymodeMotionMove('^\(class\\|def\)\s', '')<CR>
-onoremap <silent> <buffer> [C  :<C-U>call PymodeMotionMove('^\(class\\|def\)\s', 'b')<CR>
-onoremap <silent> <buffer> ]M  :<C-U>call PymodeMotionMove('^\s*def\s', '')<CR>
-onoremap <silent> <buffer> [M  :<C-U>call PymodeMotionMove('^\s*def\s', 'b')<CR>
+onoremap <silent> <buffer> ]M  :<C-U>call PymodeMotionMove('^\(class\\|def\)\s', '')<CR>
+onoremap <silent> <buffer> [M  :<C-U>call PymodeMotionMove('^\(class\\|def\)\s', 'b')<CR>
+onoremap <silent> <buffer> ]m  :<C-U>call PymodeMotionMove('^\s*def\s', '')<CR>
+onoremap <silent> <buffer> [m  :<C-U>call PymodeMotionMove('^\s*def\s', 'b')<CR>
 
 vnoremap <silent> <buffer> ]]  :call PymodeMotionVmove('^\(class\\|def\)\s', '')<CR>
 vnoremap <silent> <buffer> [[  :call PymodeMotionVmove('^\(class\\|def\)\s', 'b')<CR>
-vnoremap <silent> <buffer> ]M  :call PymodeMotionVmove('^\s*def\s', '')<CR>
-vnoremap <silent> <buffer> [M  :call PymodeMotionVmove('^\s*def\s', 'b')<CR>
+vnoremap <silent> <buffer> ]m  :call PymodeMotionVmove('^\s*def\s', '')<CR>
+vnoremap <silent> <buffer> [m  :call PymodeMotionVmove('^\s*def\s', 'b')<CR>
 
-onoremap <silent> <buffer> C  :<C-U>call PymodeMotionSelect('^\s*class\s', 0)<CR>
-onoremap <silent> <buffer> aC :<C-U>call PymodeMotionSelect('^\s*class\s', 0)<CR>
-onoremap <silent> <buffer> iC :<C-U>call PymodeMotionSelect('^\s*class\s', 1)<CR>
-vnoremap <silent> <buffer> aC :<C-U>call PymodeMotionSelect('^\s*class\s', 0)<CR>
-vnoremap <silent> <buffer> iC :<C-U>call PymodeMotionSelect('^\s*class\s', 1)<CR>
+onoremap <silent> <buffer> M  :<C-U>call PymodeMotionSelect('^\s*class\s', 0)<CR>
+onoremap <silent> <buffer> aM :<C-U>call PymodeMotionSelect('^\s*class\s', 0)<CR>
+onoremap <silent> <buffer> iM :<C-U>call PymodeMotionSelect('^\s*class\s', 1)<CR>
+vnoremap <silent> <buffer> aM :<C-U>call PymodeMotionSelect('^\s*class\s', 0)<CR>
+vnoremap <silent> <buffer> iM :<C-U>call PymodeMotionSelect('^\s*class\s', 1)<CR>
 
-onoremap <silent> <buffer> M  :<C-U>call PymodeMotionSelect('^\s*def\s', 0)<CR>
-onoremap <silent> <buffer> aM :<C-U>call PymodeMotionSelect('^\s*def\s', 0)<CR>
-onoremap <silent> <buffer> iM :<C-U>call PymodeMotionSelect('^\s*def\s', 1)<CR>
-vnoremap <silent> <buffer> aM :<C-U>call PymodeMotionSelect('^\s*def\s', 0)<CR>
-vnoremap <silent> <buffer> iM :<C-U>call PymodeMotionSelect('^\s*def\s', 1)<CR>
+onoremap <silent> <buffer> m  :<C-U>call PymodeMotionSelect('^\s*def\s', 0)<CR>
+onoremap <silent> <buffer> am :<C-U>call PymodeMotionSelect('^\s*def\s', 0)<CR>
+onoremap <silent> <buffer> im :<C-U>call PymodeMotionSelect('^\s*def\s', 1)<CR>
+vnoremap <silent> <buffer> am :<C-U>call PymodeMotionSelect('^\s*def\s', 0)<CR>
+vnoremap <silent> <buffer> im :<C-U>call PymodeMotionSelect('^\s*def\s', 1)<CR>
 
 " space-e = evaluate a visually selected block ------------------------- {{{2
 python << EOL
@@ -112,44 +112,20 @@ nnoremap <buffer> <silent> <space>Lc :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let
 nnoremap <buffer> <silent> <space>Jl :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="v"<cr>:let g:VimuxHeight="30"<cr>:call RunVimTmuxCommand("python % <bar> less")<cr>:echo "Executing file..."<cr>
 nnoremap <buffer> <silent> <space>Ll :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="h"<cr>:let g:VimuxHeight="40"<cr>:call RunVimTmuxCommand("python % <bar> less")<cr>:echo "Executing file..."<cr>
 
+" space-D wait debug, space-dl/dj start and connect -------------------- {{{2
+nnoremap <buffer> <space>D :python debugger.run()<cr>
+nnoremap <buffer> <space>dl :w<cr>:cd %:h<cr>:let g:VimuxOrientation="h"<cr>:let g:VimuxHeight="40"<cr>:call RunVimTmuxCommand("sleep 3 && python -S ~/.vim/bin/Komodo-pythonremotedebugging/bin/pydbgp -d localhost:9000 %")<cr>:python debugger.run()<cr>
+nnoremap <buffer> <space>dj :w<cr>:cd %:h<cr>:let g:VimuxOrientation="v"<cr>:let g:VimuxHeight="20"<cr>:call RunVimTmuxCommand("sleep 3 && python -S ~/.vim/bin/Komodo-pythonremotedebugging/bin/pydbgp -d localhost:9000 %")<cr>:python debugger.run()<cr>
+
+" space-B sets/unsets breakpoints, window/conditional/etc -------------- {{{2
+nnoremap <buffer> <space>B :Breakpoint<cr>
+nnoremap <buffer> <space>bb :BreakpointWindow<cr>
+nnoremap <buffer> <space>bc :Breakpoint conditional 
+nnoremap <buffer> <space>be :Breakpoint exception 
+nnoremap <buffer> <space>bf :Breakpoint call 
+nnoremap <buffer> <space>bF :Breakpoint return 
+
 " COMMANDS """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
-" space-b/B = add/remove breakpoints ----------------------------------- {{{2
-map <space>b :py SetBreakpoint()<cr>
-map <space>B :py RemoveBreakpoints()<cr>
-python << EOF
-def SetBreakpoint():                                                   
-    import re
-    nLine = int( vim.eval( 'line(".")'))
-    strLine = vim.current.line
-    strWhite = re.search( '^(\s*)', strLine).group(1)
-    vim.current.buffer.append(
-       "%(space)spdb.set_trace() %(mark)s Breakpoint %(mark)s" %
-         {'space':strWhite, 'mark': '#' * 30}, nLine - 1)
-    for strLine in vim.current.buffer:
-        if strLine == "import pdb":
-            break
-    else:
-        vim.current.buffer.append( 'import pdb', 0)
-        vim.command( 'normal j1')
-
-def RemoveBreakpoints():
-    import re
-    nCurrentLine = int( vim.eval( 'line(".")'))
-    nLines = []
-    nLine = 1
-    for strLine in vim.current.buffer:
-        if strLine == 'import pdb' or strLine.lstrip()[:15] == 'pdb.set_trace()':
-            nLines.append( nLine)
-        nLine += 1
-    nLines.reverse()
-    for nLine in nLines:
-        vim.command( 'normal %dG' % nLine)
-        vim.command( 'normal dd')
-        if nLine < nCurrentLine:
-            nCurrentLine -= 1
-    vim.command( 'normal %dG' % nCurrentLine)
-EOF
-
 " Python-mode motions -------------------------------------------------- {{{2
 fun! PymodeMotionMove(pattern, flags, ...)
     let cnt = v:count1 - 1

@@ -3,8 +3,7 @@ game theory nyt blog
 github/fugitive screencasts
 
 ------- vim -------
-replace operator cancel out of?
-aC/iC overlap
+pull request gk/gj nerdtree
 vdebug
 
 C stuff
