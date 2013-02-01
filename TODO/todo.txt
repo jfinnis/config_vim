@@ -1,9 +1,9 @@
 ------ todo -------
-game theory nyt blog
 github/fugitive screencasts
 
 ------- vim -------
 pull request gk/gj nerdtree
+scriptease
 vdebug
 
 C stuff
