@@ -3,7 +3,6 @@ github/fugitive screencasts
 
 ------- vim -------
 pull request gk/gj nerdtree
-scriptease
 
 C stuff
 - omnicppcomplete

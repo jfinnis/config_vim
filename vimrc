@@ -83,7 +83,7 @@ augroup END
 " don't quote signatures in mutt files ---------------------------------- {{{2
 au BufRead /tmp/mutt* normal :g/^> -- $/,/^$/-1d^M/^$^M^L
 
-" KEY UNBINDINGS """""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
+    " KEY UNBINDINGS """""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
 " nop dumb bindings ----------------------------------------------------- {{{2
 map ZQ <nop>
 map ZZ <nop>
@@ -526,6 +526,34 @@ function! RepeatResize()
     endif
 endfunction
 map <silent> , :call RepeatResize()<cr>
+
+" print syntax highlight group under cursor ---------------------------- {{{2
+" From Scriptease plugin by Tim Pope
+function! Synnames(...) abort
+  if a:0
+    let [line, col] = [a:1, a:2]
+  else
+    let [line, col] = [line('.'), col('.')]
+  endif
+  return reverse(map(synstack(line, col), 'synIDattr(v:val,"name")'))
+endfunction
+
+function! ZS(count)
+  if a:count
+    let name = get(Synnames(), a:count-1, '')
+    if name !=# ''
+      return 'syntax list '.name
+    endif
+  else
+    echo join(Synnames(), ' ')
+  endif
+  return ''
+endfunction
+
+nnoremap <silent> Synnames :<C-U>exe ZS(v:count)<CR>
+nmap zS Synnames
+
+"nmap :PP
 
 " free keys: Z \ ` F2-7 {{{2
 "{{{1 vim:fdm=marker:
