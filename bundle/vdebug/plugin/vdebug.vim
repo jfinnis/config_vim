@@ -59,17 +59,17 @@ if !exists("g:vdebug_keymap")
 endif
 
 let g:vdebug_keymap_defaults = {
-\    "run" : "<F5>",
-\    "run_to_cursor" : "<F9>",
-\    "step_over" : "<F2>",
-\    "step_into" : "<F3>",
-\    "step_out" : "<F4>",
-\    "close" : "<F6>",
-\    "detach" : "<F7>",
-\    "set_breakpoint" : "<F10>",
-\    "get_context" : "<F11>",
-\    "eval_under_cursor" : "<F12>",
-\    "eval_visual" : "<Leader>e"
+\    "run" : "g<F5>",
+\    "run_to_cursor" : "g<F9>",
+\    "step_over" : "g<F2>",
+\    "step_into" : "g<F3>",
+\    "step_out" : "g<F4>",
+\    "close" : "g<F6>",
+\    "detach" : "g<F7>",
+\    "set_breakpoint" : "g<F10>",
+\    "get_context" : "g<F11>",
+\    "eval_under_cursor" : "g<F12>",
+\    "eval_visual" : "g<Leader>e"
 \}
 
 let g:vdebug_options_defaults = {
