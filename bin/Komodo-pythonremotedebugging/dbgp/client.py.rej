@@ -1,0 +1,20 @@
+*** /dev/null
+--- /dev/null
+***************
+*** 3249,3250
+- _eval_optlist = [['i','transaction_id', int, 1, -1, None],
+- ['l','length', int, 1, 0, None]]
+--- 3249 -----
++ _eval_optlist = [['i','transaction_id', int, 1, -1, None]]
+***************
+*** 3252
+- (tid, data_length, data,) = self._getopts(cmdargs, self._eval_optlist, "eval")
+--- 3251 -----
++ (tid, data,) = self._getopts(cmdargs, self._eval_optlist, "eval")
+***************
+*** 3268,3269
+- prop = Property(None, None, value, self._data_encoding,
+- self._show_hidden, hiddenContextTypes[context_id])
+--- 3267,3268 -----
++ prop = Property(data, data, value, self._data_encoding,
++ self._show_hidden, hiddenContextTypes[0])

@@ -304,7 +304,7 @@ let g:jedi#get_definition_command="gd"
 let g:jedi#goto_command="<space>g"
 let g:jedi#related_names_command=""
 let g:jedi#rename_command="<space>r"
-let g:jedi#pydoc="<space>d"
+let g:jedi#pydoc="<space>k"
 let g:jedi#use_tabs_not_buffers=0
 
 " nerdtree bindings and settings ---------------------------------------- {{{2
@@ -368,6 +368,8 @@ let g:tagbar_compact=1
 let g:tagbar_autoshowtag=1
 map <Leader>tl :TagbarToggle<cr>
 "let g:tagbar_type_objc={'ctagstype':'ObjectiveC', 'kinds':['i:interface', 'I:implementation', 'p:Protocol', 'm:Object_method', 'c:Class_method', 'v:Global_variable', 'F:Object field', 'f:function', 'p:property', 't:type_alias', 's:type_structure', 'e:enumeration', 'M:preprocessor_macro'], 'sro':' ', 'kind2scope':{'i':'interface', 'I':'Implementation', 'p':'Protocol', 's':'type_structure', 'e':'enumeration'}, 'scope2kind':{'interface':'i', 'implementation':'I', 'Protocol':'p', 'type_structure':'s', 'enumeration':'e'}}
+
+" vdebug settings ------------------------------------------------------ {{{2
 
 " vimux commands -------------------------------------------------------- {{{2
 map ! :call PromptVimTmuxCommand()<cr>

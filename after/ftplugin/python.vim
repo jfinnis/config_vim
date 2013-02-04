@@ -15,6 +15,14 @@ setlocal foldmethod=expr
 setlocal foldexpr=PymodeFoldingExpr(v:lnum)
 setlocal foldtext=PymodeFoldingText()
 
+" debugging options ---------------------------------------------------- {{{2
+let g:vdebug_options['timeout']=5
+let g:vdebug_options['on_close']='stop'
+let g:vdebug_options['watch_window_style']='compact'
+let g:vdebug_options['marker_default']='⬦'
+let g:vdebug_options['marker_closed_tree']='▸'
+let g:vdebug_options['marker_open_tree']='▾'
+
 " setup environment ---------------------------------------------------- {{{2
 py << EOF
 import os.path
@@ -92,30 +100,35 @@ onoremap <silent> <buffer> im :<C-U>call PymodeMotionSelect('^\s*def\s', 1)<CR>
 vnoremap <silent> <buffer> am :<C-U>call PymodeMotionSelect('^\s*def\s', 0)<CR>
 vnoremap <silent> <buffer> im :<C-U>call PymodeMotionSelect('^\s*def\s', 1)<CR>
 
-" space-e = evaluate a visually selected block ------------------------- {{{2
-python << EOL
-import vim
-def EvaluateCurrentRange():
-  eval(compile('\n'.join(vim.current.range),'','exec'),globals())
-EOL
-vmap <space>e :py EvaluateCurrentRange()<cr>
-
 " space-j/Jl/Jc, space-l/Ll/Lc ----------------------------------------- {{{2
 " run command in below or right window
 nnoremap <buffer> <silent> <space>j :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="v"<cr>:let g:VimuxHeight="30"<cr>:call RunVimTmuxCommand("python %")<cr>:echo "Executing file..."<cr>
 nnoremap <buffer> <silent> <space>l :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="h"<cr>:let g:VimuxHeight="40"<cr>:call RunVimTmuxCommand("python %")<cr>:echo "Executing file..."<cr>
 
-"" run and pipe to column or less
+" run and pipe to column or less
 nnoremap <buffer> <silent> <space>Jc :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="v"<cr>:let g:VimuxHeight="30"<cr>:call RunVimTmuxCommand("python % <bar> column")<cr>:echo "Executing file..."<cr>
 nnoremap <buffer> <silent> <space>Lc :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="h"<cr>:let g:VimuxHeight="40"<cr>:call RunVimTmuxCommand("python % <bar> column")<cr>:echo "Executing file..."<cr>
 
 nnoremap <buffer> <silent> <space>Jl :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="v"<cr>:let g:VimuxHeight="30"<cr>:call RunVimTmuxCommand("python % <bar> less")<cr>:echo "Executing file..."<cr>
 nnoremap <buffer> <silent> <space>Ll :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="h"<cr>:let g:VimuxHeight="40"<cr>:call RunVimTmuxCommand("python % <bar> less")<cr>:echo "Executing file..."<cr>
 
-" space-D wait debug, space-dl/dj start and connect -------------------- {{{2
-nnoremap <buffer> <space>D :python debugger.run()<cr>
-nnoremap <buffer> <space>dl :w<cr>:cd %:h<cr>:let g:VimuxOrientation="h"<cr>:let g:VimuxHeight="40"<cr>:call RunVimTmuxCommand("sleep 3 && python -S ~/.vim/bin/Komodo-pythonremotedebugging/bin/pydbgp -d localhost:9000 %")<cr>:python debugger.run()<cr>
-nnoremap <buffer> <space>dj :w<cr>:cd %:h<cr>:let g:VimuxOrientation="v"<cr>:let g:VimuxHeight="20"<cr>:call RunVimTmuxCommand("sleep 3 && python -S ~/.vim/bin/Komodo-pythonremotedebugging/bin/pydbgp -d localhost:9000 %")<cr>:python debugger.run()<cr>
+" basic debugger commands: d/dc/R/s/So/Si/e/E/C ------------------------ {{{2
+nnoremap <buffer> <space>d :python debugger.run()<cr>
+nnoremap <buffer> <space>dc :python debugger.close()<cr>
+
+nnoremap <buffer> <space>R :python debugger.run_to_cursor()<cr>
+nnoremap <buffer> <space>s :python debugger.step_over()<cr>
+nnoremap <buffer> <space>So :python debugger.step_out()<cr>
+nnoremap <buffer> <space>Si :python debugger.step_into()<cr>
+
+nnoremap <buffer> <space>e :VdebugEval 
+vnoremap <buffer> <space>e :python debugger.handle_visual_eval()<cr>
+nnoremap <buffer> <space>E :python debugger.eval_under_cursor()<cr>
+nnoremap <buffer> <space>C :python debugger.get_context()<cr>
+
+" start and connect in left/right window - <space>dl/dj ------------------- {{{2
+nnoremap <buffer> <space>dl :w<cr>:cd %:h<cr>:let g:VimuxOrientation="h"<cr>:let g:VimuxHeight="30"<cr>:call RunVimTmuxCommand("sleep 1 && python -S ~/.vim/bin/Komodo-pythonremotedebugging/bin/pydbgp -d localhost:9000 %")<cr>:python debugger.run()<cr>
+nnoremap <buffer> <space>dj :w<cr>:cd %:h<cr>:let g:VimuxOrientation="v"<cr>:let g:VimuxHeight="10"<cr>:call RunVimTmuxCommand("sleep 1 && python -S ~/.vim/bin/Komodo-pythonremotedebugging/bin/pydbgp -d localhost:9000 %")<cr>:python debugger.run()<cr>
 
 " space-B sets/unsets breakpoints, window/conditional/etc -------------- {{{2
 nnoremap <buffer> <space>B :Breakpoint<cr>
@@ -124,6 +137,7 @@ nnoremap <buffer> <space>bc :Breakpoint conditional
 nnoremap <buffer> <space>be :Breakpoint exception 
 nnoremap <buffer> <space>bf :Breakpoint call 
 nnoremap <buffer> <space>bF :Breakpoint return 
+nnoremap <buffer> <space>br :BreakpointRemove *<cr>
 
 " COMMANDS """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
 " Python-mode motions -------------------------------------------------- {{{2
