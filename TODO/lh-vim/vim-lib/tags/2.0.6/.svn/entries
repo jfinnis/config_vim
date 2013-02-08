@@ -1,46 +1,0 @@
-10
-
-dir
-633
-http://lh-vim.googlecode.com/svn/vim-lib/tags/2.0.6
-http://lh-vim.googlecode.com/svn
-
-
-
-2008-02-20T21:51:14.892892Z
-39
-luc.hermitte
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-50c58283-e937-0410-a8aa-d7cab3d61977
-
-mkVba
-dir
-
-tests
-dir
-
-macros
-dir
-
-doc
-dir
-
-autoload
-dir
-
-plugin
-dir
-

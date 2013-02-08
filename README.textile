@@ -64,12 +64,12 @@
 ** run file in left/below tmux window, pipe to less/column with &lt;space&gt;l/j, &lt;space&gt;[LJ]c/l
 ** X makes executable script
 * C/C++
-** &lt;space&gt;+c -> comment comment block beginning //- 
-** &lt;space&gt;+C -> add end of block/#endif comment markers
-** &lt;space&gt;+g/G -> color "#ifdef DEBUG" blocks as comments
-** &lt;space&gt;+hf/hl/hL/... -> open corresponding header/source file in appropriate window
-** &lt;space&gt;+p/P -> read prototypes from header file (cpp only)
-** &lt;space&gt;+v/V -> selects inner/outer function
+** &lt;space&gt;c -> comment comment block beginning //- 
+** &lt;space&gt;C -> add end of block/#endif comment markers
+** &lt;space&gt;g/G -> color "#ifdef DEBUG" blocks as comments
+** &lt;space&gt;hf/hl/hL/... -> open corresponding header/source file in appropriate window
+** &lt;space&gt;p/P -> read prototypes from header file (cpp only)
+** &lt;space&gt;v/V -> selects inner/outer function
 ** surround with f/i/w (i.e., v:motion:Sf) to add for/if/while blocks around code
 ** snippets - c/cc/ch/cf/chh
 * Objective-C

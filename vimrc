@@ -264,6 +264,9 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nnoremap <leader>a :Ack 
 nnoremap <leader>K :AckHelp 
 
+" clang_complete settings ----------------------------------------------- {{{2
+let g:clang_snippets_engine="snipmate"
+
 " start ctrlp ----------------------------------------------------------- {{{2
 let g:ctrlp_map='<Leader>n'
 let g:ctrlp_by_filename=1

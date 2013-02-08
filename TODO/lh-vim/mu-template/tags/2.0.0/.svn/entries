@@ -1,43 +1,0 @@
-10
-
-dir
-633
-http://lh-vim.googlecode.com/svn/mu-template/tags/2.0.0
-http://lh-vim.googlecode.com/svn
-
-
-
-2008-02-19T01:52:28.183091Z
-34
-luc.hermitte
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-50c58283-e937-0410-a8aa-d7cab3d61977
-
-mkVba
-dir
-
-after
-dir
-
-doc
-dir
-
-syntax
-dir
-
-ftplugin
-dir
-

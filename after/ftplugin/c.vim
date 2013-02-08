@@ -6,6 +6,9 @@ setlocal shiftwidth=3            " indent width using '<' and '>'
 setlocal softtabstop=3           " 3 space tabs
 setlocal tabstop=3
 
+setlocal iskeyword+=#            " so #if is considered as a keyword, etc
+setlocal iskeyword-=-            " so ptr- (in ptr->member) is not
+
 " folding settings ----------------------------------------------------- {{{2
 " custom folding plugin
 source ~/.vim/after/ftplugin/c-fold.vim
@@ -53,5 +56,9 @@ highlight cEnumTag ctermfg=11 ctermbg=24
 hi link cDebugRegion1 Comment
 hi link cDebugRegion2 Comment
 hi link cDebugWord Comment
+
+" highlight assignments in if/while parentheses ------------------------ {{{2
+hi def link cAssignInConditionBad    SpellBad
+hi def link cAssignInConditionRare   SpellRare
 
 "{{{1 vim:fdm=marker: 
