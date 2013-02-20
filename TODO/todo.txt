@@ -1,5 +1,7 @@
 ------ todo -------
 github/fugitive screencasts
+system shock 2
+picnic pictures 
 
 ------- vim -------
 pull request gk/gj nerdtree
