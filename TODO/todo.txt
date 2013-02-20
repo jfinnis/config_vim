@@ -2,6 +2,7 @@
 github/fugitive screencasts
 system shock 2
 picnic pictures 
+bookmark app sync with iphone/android (webcomics) (rss?)
 
 ------- vim -------
 pull request gk/gj nerdtree
