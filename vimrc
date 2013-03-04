@@ -42,7 +42,9 @@ set tabstop=4
 
 " display settings ------------------------------------------------------ {{{2
 colorscheme ir_black
-hi CursorLine term=none cterm=none ctermbg=0
+highlight CursorLine term=none cterm=none ctermbg=0
+let &colorcolumn="80,".join(range(120,999),",")
+highlight ColorColumn ctermbg=233
 set laststatus=2            " always display status line
 set nocul                   " highlight current line
 set number                  " display line numbers
