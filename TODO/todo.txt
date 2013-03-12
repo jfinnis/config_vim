@@ -5,8 +5,8 @@ picnic pictures
 bookmark app sync with iphone/android (webcomics) (rss?)
 
 ------- vim -------
+obsession
 gitgutter
-pull request gk/gj nerdtree
 install clang/llvm
 clang complete plugin - test
 
