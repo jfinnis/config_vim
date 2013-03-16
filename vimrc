@@ -43,8 +43,9 @@ set tabstop=4
 " display settings ------------------------------------------------------ {{{2
 colorscheme ir_black
 highlight CursorLine term=none cterm=none ctermbg=0
-let &colorcolumn="80,".join(range(120,999),",")
+let &colorcolumn="80,".join(range(120,999),",") " show 80th line and 120+
 highlight ColorColumn ctermbg=233
+highlight clear SignColumn  " fix for gitgutter plugin
 set laststatus=2            " always display status line
 set nocul                   " highlight current line
 set number                  " display line numbers
@@ -303,6 +304,10 @@ map <Leader>gd :Gdiff<cr>
 map <Leader>gl :Glog<cr>
 map <Leader>gp :Git push origin master<cr>
 autocmd BufReadPost fugitive://* set bufhidden=delete
+
+" gitgutter wrapping ------------------------------------------------- {{{2
+map ]g :GitGutterNextHunk<cr>
+map [g :GitGutterPrevHunk<cr>
 
 " jedi python autocomplete ---------------------------------------------- {{{2
 let g:jedi#get_definition_command="gd"

@@ -1,16 +1,13 @@
------- todo -------
-github/fugitive screencasts
-system shock 2
-picnic pictures 
-bookmark app sync with iphone/android (webcomics) (rss?)
-
 ------- vim -------
+map insert mode other buffer up/down page
 obsession
 gitgutter
 install clang/llvm
 clang complete plugin - test
 
 C stuff
+- install clang/llvm
+- clang complete plugin - test
 - code complete plugin, cctree, http://cscope.sourceforge.net/cscope_vim_tutorial.html
 - protodef plugin - defaults for (*this) and output streams
 - hard way book with c
