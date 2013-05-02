@@ -37,7 +37,9 @@
 
 *Passive plugins*
 * Easytags        (automatically manage tags)
+* GitGutter       (uses the sign column to indicate git changes/adds/removes)
 * Mash            (highlight current searched for term differently)
+* Obsession       (adds :Obsession command for session management)
 * Operator-User   (utility plugin for defining new operators)
 * Powerline       (awesome statuslines, colored, symbols, really cool)
 * Rainbow Paren.  (colored nested parentheses/brackets/etc)

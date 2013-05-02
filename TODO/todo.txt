@@ -1,17 +1,7 @@
 ------- vim -------
 read the open-closed principle
-map insert mode other buffer up/down page
-obsession
-gitgutter
 install clang/llvm
 clang complete plugin - test
 read - learning aspnet2.0 with ajax
  - teach yourself sql in 21 days
 
-C stuff
-- install clang/llvm
-- clang complete plugin - test
-- code complete plugin, cctree, http://cscope.sourceforge.net/cscope_vim_tutorial.html
-- protodef plugin - defaults for (*this) and output streams
-- hard way book with c
-- read up on splint
