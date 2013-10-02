@@ -4,6 +4,7 @@ filetype off
 call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
+hi
 
 " general settings ------------------------------------------------------ {{{2
 set nocompatible
@@ -93,8 +94,12 @@ map ZZ <nop>
 
 " KEY BINDINGS """""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
 " insert mode mappings -------------------------------------------------- {{{2
-" display ! marker on any "\TODO:" message
-inoremap TODO: TODO:<c-o>:norm m1<cr>
+" digraphs on C-L to accomodate new C-K mapping
+inoremap <C-L> 
+
+" page up/down adjacent window while in insert mode
+inoremap <C-J> <esc>ppa
+inoremap <C-K> <esc>ppa
 
 " quick file access ----------------------------------------------------- {{{2
 map <Leader>S :source ~/.vimrc<cr>:filetype detect<cr>:echo "Sourced vimrc"<cr>
