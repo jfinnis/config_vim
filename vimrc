@@ -138,8 +138,11 @@ nnoremap S i<cr><esc>
 nnoremap <Leader>W :%s/\s\+$//<cr>:let @/=''<cr>:echo "Removed trailing whitespace"<cr>
 
 " global substitute word under cursor ----------------------------------- {{{2
-nmap <Leader>s :%s/\<<c-r>=expand("<cword>")<cr>\>/
-vmap <Leader>s :<C-U>%s/\<<c-r>*\>/
+"nmap <Leader>s :%s/\<<c-r>=expand("<cword>")<cr>\>/
+"vmap <Leader>s :<C-U>%s/\<<c-r>*\>/
+"
+" simple spelling corrections ------------------------------------------- {{{2
+nmap <Leader>s eas
 
 " next/previous word under cursor in same column  ----------------------- {{{2
 " i.e., to navigate amongst same blocks of structure code
