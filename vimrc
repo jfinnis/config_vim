@@ -333,7 +333,7 @@ let NERDTreeBookmarksFile="NERDTreeBookmarks"
 let NERDTreeIgnore=['\~$', '\.aux$', '\.blg$', '\.bbl$', '\.log$', '\.dvi$', '\.gif$', '\.png$', '\.jpg$', '\.doc$', '\.bmp$']
 let NERDTreeShowBookmarks=1
 " open NERDTree if vim is started with no arguments
-autocmd vimenter * if !argc() | NERDTree | endif
+"autocmd vimenter * if !argc() | NERDTree | endif
 " close vim if NERDTree is last window open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
