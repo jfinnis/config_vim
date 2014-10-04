@@ -1,4 +1,4 @@
-" VIMRC """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
+" VIMRC """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{2
 " pathogen -------------------------------------------------------------- {{{2
 filetype off
 call pathogen#infect()
@@ -97,8 +97,8 @@ map ZZ <nop>
 inoremap <C-L> 
 
 " page up/down adjacent window while in insert mode
-inoremap <C-J> <esc>ppa
-inoremap <C-K> <esc>ppa
+inoremap <C-K> <esc>ppa
+inoremap <C-I> <esc>ppa
 
 " quick file access ----------------------------------------------------- {{{2
 map <Leader>S :source ~/.vimrc<cr>:filetype detect<cr>:echo "Sourced vimrc"<cr>
@@ -199,12 +199,14 @@ imap <tab>e	<C-X><C-E>
 imap <tab>y	<C-X><C-Y>
 
 " filetype management --------------------------------------------------- {{{2
+map <leader><leader>s :set ft=scala
 map <leader><leader>c :set ft=c
 map <leader><leader>C :set ft=cpp
 map <leader><leader>o :set ft=objc
 map <leader><leader>p :set ft=python
 map <leader><leader>v :set ft=vim
 map <leader><leader>z :set ft=zsh
+map <leader><leader>t :set ft=txt
 
 " WINDOW/BUFFER MAPPINGS """""""""""""""""""""""""""""""""""""""""""""""" {{{1
 " diff mappings --------------------------------------------------------- {{{2
