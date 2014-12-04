@@ -4,7 +4,6 @@ filetype off
 call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
-hi
 
 " general settings ------------------------------------------------------ {{{2
 set nocompatible
@@ -87,7 +86,7 @@ augroup END
 " don't quote signatures in mutt files ---------------------------------- {{{2
 au BufRead /tmp/mutt* normal :g/^> -- $/,/^$/-1d^M/^$^M^L
 
-    " KEY UNBINDINGS """""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
+" KEY UNBINDINGS """""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{1
 " nop dumb bindings ----------------------------------------------------- {{{2
 map ZQ <nop>
 map ZZ <nop>
@@ -574,4 +573,4 @@ nmap zS Synnames
 "nmap :PP
 
 " free keys: Z \ ` F2-7 {{{2
-"{{{1 vim:fdm=marker:
+"{{{1 vim:fdm=marker
