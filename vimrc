@@ -97,8 +97,8 @@ map ZZ <nop>
 inoremap <C-L> 
 
 " page up/down adjacent window while in insert mode
-inoremap <C-J> <esc>ppa
-inoremap <C-K> <esc>ppa
+inoremap <A-J> <esc>ppa
+inoremap <A-K> <esc>ppa
 
 " quick file access ----------------------------------------------------- {{{2
 map <Leader>S :source ~/.vimrc<cr>:filetype detect<cr>:echo "Sourced vimrc"<cr>
@@ -150,7 +150,7 @@ nnoremap g# yiw:let c=col('.')<cr>:let @/="^.*\\%".c.'c\zs'.@"<cr>N
 
 " edit selection in new split by itself --------------------------------- {{{2
 " <leader>x to return
-xnoremap X y:let [f,s,v]=[&ft,&syn,getregtype('@"')]<cr><C-w>nVp:set ft=<c-r>=f<cr> syn=<c-r>=s<cr><cr>:nnoremap <buffer> <Leader>x :let @"=v<C-r>="<"<cr>gg0@"G$d:bw!<C-r>="<"<cr>gvp<cr>
+xnoremap <Leader>X y:let [f,s,v]=[&ft,&syn,getregtype('@"')]<cr><C-w>nVp:set ft=<c-r>=f<cr> syn=<c-r>=s<cr><cr>:nnoremap <buffer> <Leader>X :let @"=v<C-r>="<"<cr>gg0@"G$d:bw!<C-r>="<"<cr>gvp<cr>
 
 " use M to lookup with man ---------------------------------------------- {{{2
 nnoremap M K
@@ -312,7 +312,7 @@ map <Leader>gl :Glog<cr>
 map <Leader>gp :Git push origin master<cr>
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
-" gitgutter wrapping ------------------------------------------------- {{{2
+" gitgutter wrapping ---------------------------------------------------- {{{3
 map ]g :GitGutterNextHunk<cr>
 map [g :GitGutterPrevHunk<cr>
 

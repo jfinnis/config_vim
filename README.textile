@@ -2,7 +2,7 @@
 * link vimrc to ~/.vimrc
 
 *Active plugins*
-* Abolish            (cr[c/m/_] to change case, :S/:%S for smart search/substitute, record abbreviations)
+* Abolish            (cr[c/m/_] to change case, :S/:%S for smart search/substitute with variations in {}, record abbreviations in after/plugin/abolish.vim)
 * Ack                (&lt;Leader&gt;a search repo, &lt;Leader&gt;K search help, output in quickfix)
 * BufOnly            (&lt;Leader&gt;bo removes all other open buffers)
 * CtrlP              (&lt;Leader&gt;n to open window, quick find file in project, C-F switch type, C-Z/C-O to mark/open, C-V vsplit, CR opens, &lt;Leader&gt;] ctrlpTag)
@@ -10,7 +10,7 @@
 * Exchange           (cx{motion} twice to exchange regions, cxx twice to exchange lines)
 * Fswitch            (&lt;space&gt;h,hjklHJKL mappings to open source/header file)
 * Fugitive           (&lt;Leader&gt;gs/gc/gd/gl/gp - status (- stage/unstage, p patch, C commit), commit, diff, log, push, diffput/get to stage/checkout, :Gedit)
-* Jedi-vim           (python autocomplete library, better gd, &lt;space&gt;g goto, &lt;space&gt;d pydoc, &lt;space&gt;r refactor, &lt;ctl-space&gt; autocomplete)
+* Jedi-vim           (python autocomplete library, better gd, &lt;space&gt;g goto, &lt;space&gt;k pydoc, &lt;space&gt;r refactor, &lt;ctl-space&gt; autocomplete)
 * Latex-suite        (templates - &lt;Leader&gt;tt, macros - EEQ/SSS/`a/`D, F7 expands commands, F9 completes labels/cites, &lt;Leader&gt;ll compiles [visual]) <-- overkill
 * MatchIt            (extends % to if/else/endif, can configure more matchpairs)
 * NERDCommenter      (&lt;Leader&gt;c&lt;space&gt;/ci/cm/cb/cA)
@@ -56,6 +56,7 @@
 *General modifications*
 ** Can open .doc/.odt/.pdf/.rtf files (read-only)
 ** Can launch external browser for .png/.jpg/.gif/.bmp images
+** Diff commands -> df, dF, du
  
 *Language specific settings*
 * Python
