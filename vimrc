@@ -312,7 +312,7 @@ map <Leader>gl :Glog<cr>
 map <Leader>gp :Git push origin master<cr>
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
-" gitgutter wrapping ---------------------------------------------------- {{{3
+" gitgutter wrapping ---------------------------------------------------- {{{2
 map ]g :GitGutterNextHunk<cr>
 map [g :GitGutterPrevHunk<cr>
 
