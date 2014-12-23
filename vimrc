@@ -301,6 +301,10 @@ let g:easytags_file='~/.vim/.easytagsFile'
 let g:easytags_python_enabled=1
 map <space>u :UpdateTags<cr>
 
+" expand-region settings ------------------------------------------------ {{{2
+vmap + <Plug>(expand_region_expand)
+vmap _ <Plug>(expand_region_shrink)
+
 " fugitive git wrapping ------------------------------------------------- {{{2
 map <Leader>gs :Gstatus<cr>
 map <Leader>ga :Git add %<cr>
