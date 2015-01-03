@@ -10,3 +10,4 @@ Abolish becaues because
 Abolish christmas Christmas
 Abolish america{,n,ns} America{}
 Abolish pepole people
+Abolish internet Internet
