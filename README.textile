@@ -82,6 +82,7 @@
 ** &lt;space&gt;R/rr/rc/rl -> run in tmux pane/remove nslog info/pipe to column/less)
 * Ocaml, SML indent scripts
 * LaTeX 
+* Scala
 
 *Required programs*
 * pdftotext, odt2txt, antiword, unrtf, python, ruby, eog
