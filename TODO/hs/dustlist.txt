@@ -1,0 +1,22 @@
+500 dust
+
+400 gruul
+80 crazed alchemists
+40 goblin sapper
+40 kezan mystic
+80 questing adventurer
+
+druid
+40 bite
+40 mech-bear-cat
+100 ancient of lore
+
+mage 
+100 wee spellstopper
+
+priest
+40 mass dispell
+40 shadow madness
+
+warlock
+40 imp-losion
