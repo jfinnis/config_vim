@@ -1,4 +1,4 @@
-500 dust
+335 dust
 
 400 gruul
 80 crazed alchemists
@@ -19,4 +19,4 @@ priest
 40 shadow madness
 
 warlock
-40 imp-losion
+80 imp-losion
