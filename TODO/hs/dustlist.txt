@@ -20,3 +20,6 @@ priest
 
 warlock
 80 imp-losion
+
+warrior
+100 bouncing blade
