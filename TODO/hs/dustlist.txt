@@ -1,25 +1,34 @@
-335 dust
+440 dust
 
-400 gruul
-80 crazed alchemists
-40 goblin sapper
-40 kezan mystic
-80 questing adventurer
-
-druid
-40 bite
-40 mech-bear-cat
-100 ancient of lore
+20 target dummy
+40 crazed alchemists
+20 gnomish experiementer
+20 goblin sapper
+20 kezan mystic
+40 imp master
+40 questing adventurer
 
 mage 
-100 wee spellstopper
+20 unstable portal
+20 counterspell
+
+paladin
+20 holy wrath
+100 lay on hands
 
 priest
-40 mass dispell
-40 shadow madness
+20 mass dispell
+20 shadow madness
+
+shaman
+20 dunemaul shaman
 
 warlock
-80 imp-losion
+40 imp-losion
 
 warrior
+40 commanding shout
+20 armorsmith
+100 mortal strike
+20 shieldmaiden
 100 bouncing blade
