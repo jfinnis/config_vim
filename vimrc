@@ -43,7 +43,7 @@ set tabstop=4
 " display settings ------------------------------------------------------ {{{2
 colorscheme ir_black
 highlight CursorLine term=none cterm=none ctermbg=0
-let &colorcolumn="80,".join(range(120,999),",") " show 80th line and 120+
+let &colorcolumn=join(range(120,999),",") " show 120+ in different color
 highlight ColorColumn ctermbg=233
 highlight clear SignColumn  " fix for gitgutter plugin
 set laststatus=2            " always display status line
@@ -271,8 +271,18 @@ xnoremap <silent> zb :<C-u>call setpos('.',[0,line("'>"),0,0])<Bar>normal! zbgv<
 " PLUGIN SPECIFIC BINDINGS """""""""""""""""""""""""""""""""""""""""""""" {{{1
 " Ack command/shortcut -------------------------------------------------- {{{2
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-nnoremap <leader>a :Ack 
-nnoremap <leader>K :AckHelp 
+nnoremap <leader>a :Ack
+nnoremap <leader>K :AckHelp
+
+" Airline settings ------------------------------------------------------ {{{2
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#hunks#enabled = 1
 
 " clang_complete settings ----------------------------------------------- {{{2
 let g:clang_snippets_engine="snipmate"
@@ -389,7 +399,6 @@ let g:tagbar_compact=1
 let g:tagbar_autoshowtag=1
 map <Leader>tl :TagbarToggle<cr>
 "let g:tagbar_type_objc={'ctagstype':'ObjectiveC', 'kinds':['i:interface', 'I:implementation', 'p:Protocol', 'm:Object_method', 'c:Class_method', 'v:Global_variable', 'F:Object field', 'f:function', 'p:property', 't:type_alias', 's:type_structure', 'e:enumeration', 'M:preprocessor_macro'], 'sro':' ', 'kind2scope':{'i':'interface', 'I':'Implementation', 'p':'Protocol', 's':'type_structure', 'e':'enumeration'}, 'scope2kind':{'interface':'i', 'implementation':'I', 'Protocol':'p', 'type_structure':'s', 'enumeration':'e'}}
-
 
 " vimux commands -------------------------------------------------------- {{{2
 map ! :call PromptVimTmuxCommand()<cr>
