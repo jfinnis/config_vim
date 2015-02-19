@@ -1,0 +1,34 @@
+440 dust
+
+20 target dummy
+40 crazed alchemists
+20 gnomish experiementer
+20 goblin sapper
+20 kezan mystic
+40 imp master
+40 questing adventurer
+
+mage 
+20 unstable portal
+20 counterspell
+
+paladin
+20 holy wrath
+100 lay on hands
+
+priest
+20 mass dispell
+20 shadow madness
+
+shaman
+20 dunemaul shaman
+
+warlock
+40 imp-losion
+
+warrior
+40 commanding shout
+20 armorsmith
+100 mortal strike
+20 shieldmaiden
+100 bouncing blade
