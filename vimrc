@@ -43,7 +43,7 @@ set tabstop=4
 " display settings ------------------------------------------------------ {{{2
 colorscheme ir_black
 highlight CursorLine term=none cterm=none ctermbg=0
-let &colorcolumn=join(range(120,999),",") " show 120+ in different color
+"let &colorcolumn=join(range(120,999),",") " show 120+ in different color
 highlight ColorColumn ctermbg=233
 highlight clear SignColumn  " fix for gitgutter plugin
 set laststatus=2            " always display status line
@@ -405,8 +405,8 @@ map <Leader>tl :TagbarToggle<cr>
 "let g:tagbar_type_objc={'ctagstype':'ObjectiveC', 'kinds':['i:interface', 'I:implementation', 'p:Protocol', 'm:Object_method', 'c:Class_method', 'v:Global_variable', 'F:Object field', 'f:function', 'p:property', 't:type_alias', 's:type_structure', 'e:enumeration', 'M:preprocessor_macro'], 'sro':' ', 'kind2scope':{'i':'interface', 'I':'Implementation', 'p':'Protocol', 's':'type_structure', 'e':'enumeration'}, 'scope2kind':{'interface':'i', 'implementation':'I', 'Protocol':'p', 'type_structure':'s', 'enumeration':'e'}}
 
 " vimux commands -------------------------------------------------------- {{{2
-map ! :call PromptVimTmuxCommand()<cr>
-map <space>! :call RunLastVimTmuxCommand()<cr>
+map ! :call VimuxPromptCommand()<cr>
+map <space>! :call VimuxRunLastCommand()<cr>
 map <space>@ :CloseVimTmuxPanes<cr>
 let g:VimuxUseNearestPane=0
 
