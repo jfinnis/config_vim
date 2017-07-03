@@ -200,16 +200,6 @@ imap <tab>e	<C-X><C-E>
 " scroll down in insert mode
 imap <tab>y	<C-X><C-Y>
 
-" filetype management --------------------------------------------------- {{{2
-map <leader><leader>s :set ft=scala
-map <leader><leader>c :set ft=c
-map <leader><leader>C :set ft=cpp
-map <leader><leader>o :set ft=objc
-map <leader><leader>p :set ft=python
-map <leader><leader>v :set ft=vim
-map <leader><leader>z :set ft=zsh
-map <leader><leader>t :set ft=txt
-
 " WINDOW/BUFFER MAPPINGS """""""""""""""""""""""""""""""""""""""""""""""" {{{1
 " diff mappings --------------------------------------------------------- {{{2
 nnoremap df :diffthis<cr>
@@ -253,10 +243,10 @@ xnoremap <silent> zb :<C-u>call setpos('.',[0,line("'>"),0,0])<Bar>normal! zbgv<
 " center screen for searches, foldcloses, {, }, [[, ]]
 nnoremap n nzz
 nnoremap N Nzz
-nnoremap { {zz
-nnoremap } }zz
-nnoremap [[ [[zz
-nnoremap ]] ]]zz
+"nnoremap { {zz
+"nnoremap } }zz
+"nnoremap [[ [[zz
+"nnoremap ]] ]]zz
 nnoremap zc zczz
 nnoremap zo zozz
 nnoremap ]c ]czz
@@ -295,7 +285,10 @@ let g:clang_snippets_engine="snipmate"
 let g:ctrlp_map='<Leader>n'
 let g:ctrlp_by_filename=1
 let g:ctrlp_match_window_bottom=0
+let g:ctrlp_match_window_reversed=0
 let g:ctrlp_max_height=15
+let g:ctrlp_working_path_mode='ra'
+let g:ctrlp_show_hidden=1
 let g:ctrlp_open_multiple_files='1vr'
 let g:ctrlp_custom_ignore = {'dir':'\.git$\|\.hg$\|\.svn$'}
 nnoremap <leader>] :CtrlPTag<cr>
@@ -461,35 +454,35 @@ endfunction
 command! -bar -nargs=0 Sudow 	:silent exe "write !sudo tee % >/dev/null"|silent edit
 
 " toggle wrap rules for moving down and up through lines ---------------- {{{2
-function! ToggleSingleLine()
-  if !exists("s:imove")
-    let s:imove=1 "zero: not enabled
-  endif
-  if s:imove
-    map gj <Down>
-    map gk <Up>
-    map g0 <Home>
-    map g$ <End>
-    map j g<Down>
-    map k g<Up>
-    map 0 g<Home>
-    map $ g<End>
-    let s:imove=0
-    echo "Toggle: single line movements"
-  else
-    map j <Down>
-    map k <Up>
-    map 0 <Home>
-    map $ <End>
-    map gj g<Down>
-    map gk g<Up>
-    map g0 g<Home>
-    map g$ g<End>
-    let s:imove=1
-    echo "Toggle: normal vim movements"
-  endif
-endfunction
-map <F9> :call ToggleSingleLine()<cr>
+"function! ToggleSingleLine()
+"  if !exists("s:imove")
+"    let s:imove=1 "zero: not enabled
+"  endif
+"  if s:imove
+"    map gj <Down>
+"    map gk <Up>
+"    map g0 <Home>
+"    map g$ <End>
+"    map j g<Down>
+"    map k g<Up>
+"    map 0 g<Home>
+"    map $ g<End>
+"    let s:imove=0
+"    echo "Toggle: single line movements"
+"  else
+"    map j <Down>
+"    map k <Up>
+"    map 0 <Home>
+"    map $ <End>
+"    map gj g<Down>
+"    map gk g<Up>
+"    map g0 g<Home>
+"    map g$ g<End>
+"    let s:imove=1
+"    echo "Toggle: normal vim movements"
+"  endif
+"endfunction
+"map <F9> :call ToggleSingleLine()<cr>
 
 " set scripts as executable and add a shebang to beginning -------------- {{{2
 function! SetExecutableBit()
