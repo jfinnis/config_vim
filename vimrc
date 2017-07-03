@@ -264,9 +264,9 @@ xnoremap <silent> zb :<C-u>call setpos('.',[0,line("'>"),0,0])<Bar>normal! zbgv<
 
 " PLUGIN SPECIFIC BINDINGS """""""""""""""""""""""""""""""""""""""""""""" {{{1
 " Ack command/shortcut -------------------------------------------------- {{{2
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-nnoremap <leader>a :Ack
-nnoremap <leader>K :AckHelp
+let g:ackprg="ack -i -H --nocolor --nogroup --column --ignore-directory=vendor --ignore-directory=coverage --ignore-file=match:widget.html --ignore-file=match:debug.ejs"
+nnoremap <leader>a :Ack 
+nnoremap <leader>K :AckHelp 
 
 " Airline settings ------------------------------------------------------ {{{2
 let g:airline_powerline_fonts = 1
