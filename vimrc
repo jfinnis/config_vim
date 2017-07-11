@@ -264,7 +264,7 @@ xnoremap <silent> zb :<C-u>call setpos('.',[0,line("'>"),0,0])<Bar>normal! zbgv<
 
 " PLUGIN SPECIFIC BINDINGS """""""""""""""""""""""""""""""""""""""""""""" {{{1
 " Ack command/shortcut -------------------------------------------------- {{{2
-let g:ackprg="ack -i -H --nocolor --nogroup --column --ignore-directory=vendor --ignore-directory=coverage --ignore-file=match:widget.html --ignore-file=match:debug.ejs"
+let g:ackprg="ack -i -H --nocolor --nogroup --column --ignore-directory=vendor --ignore-directory=coverage --ignore-directory=dist --ignore-file=match:widget.html --ignore-file=match:debug.ejs"
 nnoremap <leader>a :Ack 
 nnoremap <leader>K :AckHelp 
 
@@ -375,6 +375,9 @@ let g:snips_author='Joshua Finnis'
 
 " switch bindings ------------------------------------------------------- {{{2
 nnoremap - :Switch<cr>
+autocmd FileType html let b:switch_definitions = [
+ \   [ 'data-challenge-name="Safety Course"', 'data-challenge-name="Welcome to the Mobile Hub!"', 'data-challenge-name=""' ]
+ \ ]
 
 " syntastic settings ---------------------------------------------------- {{{2
 let g:syntastic_check_on_open=1

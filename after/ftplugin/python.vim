@@ -16,12 +16,12 @@ setlocal foldexpr=PymodeFoldingExpr(v:lnum)
 setlocal foldtext=PymodeFoldingText()
 
 " debugging options ---------------------------------------------------- {{{2
-let g:vdebug_options['timeout']=5
-let g:vdebug_options['on_close']='stop'
-let g:vdebug_options['watch_window_style']='compact'
-let g:vdebug_options['marker_default']='⬦'
-let g:vdebug_options['marker_closed_tree']='▸'
-let g:vdebug_options['marker_open_tree']='▾'
+"let g:vdebug_options['timeout']=5
+"let g:vdebug_options['on_close']='stop'
+"let g:vdebug_options['watch_window_style']='compact'
+"let g:vdebug_options['marker_default']='⬦'
+"let g:vdebug_options['marker_closed_tree']='▸'
+"let g:vdebug_options['marker_open_tree']='▾'
 
 " setup environment ---------------------------------------------------- {{{2
 py << EOF

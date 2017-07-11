@@ -1,3 +1,9 @@
-set softtabstop=2           " 2 space tabs
-set tabstop=2
-set shiftwidth=2            " indent width using '<' and '>'
+setlocal formatoptions=crqj
+setlocal softtabstop=2           " 2 space tabs
+setlocal shiftwidth=2            " indent width using '<' and '>'
+setlocal tabstop=2
+
+set foldmethod=syntax
+
+nnoremap <buffer> <silent> <space>tj :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="v"<cr>:let g:VimuxHeight="30"<cr>:call RunVimTmuxCommand("npm run test")<cr>:echo "Running tests..."<cr>
+nnoremap <buffer> <silent> <space>tl :w<cr>:cd %:h<cr>:CloseVimTmuxPanes<cr>:let g:VimuxOrientation="h"<cr>:let g:VimuxHeight="40"<cr>:call RunVimTmuxCommand("npm run test")<cr>:echo "Running tests..."<cr>
