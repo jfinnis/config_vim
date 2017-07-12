@@ -4,6 +4,7 @@
 *Active plugins*
 * Abolish            (cr[c/m/_] to change case, :S/:%S for smart search/substitute with variations in {}, record abbreviations in after/plugin/abolish.vim)
 * Ack                (&lt;Leader&gt;a search repo, &lt;Leader&gt;K search help, output in quickfix)
+* Argumentative      (argument text objects aa ia, shift arguments <a >a)
 * BufOnly            (&lt;Leader&gt;bo removes all other open buffers)
 * CtrlP              (&lt;Leader&gt;n to open window, quick find file in project, C-F switch type, C-Z/C-O to mark/open, C-V vsplit, CR opens, &lt;Leader&gt;] ctrlpTag)
 * EasyMotion         (H and L to specify specific letter to go to, back/forward)
@@ -27,7 +28,6 @@
 * Switch             ('-' toggles preset words, e.g., true->TRUE->True->true)
 * Syntastic          (run checker on files on open/save-store in location list, [f, ]f for errors)
 * Tagbar             (better taglist, ;tl, o to toggle fold, space/enter)
-* Textobj-Arguments  (defines argument text objects for functions)
 * Textobj-Column     (text objects ac aC ic iC for manipulating blocks)
 * Textobj-Entire     (defines entire buffer text objects, ae, ie)
 * Textobj-Indent     (defines indent text objects, ai aI ii iI)
@@ -51,6 +51,7 @@
 * Textobj-User    (utility plugin for defining text objects)
 * Tmux            (syntax highlighting and filetype recognition for tmux)
 * Vim-javascript  (syntax highlighting, indent rules, and conceal for javascript)
+* Vim-json        (better highlighting and conceal)
 * Vim-jsx         (syntax highlighting for jsx files)
 
 *Included colorscheme*
