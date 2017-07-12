@@ -6,6 +6,7 @@ setlocal tabstop=2
 set foldmethod=syntax
 
 " vim-javascript settings
+setlocal conceallevel=1
 let g:javascript_conceal_function             = "ƒ"
 let g:javascript_conceal_null                 = "ø"
 let g:javascript_conceal_this                 = "@"

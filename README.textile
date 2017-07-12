@@ -40,6 +40,7 @@
 *Passive plugins*
 * Easytags        (automatically manage tags)
 * GitGutter       (uses the sign column to indicate git changes/adds/removes)
+* JS-lib-support  (syntax highlighting for jquery, underscore, backbone, etc)
 * Mash            (highlight current searched for term differently)
 * Obsession       (adds :Obsession command for session management)
 * Operator-User   (utility plugin for defining new operators)
