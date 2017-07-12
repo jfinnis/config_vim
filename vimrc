@@ -318,6 +318,13 @@ let g:easytags_by_filetype='~/.vim/.tags/'
 let g:easytags_dynamic_files=1
 let g:easytags_file='~/.vim/.easytagsFile'
 let g:easytags_python_enabled=1
+let g:easytags_languages = {
+\  'javascript': {
+\    'cmd': 'jsctags',
+\    'args': [],
+\  }
+\}
+
 map <space>u :UpdateTags<cr>
 
 " expand-region settings ------------------------------------------------ {{{2

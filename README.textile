@@ -28,6 +28,7 @@
 * Switch             ('-' toggles preset words, e.g., true->TRUE->True->true)
 * Syntastic          (run checker on files on open/save-store in location list, [f, ]f for errors)
 * Tagbar             (better taglist, ;tl, o to toggle fold, space/enter)
+* Tern For Vim       (javascript tags - <s>dd/s/v go to def, t type, r refs, R rename, b browse)
 * Textobj-Column     (text objects ac aC ic iC for manipulating blocks)
 * Textobj-Entire     (defines entire buffer text objects, ae, ie)
 * Textobj-Indent     (defines indent text objects, ai aI ii iI)
