@@ -34,7 +34,7 @@
 * Textobj-Line       (defines line text objects, al il)
 * Textobj-Underscore (defines _ for surrounding textobjects)
 * Unimpaired         (consistent [ and ] motions, [&lt;space&gt; adds spaces, [e exchanges lines, [b buffer navigation)
-* VDebug             ()
+* VDebug             (REMOVED)
 * Vimux              (! and ;! run a tmux pane with new command/last command)
 
 *Passive plugins*
@@ -50,6 +50,8 @@
 * RelOps          (modifies operators to display relative line numberings)
 * Textobj-User    (utility plugin for defining text objects)
 * Tmux            (syntax highlighting and filetype recognition for tmux)
+* Vim-javascript  (syntax highlighting, indent rules, and conceal for javascript)
+* Vim-jsx         (syntax highlighting for jsx files)
 
 *Included colorscheme*
 * IR_Black
