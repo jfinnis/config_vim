@@ -291,7 +291,7 @@ omap ia <Plug>Argumentative_OpPendingInnerTextObject
 omap aa <Plug>Argumentative_OpPendingOuterTextObject
 
 " clang_complete settings ----------------------------------------------- {{{2
-let g:clang_snippets_engine="snipmate"
+"let g:clang_snippets_engine="snipmate"
 
 " start ctrlp ----------------------------------------------------------- {{{2
 let g:ctrlp_map='<Leader>n'

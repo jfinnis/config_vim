@@ -1,6 +1,0 @@
-------- vim -------
-read the open-closed principle
-install clang/llvm
-clang complete plugin - test
-
-<Leader>X doesn't work
