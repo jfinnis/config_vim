@@ -344,6 +344,10 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 map ]g :GitGutterNextHunk<cr>
 map [g :GitGutterPrevHunk<cr>
 
+" indent-guides settings ------------------------------------------------ {{{2
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=8
+
 " jedi python autocomplete ---------------------------------------------- {{{2
 let g:jedi#get_definition_command="gd"
 let g:jedi#goto_command="<space>g"
