@@ -54,6 +54,7 @@
 * Vim-javascript  (syntax highlighting, indent rules, and conceal for javascript)
 * Vim-json        (better highlighting and conceal)
 * Vim-jsx         (syntax highlighting for jsx files)
+* Vim-misc        (support for easytags plugin)
 
 *Included colorscheme*
 * IR_Black
