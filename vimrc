@@ -290,8 +290,6 @@ xmap aa <Plug>Argumentative_OuterTextObject
 omap ia <Plug>Argumentative_OpPendingInnerTextObject
 omap aa <Plug>Argumentative_OpPendingOuterTextObject
 
-" clang_complete settings ----------------------------------------------- {{{2
-"let g:clang_snippets_engine="snipmate"
 
 " start ctrlp ----------------------------------------------------------- {{{2
 let g:ctrlp_map='<Leader>n'
@@ -405,11 +403,6 @@ let g:syntastic_loc_list_height=5
 let g:syntastic_enable_signs=1
 map <F12> :SyntasticToggleMode<cr>
 
-" tabular settings to align at = and after : for blocks of code --------- {{{2
-nmap <Leader>= :Tabularize /=<cr>
-vmap <Leader>= :Tabularize /=<cr>
-nmap <Leader>: :Tabularize /:\zs/l0l1<cr>
-vmap <Leader>: :Tabularize /:\zs/l0l1<cr>
 
 " tagbar settings ------------------------------------------------------- {{{2
 let g:tagbar_width=30

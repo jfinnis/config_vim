@@ -13,6 +13,7 @@
 * Fugitive           (&lt;Leader&gt;gs/gc/gd/gl/gp - status (- stage/unstage, p patch, C commit), commit, diff, log, push, diffput/get to stage/checkout, :Gedit)
 * Jedi-vim           (python autocomplete library, better gd, &lt;space&gt;g goto, &lt;space&gt;k pydoc, &lt;space&gt;r refactor, &lt;ctl-space&gt; autocomplete)
 * Latex-suite        (templates - &lt;Leader&gt;tt, macros - EEQ/SSS/`a/`D, F7 expands commands, F9 completes labels/cites, &lt;Leader&gt;ll compiles [visual]) <-- overkill
+* Multiple Cursors   (&lt;c-n&gt; repeatedly to select matches, in visual mode to convert region to multiple cursors)
 * NERDCommenter      (&lt;Leader&gt;c&lt;space&gt;/ci/cm/cb/cA)
 * NERDTree           (&lt;Leader&gt;N opens directory tree, o, s, t to open/vsplit/tab, C changeroot, r refresh, I hidden files)
 * Operator-Replace   (R is multipurpose replace command, Rib, "xR$, etc)
