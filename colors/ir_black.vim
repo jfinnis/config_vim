@@ -123,6 +123,8 @@ hi Special          guifg=#E18964     guibg=NONE        gui=NONE      ctermfg=wh
 hi Delimiter        guifg=#00A0A0     guibg=NONE        gui=NONE      ctermfg=cyan        ctermbg=NONE        cterm=NONE
 hi Operator         guifg=white       guibg=NONE        gui=NONE      ctermfg=white       ctermbg=NONE        cterm=NONE
 
+hi Conceal                            guibg=NONE                                          ctermbg=NONE
+
 hi link Character       Constant
 hi link Boolean         Constant
 hi link Float           Number
