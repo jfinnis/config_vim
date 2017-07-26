@@ -4,6 +4,7 @@ setlocal shiftwidth=2            " indent width using '<' and '>'
 setlocal tabstop=2
 
 set foldmethod=syntax
+set foldnestmax=2
 
 " vim-javascript settings
 setlocal conceallevel=1

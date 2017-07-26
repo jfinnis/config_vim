@@ -264,7 +264,7 @@ xnoremap <silent> zb :<C-u>call setpos('.',[0,line("'>"),0,0])<Bar>normal! zbgv<
 
 " PLUGIN SPECIFIC BINDINGS """""""""""""""""""""""""""""""""""""""""""""" {{{1
 " Ack command/shortcut -------------------------------------------------- {{{2
-let g:ackprg="ack -i -H --nocolor --nogroup --column --ignore-directory=vendor --ignore-directory=coverage --ignore-directory=dist --ignore-file=match:widget.html --ignore-file=match:debug.ejs"
+let g:ackprg="ack -i -H --nocolor --nogroup --column --ignore-directory=vendor --ignore-directory=coverage --ignore-directory=dist --ignore-file=match:widget.html --ignore-file=match:debug.ejs --ignore-file=match:tags --ignore-directory=deploy --ignore-directory=jest --ignore-file=match:npm-debug.log"
 nnoremap <leader>a :Ack 
 nnoremap <leader>K :AckHelp 
 
@@ -300,8 +300,13 @@ let g:ctrlp_max_height=15
 let g:ctrlp_working_path_mode='ra'
 let g:ctrlp_show_hidden=1
 let g:ctrlp_open_multiple_files='1vr'
-let g:ctrlp_custom_ignore = {'dir':'\.git$\|\.hg$\|\.svn$'}
+let g:ctrlp_custom_ignore = {
+ \ 'dir': '\v[\/](\.(git|hg|svn)|node_modules)$'
+ \ }
 nnoremap <leader>] :CtrlPTag<cr>
+
+" delimitmate ----------------------------------------------------- {{{2
+inoremap <expr> <S-Space> delimitMate#JumpAny()
 
 " easymotion options and bindings (visual binding screws up snippets) --- {{{2
 let EasyMotion_do_mapping=0
@@ -345,7 +350,8 @@ map ]g :GitGutterNextHunk<cr>
 map [g :GitGutterPrevHunk<cr>
 
 " indent-guides settings ------------------------------------------------ {{{2
-let g:indent_guides_auto_colors = 0
+let g:indent_guides_auto_colors=0
+let g:indent_guides_guide_size=1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=8
 
 " jedi python autocomplete ---------------------------------------------- {{{2
