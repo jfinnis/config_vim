@@ -291,7 +291,7 @@ omap ia <Plug>Argumentative_OpPendingInnerTextObject
 omap aa <Plug>Argumentative_OpPendingOuterTextObject
 
 
-" start ctrlp ----------------------------------------------------------- {{{2
+" ctrlp ----------------------------------------------------------------- {{{2
 let g:ctrlp_map='<Leader>n'
 let g:ctrlp_by_filename=1
 let g:ctrlp_match_window_bottom=0
@@ -342,6 +342,8 @@ map <Leader>gw :Gbrowse<cr>
 map <Leader>gc :Gcommit -a<cr>
 map <Leader>gd :Gdiff<cr>
 map <Leader>gl :Glog<cr>
+map <Leader>gr :Gread<cr>
+map <Leader>gm :Gmove 
 map <Leader>gp :Git push origin master<cr>
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
